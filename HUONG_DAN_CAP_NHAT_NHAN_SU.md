@@ -42,12 +42,8 @@ Script kiểm tra chấm công cũ phải có lịch tương ứng, khớp nhân
 
 Hai file `ThemDuLieu_QuanLyKhachSan*.sql` là dữ liệu mẫu cho cấu trúc cũ. Khi thiết lập DB mới từ đầu, nhập dữ liệu mẫu trước rồi chạy nâng cấp này; không dùng chúng để tạo thêm lịch/chấm công sau nâng cấp vì thứ tự chèn cũ là chấm công trước, lịch sau.
 
-Kiểm thử tự động bằng DB tạm riêng:
+Giao diện Nhân viên và năm tab trong `NhanSuView` đã nối SQL qua `DAL_NhanSu` → `BUS_NhanSu`. Phòng ban/Chức vụ giữ BUS riêng; các ô tìm kiếm dùng chung `NhanSuGiaoDien`. Các mã trạng thái, tìm kiếm không dấu và nhập giờ dùng `NhanSuQuyUoc`.
 
-```powershell
-powershell -ExecutionPolicy Bypass -File checks/NhanSuDatabaseMigration.ps1
-```
+Form Nhân viên/Ca/Lịch/Chấm công/Lương/Khen thưởng dùng lại cho thêm và sửa. Từ cửa sổ chi tiết, bấm **Sửa** để mở form có bản nháp; đóng form không lưu sẽ giữ dữ liệu cũ. Những chỗ thêm/bớt/khác Phòng ban có comment ngay trong C# và XAML.
 
-Bộ kiểm tra dựng cấu trúc Nhân sự gốc từ file SQL trong dự án, kiểm tra giữ nguyên dữ liệu, rollback khi lỗi, chạy lại nhiều lần, sinh mã, CRUD, khóa ngoại và các điều kiện nhập liệu; sau đó xóa đúng DB tạm do nó tạo. Tài khoản chạy kiểm thử cần quyền tạo/xóa DB tạm.
-
-Script này chỉ chuẩn bị DB. Các tab còn dùng dữ liệu mẫu trong `NhanSuView` vẫn cần được nối DAL → BUS → binding; chạy SQL không tự thay đổi các handler C#.
+Lập lương vẫn nhập tiền công, tăng ca, phụ cấp, khấu trừ và thuế theo kỳ; chưa có công thức quy đổi công thành tiền tự động. Nút **Nạp lương cơ bản và thưởng đã duyệt** lấy lương tham chiếu và gán tổng thưởng tiền mặt đã duyệt trong tháng/năm đang chọn, không cộng dồn khi bấm lại. Tổng lương = tiền công + tăng ca + thưởng + phụ cấp; thực lĩnh = tổng lương − khấu trừ − thuế. Lương cơ bản không cộng lần thứ hai. Bảng lương đã thanh toán chỉ xem, không sửa/xóa; thay đổi khen thưởng không tự sửa số tiền của kỳ đã chốt.

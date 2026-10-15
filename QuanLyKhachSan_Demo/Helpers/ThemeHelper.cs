@@ -53,6 +53,12 @@ namespace QuanLyKhachSan.Helpers
             "Hong" => "Hỏng",
             "TamTinh" => "Tạm tính",
             "DaDuyet" => "Đã duyệt",
+            // Thêm: dùng lại converter trạng thái cho khen thưởng, không hiện mã SQL trên giao diện.
+            "ChoDuyet" => "Chờ duyệt",
+            "TuChoi" => "Từ chối",
+            "TienThuong" => "Tiền thưởng",
+            "BieuDuong" => "Biểu dương",
+            "GiayKhen" => "Giấy khen",
             "DuCong" => "Đủ công",
             "ThieuCong" => "Thiếu công",
             "Nghi" => "Nghỉ",

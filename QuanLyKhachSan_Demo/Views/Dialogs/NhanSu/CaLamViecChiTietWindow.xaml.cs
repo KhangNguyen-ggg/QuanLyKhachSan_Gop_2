@@ -1,25 +1,31 @@
-using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using QuanLyKhachSan.Data;
+using BUS_QuanlyKhachSan.NhanSu;
+using ET_QuanLyKhachSan;
+using QuanLyKhachSan.Helpers;
 
 namespace QuanLyKhachSan.Views.Dialogs;
 
 public partial class CaLamViecChiTietWindow : Window
 {
-    private readonly CaLamViecMau _item;
-    private bool _editing;
+    private readonly BUS_NhanSu bus = new();
+    private readonly long ma;
 
-    public CaLamViecChiTietWindow(CaLamViecMau? item = null)
+    public CaLamViecChiTietWindow(CaLamViec duLieu)
     {
         InitializeComponent();
-        _item = item ?? new CaLamViecMau();
-        DataContext = _item;
-        btnCaLamViecThemMoi.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnCaLamViecThemMoi");
+        ma = duLieu.MaCa;
+        HienThi();
+    }
+
+    private void HienThi()
+    {
+        if (!DemoSession.CanOpen("NhanSuView")) { btnCaLamViecSuaThongTin.IsEnabled = btnCaLamViecXoa.IsEnabled = false; return; }
+        var duLieu = bus.CaLamViec().FirstOrDefault(x => x.MaCa == ma)
+            ?? throw new InvalidOperationException("Ca làm việc không còn tồn tại.");
+        DataContext = duLieu;
         btnCaLamViecSuaThongTin.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnCaLamViecSuaThongTin");
         btnCaLamViecXoa.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnCaLamViecXoa");
-        btnLuuSua.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnCaLamViecSuaThongTin");
-        btnHuySua.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnCaLamViecSuaThongTin");
+        txtThongBao.Text = "Nhấn Sửa để mở form chỉnh sửa.";
     }
 
     private void btnDong_Click(object sender, RoutedEventArgs e) => Close();
@@ -27,84 +33,20 @@ public partial class CaLamViecChiTietWindow : Window
     private void btnSua_Click(object sender, RoutedEventArgs e)
     {
         if (!DemoSession.CanUseButton("NhanSuView", "btnCaLamViecSuaThongTin")) return;
-        SetEditMode(true);
-    }
-
-    private void btnHuySua_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("NhanSuView", "btnCaLamViecSuaThongTin")) return;
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
-    }
-
-    private void SetEditMode(bool editing)
-    {
-        _editing = editing;
-        txtTenCa.IsReadOnly = !editing;
-        txtGioBatDau.IsReadOnly = !editing;
-        txtGioKetThuc.IsReadOnly = !editing;
-        txtTrangThai.IsReadOnly = !editing;
-        btnCaLamViecThemMoi.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnCaLamViecSuaThongTin.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnCaLamViecXoa.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnLuuSua.Visibility = btnHuySua.Visibility = editing ? Visibility.Visible : Visibility.Collapsed;
-        txtThongBao.Text = editing ? "Chỉnh sửa rồi nhấn Lưu thay đổi hoặc Hủy sửa." : "Nhấn Sửa để chỉnh sửa thông tin của dòng này.";
-    }
-
-    private void btnLuuSua_Click(object sender, RoutedEventArgs e)
-    {
-        if (!_editing || !DemoSession.CanUseButton("NhanSuView", "btnCaLamViecSuaThongTin")) return;
-        if (string.IsNullOrWhiteSpace(txtTenCa.Text) ||
-            string.IsNullOrWhiteSpace(txtGioBatDau.Text) ||
-            string.IsNullOrWhiteSpace(txtGioKetThuc.Text) ||
-            string.IsNullOrWhiteSpace(txtTrangThai.Text))
+        try
         {
-            txtThongBao.Text = "Vui lòng nhập đầy đủ thông tin bắt buộc.";
-            return;
+            // Khác Phòng ban: dùng lại form Thêm/Sửa, không lặp phần đọc ô nhập và kiểm tra dữ liệu.
+            var form = new CaLamViecForm(bus.TheoId<CaLamViec>(ma)) { Owner = this };
+            if (form.ShowDialog() == true) { HienThi(); txtThongBao.Text = "Đã lưu thông tin ca làm việc."; }
         }
-
-        if (!TimeSpan.TryParseExact(txtGioBatDau.Text.Trim().Replace(" hôm sau", ""), @"hh\:mm", CultureInfo.InvariantCulture, out var valueGioBatDau) || valueGioBatDau.TotalHours >= 24)
-        {
-            txtThongBao.Text = "Giờ bắt đầu: nhập giờ hợp lệ theo HH:mm.";
-            return;
-        }
-        if (!TimeSpan.TryParseExact(txtGioKetThuc.Text.Trim().Replace(" hôm sau", ""), @"hh\:mm", CultureInfo.InvariantCulture, out var valueGioKetThuc) || valueGioKetThuc.TotalHours >= 24)
-        {
-            txtThongBao.Text = "Giờ kết thúc: nhập giờ hợp lệ theo HH:mm.";
-            return;
-        }
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Lưu thay đổi — Ca làm việc: {_item.Ma}?";
-        if (confirm.ShowDialog() != true) return;
-        // shortcut: sửa dữ liệu demo trong bộ nhớ, nối tầng lưu trữ khi triển khai nghiệp vụ thật.
-        _item.TenCa = txtTenCa.Text.Trim();
-        _item.GioBatDau = txtGioBatDau.Text.Trim();
-        _item.GioKetThuc = txtGioKetThuc.Text.Trim();
-        _item.TrangThai = txtTrangThai.Text.Trim();
-        var duration = valueGioKetThuc - valueGioBatDau;
-        if (duration < TimeSpan.Zero) duration += TimeSpan.FromDays(1);
-        _item.SoGio = duration.TotalHours.ToString("0.##", CultureInfo.GetCultureInfo("vi-VN"));
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
+        catch (Exception ex) { txtThongBao.Text = ex.Message; }
     }
 
     private void btnXoa_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("NhanSuView", "btnCaLamViecXoa") || _editing) return;
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Xóa — Ca làm việc: {_item.Ma}?";
-        if (confirm.ShowDialog() != true) return;
-        DialogResult = true;
-    }
-
-    private void btnCaLamViecThemMoi_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("NhanSuView", "btnCaLamViecThemMoi")) return;
-        CaLamViecForm form = new CaLamViecForm();
-        form.Owner = this;
-        // shortcut: giữ form nghiệp vụ demo có sẵn, nối tầng lưu trữ trước khi ghi giao dịch thật.
-        form.ShowDialog();
+        if (!DemoSession.CanUseButton("NhanSuView", "btnCaLamViecXoa")) return;
+        if (!NhanSuGiaoDien.XacNhanXoa(this, $"Xóa ca làm việc {ma}")) return;
+        try { bus.Xoa<CaLamViec>(ma); DialogResult = true; }
+        catch (Exception ex) { txtThongBao.Text = "Không xóa được ca làm việc. " + ex.Message; }
     }
 }

@@ -1,25 +1,31 @@
-using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using QuanLyKhachSan.Data;
+using BUS_QuanlyKhachSan.NhanSu;
+using ET_QuanLyKhachSan;
+using QuanLyKhachSan.Helpers;
 
 namespace QuanLyKhachSan.Views.Dialogs;
 
 public partial class LichLamViecChiTietWindow : Window
 {
-    private readonly LichLamViecMau _item;
-    private bool _editing;
+    private readonly BUS_NhanSu bus = new();
+    private readonly long ma;
 
-    public LichLamViecChiTietWindow(LichLamViecMau? item = null)
+    public LichLamViecChiTietWindow(LichLamViec duLieu)
     {
         InitializeComponent();
-        _item = item ?? new LichLamViecMau();
-        DataContext = _item;
-        btnLichLamViecThemLich.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnLichLamViecThemLich");
+        ma = duLieu.MaLich;
+        HienThi();
+    }
+
+    private void HienThi()
+    {
+        if (!DemoSession.CanOpen("NhanSuView")) { btnLichLamViecSuaThongTin.IsEnabled = btnLichLamViecXoa.IsEnabled = false; return; }
+        var duLieu = bus.LichLamViec().FirstOrDefault(x => x.MaLich == ma)
+            ?? throw new InvalidOperationException("Lịch làm việc không còn tồn tại.");
+        DataContext = duLieu;
         btnLichLamViecSuaThongTin.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnLichLamViecSuaThongTin");
         btnLichLamViecXoa.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnLichLamViecXoa");
-        btnLuuSua.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnLichLamViecSuaThongTin");
-        btnHuySua.IsEnabled = DemoSession.CanUseButton("NhanSuView", "btnLichLamViecSuaThongTin");
+        txtThongBao.Text = "Nhấn Sửa để mở form chỉnh sửa.";
     }
 
     private void btnDong_Click(object sender, RoutedEventArgs e) => Close();
@@ -27,80 +33,20 @@ public partial class LichLamViecChiTietWindow : Window
     private void btnSua_Click(object sender, RoutedEventArgs e)
     {
         if (!DemoSession.CanUseButton("NhanSuView", "btnLichLamViecSuaThongTin")) return;
-        SetEditMode(true);
-    }
-
-    private void btnHuySua_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("NhanSuView", "btnLichLamViecSuaThongTin")) return;
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
-    }
-
-    private void SetEditMode(bool editing)
-    {
-        _editing = editing;
-        txtNhanVien.IsReadOnly = !editing;
-        txtNgayLam.IsReadOnly = !editing;
-        txtCa.IsReadOnly = !editing;
-        txtTrangThai.IsReadOnly = !editing;
-        txtGhiChu.IsReadOnly = !editing;
-        btnLichLamViecThemLich.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnLichLamViecSuaThongTin.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnLichLamViecXoa.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnLuuSua.Visibility = btnHuySua.Visibility = editing ? Visibility.Visible : Visibility.Collapsed;
-        txtThongBao.Text = editing ? "Chỉnh sửa rồi nhấn Lưu thay đổi hoặc Hủy sửa." : "Nhấn Sửa để chỉnh sửa thông tin của dòng này.";
-    }
-
-    private void btnLuuSua_Click(object sender, RoutedEventArgs e)
-    {
-        if (!_editing || !DemoSession.CanUseButton("NhanSuView", "btnLichLamViecSuaThongTin")) return;
-        if (string.IsNullOrWhiteSpace(txtNhanVien.Text) ||
-            string.IsNullOrWhiteSpace(txtNgayLam.Text) ||
-            string.IsNullOrWhiteSpace(txtCa.Text) ||
-            string.IsNullOrWhiteSpace(txtTrangThai.Text))
+        try
         {
-            txtThongBao.Text = "Vui lòng nhập đầy đủ thông tin bắt buộc.";
-            return;
+            // Khác Phòng ban: dùng lại form Thêm/Sửa, không lặp phần đọc ô nhập và kiểm tra dữ liệu.
+            var form = new LichLamViecForm(bus.TheoId<LichLamViec>(ma)) { Owner = this };
+            if (form.ShowDialog() == true) { HienThi(); txtThongBao.Text = "Đã lưu thông tin lịch làm việc."; }
         }
-
-        if (!DateTime.TryParseExact(txtNgayLam.Text.Trim(), "dd/MM/yyyy", CultureInfo.GetCultureInfo("vi-VN"), DateTimeStyles.None, out _))
-        {
-            txtThongBao.Text = "Ngày làm: nhập ngày hợp lệ theo dd/MM/yyyy.";
-            return;
-        }
-
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Lưu thay đổi — Lịch làm việc: {_item.Ma}?";
-        if (confirm.ShowDialog() != true) return;
-        // shortcut: sửa dữ liệu demo trong bộ nhớ, nối tầng lưu trữ khi triển khai nghiệp vụ thật.
-        _item.NhanVien = txtNhanVien.Text.Trim();
-        _item.NgayLam = txtNgayLam.Text.Trim();
-        _item.Ca = txtCa.Text.Trim();
-        _item.TrangThai = txtTrangThai.Text.Trim();
-        _item.GhiChu = txtGhiChu.Text.Trim();
-
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
+        catch (Exception ex) { txtThongBao.Text = ex.Message; }
     }
 
     private void btnXoa_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("NhanSuView", "btnLichLamViecXoa") || _editing) return;
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Xóa — Lịch làm việc: {_item.Ma}?";
-        if (confirm.ShowDialog() != true) return;
-        DialogResult = true;
-    }
-
-    private void btnLichLamViecThemLich_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("NhanSuView", "btnLichLamViecThemLich")) return;
-        LichLamViecForm form = new LichLamViecForm();
-        form.Owner = this;
-        // shortcut: giữ form nghiệp vụ demo có sẵn, nối tầng lưu trữ trước khi ghi giao dịch thật.
-        form.ShowDialog();
+        if (!DemoSession.CanUseButton("NhanSuView", "btnLichLamViecXoa")) return;
+        if (!NhanSuGiaoDien.XacNhanXoa(this, $"Xóa lịch làm việc {ma}")) return;
+        try { bus.Xoa<LichLamViec>(ma); DialogResult = true; }
+        catch (Exception ex) { txtThongBao.Text = "Không xóa được lịch làm việc. " + ex.Message; }
     }
 }

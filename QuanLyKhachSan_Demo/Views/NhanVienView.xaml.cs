@@ -4,20 +4,42 @@ using System.Windows.Input;
 using BUS_QuanlyKhachSan.NhanSu;
 using ET_QuanLyKhachSan;
 using QuanLyKhachSan.Views.Dialogs;
+using QuanLyKhachSan.Helpers;
 
 namespace QuanLyKhachSan.Views
 {
     public partial class NhanVienView : UserControl
     {
         private readonly BUS_PhongBan? phongBan;
-        private string tuKhoaPhongBanHopLe = "";
+        private readonly BUS_ChucVu? chucVu;
+        private readonly BUS_NhanSu? nhanSu;
 
         public NhanVienView()
         {
             InitializeComponent();
+            // Bớt: chặn gõ/dán và báo lỗi tìm kiếm dùng chung cho cả Phòng ban, Chức vụ, Nhân viên.
+            NhanSuGiaoDien.GanTimKiem(txtTimPhongBan, txtLoiTimPhongBan);
+            NhanSuGiaoDien.GanTimKiem(txtTimChucVu, txtLoiTimChucVu);
             if (DAL.CauHinhKetNoi.DaCauHinh) phongBan = new BUS_PhongBan();
             btnPhongBanThemMoi.IsEnabled = phongBan != null && DemoSession.CanUseButton(nameof(NhanVienView), "btnPhongBanThemMoi");
             Loaded += (_, _) => TaiLaiPhongBan();
+            if (DAL.CauHinhKetNoi.DaCauHinh) chucVu = new BUS_ChucVu();
+            btnChucVuThemMoi.IsEnabled = chucVu != null && DemoSession.CanUseButton(nameof(NhanVienView), "btnChucVuThemMoi");
+            Loaded += (_, _) => TaiLaiChucVu();
+            if (DAL.CauHinhKetNoi.DaCauHinh) nhanSu = new();
+            // Thêm: hồ sơ Nhân viên dùng lại SQL, tìm kiếm và danh mục trạng thái chung.
+            NhanSuGiaoDien.GanTimKiem(txtTimNhanVien, txtLoiTimNhanVien);
+            NhanSuGiaoDien.DanhMuc(cboLocNhanVien, new[] { new KeyValuePair<string, string>("", "Tất cả trạng thái") }.Concat(NhanSuQuyUoc.TrangThai("NhanVien")), "");
+            cboLocNhanVien.SelectionChanged += (_, _) => { if (IsLoaded) TaiLaiNhanVien(); };
+            btnNhanVienThemMoi.IsEnabled = nhanSu != null && DemoSession.CanUseButton(nameof(NhanVienView), "btnNhanVienThemMoi");
+            Loaded += (_, _) => TaiLaiNhanVien();
+            tabChinh.SelectionChanged += (_, e) =>
+            {
+                if (e.Source != tabChinh || !IsLoaded) return;
+                if (tabChinh.SelectedIndex == 0) TaiLaiNhanVien();
+                else if (tabChinh.SelectedIndex == 1) TaiLaiPhongBan();
+                else if (tabChinh.SelectedIndex == 2) TaiLaiChucVu();
+            };
         }
 
         private void TaiLaiPhongBan()
@@ -40,34 +62,74 @@ namespace QuanLyKhachSan.Views
             catch (Exception ex) { txtThongBaoPhongBan.Text = "Không tải được phòng ban: " + ex.Message; }
         }
 
+        private void TaiLaiChucVu()
+        {
+            if (!DemoSession.CanOpen(nameof(NhanVienView))) return;
+            var maDaChon = dgvChucVu.SelectedValue;
+            dgvChucVu.ItemsSource = null;
+            if (chucVu == null)
+            {
+                txtThongBaoChucVu.Text = "Cấu hình connection.txt hoặc QLKS_CONNECTION để dùng chức năng Chức vụ.";
+                return;
+            }
+            try
+            {
+                dgvChucVu.ItemsSource = chucVu.HienThiTatCa(txtTimChucVu.Text, cboLocChucVu.SelectedValue as bool?);
+                dgvChucVu.SelectedValue = maDaChon;
+                if (dgvChucVu.SelectedIndex < 0 && dgvChucVu.Items.Count > 0) dgvChucVu.SelectedIndex = 0;
+                txtThongBaoChucVu.Text = $"{dgvChucVu.Items.Count} dòng · Nhấp đúp để xem chi tiết / sửa";
+            }
+            catch (Exception ex) { txtThongBaoChucVu.Text = "Không tải được chức vụ: " + ex.Message; }
+        }
+
+        private void TaiLaiNhanVien()
+        {
+            if (!DemoSession.CanOpen(nameof(NhanVienView))) return;
+            var maDaChon = dgvNhanVien.SelectedValue;
+            dgvNhanVien.ItemsSource = null;
+            if (nhanSu == null) { txtThongBaoNhanVien.Text = "Cấu hình connection.txt hoặc QLKS_CONNECTION để dùng Nhân viên."; return; }
+            try
+            {
+                dgvNhanVien.ItemsSource = nhanSu.NhanVien(txtTimNhanVien.Text, NhanSuGiaoDien.TrangThai(cboLocNhanVien));
+                dgvNhanVien.SelectedValue = maDaChon;
+                if (dgvNhanVien.SelectedIndex < 0 && dgvNhanVien.Items.Count > 0) dgvNhanVien.SelectedIndex = 0;
+                txtThongBaoNhanVien.Text = $"{dgvNhanVien.Items.Count} dòng · Nhấp đúp để xem chi tiết";
+            }
+            catch (Exception ex) { txtThongBaoNhanVien.Text = "Không tải được nhân viên. " + ex.Message; }
+        }
+
         private void btnNhanVienThemMoi_Click(object sender, RoutedEventArgs e)
         {
-            if (!DemoSession.CanUseButton("NhanVienView", "btnNhanVienThemMoi")) return;
-            // Chỉ mở cửa sổ XAML có sẵn; không tạo control bằng code.
-            NhanVienForm form = new NhanVienForm();
-            form.Owner = Window.GetWindow(this);
-            form.ShowDialog();
+            if (nhanSu == null || !DemoSession.CanUseButton(nameof(NhanVienView), "btnNhanVienThemMoi")) return;
+            try
+            {
+                var form = new NhanVienForm { Owner = Window.GetWindow(this) };
+                form.ShowDialog();
+                TaiLaiNhanVien();
+            }
+            catch (Exception ex) { txtThongBaoNhanVien.Text = ex.Message; }
         }
 
         private void NhanVien_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (!DemoSession.CanOpen("NhanVienView") || e.OriginalSource is not DependencyObject source ||
-                ItemsControl.ContainerFromElement(dgvNhanVien, source) is not DataGridRow row ||
-                row.Item is not Data.NhanVienMau item) return;
-            var form = new NhanVienChiTietWindow(item) { Owner = Window.GetWindow(this) };
-            if (form.ShowDialog() == true) dgvNhanVien.Items.Remove(item);
-            dgvNhanVien.Items.Refresh();
+            if (nhanSu == null || !DemoSession.CanOpen(nameof(NhanVienView)) || e.OriginalSource is not DependencyObject nguon ||
+                ItemsControl.ContainerFromElement(dgvNhanVien, nguon) is not DataGridRow dong ||
+                dong.Item is not NhanVien duLieu) return;
+            try
+            {
+                var form = new NhanVienChiTietWindow(duLieu) { Owner = Window.GetWindow(this) };
+                form.ShowDialog();
+                TaiLaiNhanVien();
+            }
+            catch (Exception ex) { txtThongBaoNhanVien.Text = ex.Message; }
         }
 
-        private void btnTimNhanVien_Click(object sender, RoutedEventArgs e)
-        {
-            // Chưa triển khai tìm kiếm.
-        }
+        private void btnTimNhanVien_Click(object sender, RoutedEventArgs e) => TaiLaiNhanVien();
 
         private void btnMoiNhanVien_Click(object sender, RoutedEventArgs e)
         {
-            txtTimNhanVien.Clear();
-            cboLocNhanVien.SelectedIndex = 0;
+            NhanSuGiaoDien.MoiTimKiem(txtTimNhanVien, txtLoiTimNhanVien, cboLocNhanVien);
+            TaiLaiNhanVien();
         }
 
         private void btnPhongBanThemMoi_Click(object sender, RoutedEventArgs e)
@@ -101,88 +163,54 @@ namespace QuanLyKhachSan.Views
             TaiLaiPhongBan();
         }
 
-        private void HienThiLoiTimPhongBan(bool coLoi)
-        {
-            txtLoiTimPhongBan.Visibility = coLoi ? Visibility.Visible : Visibility.Collapsed;
-            txtTimPhongBan.SetResourceReference(BorderBrushProperty, coLoi ? "DangerBrush" : "BorderBrush");
-        }
-
-        private bool ChoPhepNhapTuKhoaPhongBan(string vanBan)
-        {
-            string duKien = txtTimPhongBan.Text.Remove(txtTimPhongBan.SelectionStart, txtTimPhongBan.SelectionLength)
-                .Insert(txtTimPhongBan.SelectionStart, vanBan);
-            bool hopLe = BUS_PhongBan.TuKhoaTimKiemHopLe(duKien);
-            HienThiLoiTimPhongBan(!hopLe);
-            return hopLe;
-        }
-
-        private void txtTimPhongBan_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            e.Handled = !ChoPhepNhapTuKhoaPhongBan(e.Text);
-        }
-
-        private void txtTimPhongBan_Pasting(object sender, DataObjectPastingEventArgs e)
-        {
-            string? vanBan = e.DataObject.GetData(DataFormats.UnicodeText, true) as string;
-            if (vanBan == null || !ChoPhepNhapTuKhoaPhongBan(vanBan))
-            {
-                e.CancelCommand();
-                HienThiLoiTimPhongBan(true);
-            }
-        }
-
-        private void txtTimPhongBan_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txtLoiTimPhongBan == null) return;
-            if (BUS_PhongBan.TuKhoaTimKiemHopLe(txtTimPhongBan.Text))
-            {
-                tuKhoaPhongBanHopLe = txtTimPhongBan.Text;
-                HienThiLoiTimPhongBan(false);
-                return;
-            }
-
-            int viTriConTro = txtTimPhongBan.CaretIndex;
-            txtTimPhongBan.Text = tuKhoaPhongBanHopLe;
-            txtTimPhongBan.CaretIndex = Math.Min(viTriConTro, tuKhoaPhongBanHopLe.Length);
-            HienThiLoiTimPhongBan(true);
-        }
-
         private void btnMoiPhongBan_Click(object sender, RoutedEventArgs e)
         {
-            txtTimPhongBan.Clear();
-            HienThiLoiTimPhongBan(false);
-            cboLocPhongBan.SelectedIndex = 0;
+            NhanSuGiaoDien.MoiTimKiem(txtTimPhongBan, txtLoiTimPhongBan, cboLocPhongBan);
             TaiLaiPhongBan();
         }
 
         private void btnChucVuThemMoi_Click(object sender, RoutedEventArgs e)
         {
-            if (!DemoSession.CanUseButton("NhanVienView", "btnChucVuThemMoi")) return;
-            // Chỉ mở cửa sổ XAML có sẵn; không tạo control bằng code.
-            ChucVuForm form = new ChucVuForm();
-            form.Owner = Window.GetWindow(this);
-            form.ShowDialog();
+            if (chucVu == null || !DemoSession.CanUseButton(nameof(NhanVienView), "btnChucVuThemMoi")) return;
+            try
+            {
+                var form = new ChucVuForm { Owner = Window.GetWindow(this) };
+                form.ShowDialog();
+                TaiLaiChucVu();
+            }
+            catch (Exception ex) { txtThongBaoChucVu.Text = ex.Message; }
         }
 
         private void ChucVu_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (!DemoSession.CanOpen("NhanVienView") || e.OriginalSource is not DependencyObject source ||
+            if (chucVu == null || !DemoSession.CanOpen("NhanVienView") || e.OriginalSource is not DependencyObject source ||
                 ItemsControl.ContainerFromElement(dgvChucVu, source) is not DataGridRow row ||
-                row.Item is not Data.ChucVuMau item) return;
-            var form = new ChucVuChiTietWindow(item) { Owner = Window.GetWindow(this) };
-            if (form.ShowDialog() == true) dgvChucVu.Items.Remove(item);
-            dgvChucVu.Items.Refresh();
+                row.Item is not ChucVu item) return;
+            try
+            {
+                var form = new ChucVuChiTietWindow(chucVu.HienThiTheoId(item.MaChucVu)) { Owner = Window.GetWindow(this) };
+                form.ShowDialog();
+                TaiLaiChucVu();
+            }
+            catch (Exception ex) { txtThongBaoChucVu.Text = "Không mở được chi tiết chức vụ: " + ex.Message; }
         }
 
         private void btnTimChucVu_Click(object sender, RoutedEventArgs e)
         {
-            // Chưa triển khai tìm kiếm.
+            TaiLaiChucVu();
         }
 
         private void btnMoiChucVu_Click(object sender, RoutedEventArgs e)
         {
-            txtTimChucVu.Clear();
-            cboLocChucVu.SelectedIndex = 0;
+            NhanSuGiaoDien.MoiTimKiem(txtTimChucVu, txtLoiTimChucVu, cboLocChucVu);
+            TaiLaiChucVu();
+        }
+
+        private void cboLocChucVu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // SelectedIndex có thể phát sự kiện khi các control phía sau chưa được tạo.
+            if (!IsLoaded) return;
+            TaiLaiChucVu();
         }
 
         private void cboLocPhongBan_SelectionChanged(object sender, SelectionChangedEventArgs e)

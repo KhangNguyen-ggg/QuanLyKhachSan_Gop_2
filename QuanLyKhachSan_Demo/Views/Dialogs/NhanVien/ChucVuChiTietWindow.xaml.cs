@@ -1,24 +1,40 @@
-using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using QuanLyKhachSan.Data;
+using BUS_QuanlyKhachSan;
+using BUS_QuanlyKhachSan.NhanSu;
+using ET_QuanLyKhachSan;
 
 namespace QuanLyKhachSan.Views.Dialogs;
 
 public partial class ChucVuChiTietWindow : Window
 {
-    private readonly ChucVuMau _item;
+    private readonly BUS_ChucVu bus = new();
+    private ChucVu chucVu;
     private bool _editing;
 
-    public ChucVuChiTietWindow(ChucVuMau? item = null)
+    public ChucVuChiTietWindow(ChucVu duLieu)
     {
         InitializeComponent();
-        _item = item ?? new ChucVuMau();
-        DataContext = _item;
+        chucVu = duLieu;
         btnChucVuSuaThongTin.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnChucVuSuaThongTin");
         btnChucVuXoa.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnChucVuXoa");
         btnLuuSua.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnChucVuSuaThongTin");
         btnHuySua.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnChucVuSuaThongTin");
+        HienThiChucVu();
+    }
+
+    private void HienThiChucVu()
+    {
+        // Sửa trên bản nháp để Hủy sửa hoặc Đóng không đổi dữ liệu đang hiển thị.
+        DataContext = new ChucVu
+        {
+            MaChucVu = chucVu.MaChucVu,
+            TenChucVu = chucVu.TenChucVu,
+            MoTa = chucVu.MoTa,
+            // Khác Phòng ban: sao chép cả mức lương để Hủy sửa khôi phục đúng lương cũ.
+            Chucvu = chucVu.Chucvu,
+            TrangThai = chucVu.TrangThai
+        };
+        SetEditMode(false);
     }
 
     private void btnDong_Click(object sender, RoutedEventArgs e) => Close();
@@ -32,9 +48,7 @@ public partial class ChucVuChiTietWindow : Window
     private void btnHuySua_Click(object sender, RoutedEventArgs e)
     {
         if (!DemoSession.CanUseButton("NhanVienView", "btnChucVuSuaThongTin")) return;
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
+        HienThiChucVu();
     }
 
     private void SetEditMode(bool editing)
@@ -42,8 +56,9 @@ public partial class ChucVuChiTietWindow : Window
         _editing = editing;
         txtTenChucVu.IsReadOnly = !editing;
         txtMoTa.IsReadOnly = !editing;
+        // Khác Phòng ban: bật/tắt chỉnh sửa thêm ô mức lương.
         txtLuong.IsReadOnly = !editing;
-        txtTrangThai.IsReadOnly = !editing;
+        cboTrangThai.IsEnabled = editing;
         btnChucVuSuaThongTin.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnChucVuXoa.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnLuuSua.Visibility = btnHuySua.Visibility = editing ? Visibility.Visible : Visibility.Collapsed;
@@ -53,40 +68,31 @@ public partial class ChucVuChiTietWindow : Window
     private void btnLuuSua_Click(object sender, RoutedEventArgs e)
     {
         if (!_editing || !DemoSession.CanUseButton("NhanVienView", "btnChucVuSuaThongTin")) return;
-        if (string.IsNullOrWhiteSpace(txtTenChucVu.Text) ||
-            string.IsNullOrWhiteSpace(txtLuong.Text) ||
-            string.IsNullOrWhiteSpace(txtTrangThai.Text))
+        try
         {
-            txtThongBao.Text = "Vui lòng nhập đầy đủ thông tin bắt buộc.";
-            return;
+            var duLieu = (ChucVu)DataContext;
+            // Khác Phòng ban: kiểm tra chuỗi nhập rồi đổi sang tiền, không lưu nhầm lương cũ khi nhập sai.
+            duLieu.Chucvu = BUS_KiemTra.SoTien(txtLuong.Text, "Mức lương");
+            bus.Luu(duLieu);
+            chucVu = duLieu;
+            HienThiChucVu();
+            txtThongBao.Text = "Đã lưu thông tin chức vụ.";
         }
-        if (!decimal.TryParse(txtLuong.Text.Trim().Replace(" đ", ""), NumberStyles.Number, CultureInfo.GetCultureInfo("vi-VN"), out var valueLuong) || valueLuong < 0)
-        {
-            txtThongBao.Text = "Mức lương: nhập số không âm theo định dạng Việt Nam.";
-            return;
-        }
-
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Lưu thay đổi — Chức vụ: {_item.Ma}?";
-        if (confirm.ShowDialog() != true) return;
-        // shortcut: sửa dữ liệu demo trong bộ nhớ, nối tầng lưu trữ khi triển khai nghiệp vụ thật.
-        _item.TenChucVu = txtTenChucVu.Text.Trim();
-        _item.MoTa = txtMoTa.Text.Trim();
-        _item.Luong = txtLuong.Text.Trim();
-        _item.TrangThai = txtTrangThai.Text.Trim();
-
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
+        catch (Exception ex) { txtThongBao.Text = "Không lưu được chức vụ. " + ex.Message; }
     }
 
     private void btnXoa_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("NhanVienView", "btnChucVuXoa") || _editing) return;
+        if (_editing || !DemoSession.CanUseButton("NhanVienView", "btnChucVuXoa")) return;
         var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Xóa — Chức vụ: {_item.Ma}?";
+        confirm.txtNoiDung.Text = $"Xóa chức vụ {chucVu.MaChucVu} — {chucVu.TenChucVu}? Thao tác này không thể hoàn tác.";
         if (confirm.ShowDialog() != true) return;
-        DialogResult = true;
+        try
+        {
+            bus.Xoa(chucVu.MaChucVu);
+            DialogResult = true;
+        }
+        catch (Exception ex) { txtThongBao.Text = "Không xóa được chức vụ. " + ex.Message; }
     }
 
 }

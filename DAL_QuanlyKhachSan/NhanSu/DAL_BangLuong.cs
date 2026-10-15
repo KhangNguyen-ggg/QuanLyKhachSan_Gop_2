@@ -28,47 +28,16 @@ using System.Threading.Tasks;
  */
 
 
-namespace DAL.NhanSu  
+namespace DAL.NhanSu;
+
+// Bớt tiện ích ghi cũ nuốt lỗi: dùng lại DAL chung, vẫn giữ chữ ký hàm để tương thích.
+public class DAL_BangLuong
 {
-    public class DAL_BangLuong
-    {
-        private readonly string str = CauHinhKetNoi.Chuoi;
-        private readonly HienThi hienThi;
-        private readonly Them them;
-        private readonly Sua sua;
-        private readonly Xoa xoa;
-        private readonly ThuThiLenhCoDieuKien lenh;
-
-        public DAL_BangLuong()
-        {
-            hienThi = new HienThi(str);
-            them = new Them(str);
-            xoa = new Xoa(str);
-            sua = new Sua(str);
-            lenh = new ThuThiLenhCoDieuKien(str);
-        }
-
-        public List<dynamic> HienThiBangLuongAll() => lenh.TruyVan<dynamic>("EXEC dbo.usp_HienThiBangLuong");
-        public List<BangLuong> HienThiBangLuong(BangLuong duLieu) => hienThi.HienThiTatCa<BangLuong>();
-        public BangLuong HienThiBangLuongTheoId(BangLuong duLieu) => hienThi.HienThiTheoId(duLieu);
-        //Thêm bảng lương mới
-        public bool ThemBangLuong(BangLuong bangLuong)
-        {
-            return them.ThemKhongDieuKien(bangLuong);
-        }
-
-        //Cập nhật bảng lương
-        public bool SuaBangLuong(BangLuong bangLuong)
-        {
-            return sua.SuaTheoId(bangLuong);
-        }
-        //xóa bảng lương
-        public bool XoaBangLuong(BangLuong bangLuong)
-        {
-            return xoa.XoaTheoId(bangLuong);
-        }
-
-        
-
-    }
+    private readonly DAL_QuanlyKhachSan.NhanSu.DAL_NhanSu dal = new();
+    public List<dynamic> HienThiBangLuongAll() => dal.BangLuong().Cast<dynamic>().ToList();
+    public List<BangLuong> HienThiBangLuong(BangLuong duLieu) => dal.TatCa<BangLuong>();
+    public BangLuong HienThiBangLuongTheoId(BangLuong duLieu) => dal.TheoId<BangLuong>(duLieu.MaBangLuong);
+    public bool ThemBangLuong(BangLuong duLieu) { dal.LuuBangLuong(duLieu); return true; }
+    public bool SuaBangLuong(BangLuong duLieu) { dal.LuuBangLuong(duLieu); return true; }
+    public bool XoaBangLuong(BangLuong duLieu) { dal.XoaBangLuong(duLieu.MaBangLuong); return true; }
 }
