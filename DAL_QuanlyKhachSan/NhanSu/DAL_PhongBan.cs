@@ -25,7 +25,7 @@ public class DAL_PhongBan
     }
 
     // Đọc toàn bộ bảng PhongBan và ánh xạ mỗi dòng SQL thành một đối tượng ET PhongBan.
-    public List<PhongBan> HienThiTatCa() => hienThi.HienThiTatCa<PhongBan>();
+    public List<PhongBan> HienThiTatCaPB() => hienThi.HienThiTatCa<PhongBan>();
 
     // Tiện ích đọc thuộc tính có [Key] trong ET để tìm bản ghi theo MaPhongBan.
     public PhongBan HienThiTheoId(int ma) => hienThi.HienThiTheoId(new PhongBan { MaPhongBan = ma });

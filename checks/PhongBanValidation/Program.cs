@@ -195,13 +195,19 @@ internal static class Program
             Click(view, "btnTimPhongBan");
             Assert(grid.Items.Count == 1, "Search did not reload SQL data.");
             Field<ComboBox>(view, "cboLocPhongBan").SelectedIndex = 1;
-            Click(view, "btnTimPhongBan");
-            Assert(grid.Items.Count == 0, "Active filter failed.");
+            Assert(grid.Items.Count == 0, "Active filter did not apply immediately.");
             Field<ComboBox>(view, "cboLocPhongBan").SelectedIndex = 2;
+            Assert(grid.Items.Count == 1, "Inactive filter did not apply immediately or lost the keyword.");
+            SetText(view, "txtTimPhongBan", "  đÃ CẬp nHẬT  ");
             Click(view, "btnTimPhongBan");
-            Assert(grid.Items.Count == 1, "Inactive filter failed.");
+            Assert(grid.Items.Count == 1, "Description search did not trim or ignore case.");
+            SetText(view, "txtTimPhongBan", "__PhongBan_NotFound__");
+            Click(view, "btnTimPhongBan");
+            Assert(grid.Items.Count == 0 && Field<TextBlock>(view, "txtThongBaoPhongBan").Text.Contains("0 dòng"),
+                "No-match search did not show an empty result.");
             Click(view, "btnMoiPhongBan");
-            Assert(grid.Items.Count == 3 && Field<TextBox>(view, "txtTimPhongBan").Text == "", "Refresh failed.");
+            Assert(grid.Items.Count == 3 && Field<TextBox>(view, "txtTimPhongBan").Text == "" &&
+                Field<ComboBox>(view, "cboLocPhongBan").SelectedIndex == 0, "Refresh did not reset both filters.");
             host.Close();
 
             DemoSession.SignIn("letan", "demo123");

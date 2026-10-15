@@ -23,6 +23,7 @@ public class DAL_Datphong
     }
 
     public System.Data.DataTable hienThiDPAll() => lenh.TruyVanBang("EXEC dbo.sp_HienThiDatPhong");
+
     public List<KhachHang> HienThiKhachHang() => hienThi.HienThiTatCa<KhachHang>();
     public List<LoaiPhong> HienThiLoaiPhong() => hienThi.HienThiTatCa<LoaiPhong>();
     public List<XepPhong> HienThiXepPhong() => hienThi.HienThiTatCa<XepPhong>();

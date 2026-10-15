@@ -136,5 +136,12 @@ namespace QuanLyKhachSan.Views
             txtTimChucVu.Clear();
             cboLocChucVu.SelectedIndex = 0;
         }
+
+        private void cboLocPhongBan_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //SelectionChanged có thể chạy ngay trong lúc giao diện đang được tạo, trước khi chọn trạng thái.
+            if (!IsLoaded) return;//chặn lệnh chạy khi giao diện chưa load xong.
+            TaiLaiPhongBan();
+        }
     }
 }

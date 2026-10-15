@@ -6,12 +6,12 @@ namespace BUS_QuanlyKhachSan.NhanSu;
 
 public class BUS_PhongBan
 {
-    private readonly DAL_PhongBan dal = new();
+    private readonly DAL_PhongBan dal = new DAL_PhongBan();
 
     public List<PhongBan> HienThiTatCa(string tuKhoa = "", bool? trangThai = null)
     {
         tuKhoa = (tuKhoa ?? "").Trim();
-        return dal.HienThiTatCa().Where(x =>
+        return dal.HienThiTatCaPB().Where(x =>
             (x.TenPhongBan.Contains(tuKhoa, StringComparison.CurrentCultureIgnoreCase) ||
              (x.MoTa ?? "").Contains(tuKhoa, StringComparison.CurrentCultureIgnoreCase)) &&
             (!trangThai.HasValue || x.TrangThai == trangThai.Value))
