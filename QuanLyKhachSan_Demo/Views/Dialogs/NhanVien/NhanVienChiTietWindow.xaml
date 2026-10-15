@@ -29,7 +29,6 @@
                 <TextBox x:Name="txtTrangThai" Text="{Binding TrangThai, Mode=OneWay}" IsReadOnly="True" Style="{StaticResource DarkTextBox}"/>
         </StackPanel></ScrollViewer>
         <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,16,0,0">
-            <Button x:Name="btnNhanVienThemMoi" Content="Thêm mới" Click="btnNhanVienThemMoi_Click" Style="{StaticResource PrimaryButton}" Margin="8,4,0,4" MinWidth="90"/>
             <Button x:Name="btnNhanVienSuaThongTin" Content="Sửa" Click="btnSua_Click" Style="{StaticResource SecondaryButton}" Margin="8,4,0,4" MinWidth="90"/>
             <Button x:Name="btnNhanVienXoa" Content="Xóa" Click="btnXoa_Click" Style="{StaticResource DangerButton}" Margin="8,4,0,4" MinWidth="90"/>
             <Button x:Name="btnLuuSua" Content="Lưu thay đổi" Click="btnLuuSua_Click" Style="{StaticResource PrimaryButton}" Margin="8,4,0,4" Visibility="Collapsed"/>

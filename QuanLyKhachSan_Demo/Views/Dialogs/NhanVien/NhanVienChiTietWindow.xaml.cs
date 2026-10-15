@@ -15,7 +15,6 @@ public partial class NhanVienChiTietWindow : Window
         InitializeComponent();
         _item = item ?? new NhanVienMau();
         DataContext = _item;
-        btnNhanVienThemMoi.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnNhanVienThemMoi");
         btnNhanVienSuaThongTin.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnNhanVienSuaThongTin");
         btnNhanVienXoa.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnNhanVienXoa");
         btnLuuSua.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnNhanVienSuaThongTin");
@@ -47,7 +46,6 @@ public partial class NhanVienChiTietWindow : Window
         txtDienThoai.IsReadOnly = !editing;
         txtLuongCoBan.IsReadOnly = !editing;
         txtTrangThai.IsReadOnly = !editing;
-        btnNhanVienThemMoi.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnNhanVienSuaThongTin.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnNhanVienXoa.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnLuuSua.Visibility = btnHuySua.Visibility = editing ? Visibility.Visible : Visibility.Collapsed;
@@ -97,12 +95,4 @@ public partial class NhanVienChiTietWindow : Window
         DialogResult = true;
     }
 
-    private void btnNhanVienThemMoi_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("NhanVienView", "btnNhanVienThemMoi")) return;
-        NhanVienForm form = new NhanVienForm();
-        form.Owner = this;
-        // shortcut: giữ form nghiệp vụ demo có sẵn, nối tầng lưu trữ trước khi ghi giao dịch thật.
-        form.ShowDialog();
-    }
 }

@@ -14,7 +14,6 @@ public partial class PhongBanChiTietWindow : Window
     {
         InitializeComponent();
         phongBan = duLieu;
-        btnPhongBanThemMoi.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanThemMoi");
         btnPhongBanSuaThongTin.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin");
         btnPhongBanXoa.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanXoa");
         btnLuuSua.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin");
@@ -50,7 +49,6 @@ public partial class PhongBanChiTietWindow : Window
         txtTenPhongBan.IsReadOnly = !editing;
         txtMoTa.IsReadOnly = !editing;
         cboTrangThai.IsEnabled = editing;
-        btnPhongBanThemMoi.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnPhongBanSuaThongTin.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnPhongBanXoa.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnLuuSua.Visibility = btnHuySua.Visibility = editing ? Visibility.Visible : Visibility.Collapsed;
@@ -85,14 +83,4 @@ public partial class PhongBanChiTietWindow : Window
         catch (Exception ex) { txtThongBao.Text = "Không xóa được phòng ban. " + ex.Message; }
     }
 
-    private void btnPhongBanThemMoi_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("NhanVienView", "btnPhongBanThemMoi")) return;
-        try
-        {
-            var form = new PhongBanForm { Owner = this };
-            if (form.ShowDialog() == true) Close();
-        }
-        catch (Exception ex) { txtThongBao.Text = ex.Message; }
-    }
 }
