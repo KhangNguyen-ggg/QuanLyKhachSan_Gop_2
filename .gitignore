@@ -1,0 +1,28 @@
+*zip
+
+# .NET build and test output
+[Bb]in/
+[Oo]bj/
+[Tt]est[Rr]esults/
+*.coverage
+*.coveragexml
+
+# Visual Studio cache and personal settings
+.vs/
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs and temporary files
+*.log
+*.binlog
+*.tmp
+*.temp
+~$*
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini
