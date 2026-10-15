@@ -11,6 +11,16 @@ namespace QuanLyKhachSan.Helpers
 
         public static string StatusText(string s) => s switch
         {
+            // Thêm: dùng chung converter cho phiếu và mục đích cấp Kho/Vật tư.
+            "MOI" => "Mới",
+            "DA_HUY" => "Đã hủy",
+            "DON_PHONG" => "Dọn phòng",
+            "DICH_VU" => "Dịch vụ",
+            "KHAC" => "Khác",
+            "PHIEU_KHO" => "Nhập / xuất",
+            "CHUYEN_KHO" => "Chuyển kho",
+            "CAP_NOI_BO" => "Cấp nội bộ",
+            "KIEM_KE" => "Kiểm kê",
             "DaCheckIn" => "Đang ở",
             "DaCheckOut" => "Đã trả phòng",
             "DaXacNhan" => "Đã xác nhận",
@@ -180,6 +190,8 @@ namespace QuanLyKhachSan.Helpers
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (parameter as string == "Text" && value is bool trangThai)
+                return trangThai ? "Đang hoạt động" : "Ngừng hoạt động";
             if (value is bool b) return b ? "DANG_HOAT_DONG" : "NGUNG_HOAT_DONG";
             if (value is string s && (s == "True" || s == "False")) return s == "True" ? "DANG_HOAT_DONG" : "NGUNG_HOAT_DONG";
             return value?.ToString() ?? "";

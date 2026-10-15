@@ -1,76 +1,52 @@
 using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using QuanLyKhachSan.Data;
+using BUS_QuanlyKhachSan.KhoVatTu;
+using ET_QuanLyKhachSan;
 
 namespace QuanLyKhachSan.Views.Dialogs;
 
 public partial class TonKhoChiTietWindow : Window
 {
-    private readonly TonKhoMau _item;
-
-    public TonKhoChiTietWindow(TonKhoMau? item = null)
+    private readonly BUS_KhoVatTu bus = new();
+    private TonKhoHienThi duLieu;
+    public TonKhoChiTietWindow(TonKhoHienThi x)
     {
-        InitializeComponent();
-        _item = item ?? new TonKhoMau();
-        DataContext = _item;
+        InitializeComponent(); duLieu = x; DataContext = x;
         btnTonKhoNhapKho.IsEnabled = DemoSession.CanUseButton("KhoView", "btnTonKhoNhapKho");
         btnTonKhoXuatKho.IsEnabled = DemoSession.CanUseButton("KhoView", "btnTonKhoXuatKho");
         btnTonKhoDieuChinhTon.IsEnabled = DemoSession.CanUseButton("KhoView", "btnTonKhoDieuChinhTon");
-
+        btnTonKhoChuyenKho.IsEnabled = DemoSession.CanUseButton("KhoView", "btnTonKhoChuyenKho");
+        if (DemoSession.CanOpen("KhoView")) try { dgvNhatKy.ItemsSource = bus.NhatKy(x.MaKho, x.MaVatTu); } catch (Exception ex) { txtThongBao.Text = ex.Message; }
     }
-
     private void btnDong_Click(object sender, RoutedEventArgs e) => Close();
-
-    private void btnTonKhoNhapKho_Click(object sender, RoutedEventArgs e)
+    private void Mo(Window form)
     {
-        if (!DemoSession.CanUseButton("KhoView", "btnTonKhoNhapKho")) return;
-        TonKhoNhapKhoWindow form = new TonKhoNhapKhoWindow();
         form.Owner = this;
-        form.DataContext = _item;
-        form.Title += $" — {_item.MaVatTu}";
-        var optionKho = form.cboKho.Items.OfType<ComboBoxItem>().FirstOrDefault(i => Equals(i.Content, _item.Kho));
-        if (optionKho == null) { optionKho = new ComboBoxItem { Content = _item.Kho }; form.cboKho.Items.Add(optionKho); }
-        form.cboKho.SelectedItem = optionKho;
-        var optionVatTu = form.cboVatTu.Items.OfType<ComboBoxItem>().FirstOrDefault(i => Equals(i.Content, _item.VatTu));
-        if (optionVatTu == null) { optionVatTu = new ComboBoxItem { Content = _item.VatTu }; form.cboVatTu.Items.Add(optionVatTu); }
-        form.cboVatTu.SelectedItem = optionVatTu;
-        // shortcut: giữ form nghiệp vụ demo có sẵn, nối tầng lưu trữ trước khi ghi giao dịch thật.
-        form.ShowDialog();
+        if (form.ShowDialog() == true)
+        {
+            try
+            {
+                duLieu = bus.Ton().SingleOrDefault(x => x.MaKho == duLieu.MaKho && x.MaVatTu == duLieu.MaVatTu) ?? duLieu;
+                DataContext = null; DataContext = duLieu;
+                dgvNhatKy.ItemsSource = bus.NhatKy(duLieu.MaKho, duLieu.MaVatTu);
+            }
+            catch (Exception ex) { txtThongBao.Text = ex.Message; }
+        }
     }
-
-    private void btnTonKhoXuatKho_Click(object sender, RoutedEventArgs e)
+    private void btnNhap_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("KhoView", "btnTonKhoXuatKho")) return;
-        TonKhoXuatKhoWindow form = new TonKhoXuatKhoWindow();
-        form.Owner = this;
-        form.DataContext = _item;
-        form.Title += $" — {_item.MaVatTu}";
-        var optionKho = form.cboKho.Items.OfType<ComboBoxItem>().FirstOrDefault(i => Equals(i.Content, _item.Kho));
-        if (optionKho == null) { optionKho = new ComboBoxItem { Content = _item.Kho }; form.cboKho.Items.Add(optionKho); }
-        form.cboKho.SelectedItem = optionKho;
-        var optionVatTu = form.cboVatTu.Items.OfType<ComboBoxItem>().FirstOrDefault(i => Equals(i.Content, _item.VatTu));
-        if (optionVatTu == null) { optionVatTu = new ComboBoxItem { Content = _item.VatTu }; form.cboVatTu.Items.Add(optionVatTu); }
-        form.cboVatTu.SelectedItem = optionVatTu;
-        // shortcut: giữ form nghiệp vụ demo có sẵn, nối tầng lưu trữ trước khi ghi giao dịch thật.
-        form.ShowDialog();
+        if (DemoSession.CanUseButton("KhoView", "btnTonKhoNhapKho")) Mo(new TonKhoNhapKhoWindow(duLieu));
     }
-
-    private void btnTonKhoDieuChinhTon_Click(object sender, RoutedEventArgs e)
+    private void btnXuat_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("KhoView", "btnTonKhoDieuChinhTon")) return;
-        TonKhoForm form = new TonKhoForm();
-        form.Owner = this;
-        form.DataContext = _item;
-        form.Title += $" — {_item.MaVatTu}";
-        var optionKho = form.cboKho.Items.OfType<ComboBoxItem>().FirstOrDefault(i => Equals(i.Content, _item.Kho));
-        if (optionKho == null) { optionKho = new ComboBoxItem { Content = _item.Kho }; form.cboKho.Items.Add(optionKho); }
-        form.cboKho.SelectedItem = optionKho;
-        var optionVatTu = form.cboVatTu.Items.OfType<ComboBoxItem>().FirstOrDefault(i => Equals(i.Content, _item.VatTu));
-        if (optionVatTu == null) { optionVatTu = new ComboBoxItem { Content = _item.VatTu }; form.cboVatTu.Items.Add(optionVatTu); }
-        form.cboVatTu.SelectedItem = optionVatTu;
-        form.txtTonKiemKe.Text = _item.Ton;
-        // shortcut: giữ form nghiệp vụ demo có sẵn, nối tầng lưu trữ trước khi ghi giao dịch thật.
-        form.ShowDialog();
+        if (DemoSession.CanUseButton("KhoView", "btnTonKhoXuatKho")) Mo(new TonKhoXuatKhoWindow(duLieu));
+    }
+    private void btnKiemKe_Click(object sender, RoutedEventArgs e)
+    {
+        if (DemoSession.CanUseButton("KhoView", "btnTonKhoDieuChinhTon")) Mo(new TonKhoForm(duLieu));
+    }
+    private void btnChuyen_Click(object sender, RoutedEventArgs e)
+    {
+        if (DemoSession.CanUseButton("KhoView", "btnTonKhoChuyenKho")) Mo(new ChuyenKhoForm(duLieu));
     }
 }

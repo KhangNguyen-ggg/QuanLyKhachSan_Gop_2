@@ -1,143 +1,99 @@
 using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using QuanLyKhachSan.Data;
+using BUS_QuanlyKhachSan;
+using BUS_QuanlyKhachSan.KhoVatTu;
+using ET_QuanLyKhachSan;
+using QuanLyKhachSan.Helpers;
+using static QuanLyKhachSan.Helpers.NhanSuGiaoDien;
 
 namespace QuanLyKhachSan.Views.Dialogs;
 
 public partial class ChiTietPhieuKhoChiTietWindow : Window
 {
-    private readonly ChiTietPhieuKhoMau _item;
-    private bool _editing;
-    private readonly bool _creating;
-    private readonly bool _lockParent;
-    private readonly IEnumerable<ChiTietPhieuKhoMau>? _siblings;
-
-    private bool CanSave => DemoSession.CanUseButton("KhoView", _creating ? "btnChiTietPhieuKhoThemMoi" : "btnChiTietPhieuKhoSuaThongTin");
-
-    public ChiTietPhieuKhoChiTietWindow(ChiTietPhieuKhoMau? item = null)
-        : this(item ?? new ChiTietPhieuKhoMau(), false, false, null) { }
-
-    public ChiTietPhieuKhoChiTietWindow(ChiTietPhieuKhoMau item, bool creating, bool lockParent, IEnumerable<ChiTietPhieuKhoMau>? siblings)
+    private readonly BUS_KhoVatTu bus = new();
+    private ChiTietPhieuKhoHienThi duLieu;
+    private readonly bool cap;
+    private bool dangSua;
+    private readonly string view, quyenSua, quyenXoa;
+    public ChiTietPhieuKhoChiTietWindow(ChiTietCapHienThi x) : this(DongCap(x), true) { }
+    private static ChiTietPhieuKhoHienThi DongCap(ChiTietCapHienThi x) => new() {
+        MaChiTietPhieuKho = x.MaChiTietCap, MaPhieu = x.MaPhieuCap, MaVatTu = x.MaVatTu,
+        TenVatTu = x.TenVatTu, DonViTinh = x.DonViTinh, SoLuong = x.SoLuong };
+    public ChiTietPhieuKhoChiTietWindow(ChiTietPhieuKhoHienThi x, bool capNoiBo = false)
     {
-        InitializeComponent();
-        _creating = creating;
-        _lockParent = lockParent;
-        _siblings = siblings;
-        _item = item ?? new ChiTietPhieuKhoMau();
-        DataContext = _item;
-        btnChiTietPhieuKhoSuaThongTin.IsEnabled = DemoSession.CanUseButton("KhoView", "btnChiTietPhieuKhoSuaThongTin");
-        btnChiTietPhieuKhoXoa.IsEnabled = DemoSession.CanUseButton("KhoView", "btnChiTietPhieuKhoXoa");
-        btnLuuSua.IsEnabled = CanSave;
-        btnHuySua.IsEnabled = DemoSession.CanUseButton("KhoView", "btnChiTietPhieuKhoSuaThongTin");
-        if (creating && CanSave)
-        {
-            Title = txtTieuDe.Text = "Thêm — " + Title.Replace("Chi tiết — ", "");
-            SetEditMode(true);
-            btnHuySua.Visibility = Visibility.Collapsed;
-            btnLuuSua.Content = "Thêm";
-        }
+        InitializeComponent(); duLieu = x; cap = capNoiBo;
+        pnlGia.Visibility = cap ? Visibility.Collapsed : Visibility.Visible;
+        view = cap ? "TieuHaoView" : "KhoView";
+        quyenSua = cap ? "btnCapVatTuNoiBoTaoPhieuCap" : "btnChiTietPhieuKhoSuaThongTin";
+        quyenXoa = cap ? "btnCapVatTuNoiBoHuyPhieuCap" : "btnChiTietPhieuKhoXoa";
+        cboVatTu.SelectionChanged += (_, _) => { if (cboVatTu.SelectedItem is VatTu v) txtDonVi.Text = v.DonViTinh; };
+        HienThi(); Tai();
     }
-
+    private bool Tai()
+    {
+        btnChiTietPhieuKhoSuaThongTin.IsEnabled = btnLuuSua.IsEnabled = btnChiTietPhieuKhoXoa.IsEnabled = false;
+        if (!DemoSession.CanOpen(view)) return false;
+        try
+        {
+            bool moi = (cap ? bus.TheoId<PhieuCapVatTuNoiBo>(duLieu.MaPhieu).TrangThai : bus.TheoId<PhieuNhapXuat>(duLieu.MaPhieu).TrangThai) == "MOI";
+            duLieu = cap ? DongCap(bus.ChiTietCap(duLieu.MaPhieu).Single(x => x.MaChiTietCap == duLieu.MaChiTietPhieuKho)) :
+                bus.ChiTiet(duLieu.MaPhieu).Single(x => x.MaChiTietPhieuKho == duLieu.MaChiTietPhieuKho);
+            LuaChon(cboVatTu, bus.DanhMuc<VatTu>().Where(x => x.TrangThai || x.MaLoaiVatTu == duLieu.MaVatTu), "TenVatTu", "MaLoaiVatTu", duLieu.MaVatTu);
+            btnChiTietPhieuKhoSuaThongTin.IsEnabled = btnLuuSua.IsEnabled = moi && DemoSession.CanUseButton(view, quyenSua);
+            btnChiTietPhieuKhoXoa.IsEnabled = moi && DemoSession.CanUseButton(view, quyenXoa);
+            HienThi();
+            if (!moi) txtThongBao.Text = "Phiếu đã xử lý: chỉ xem.";
+            return moi;
+        }
+        catch (Exception ex) { txtThongBao.Text = ex.Message; return false; }
+    }
+    private void HienThi()
+    {
+        DataContext = BanNhap(duLieu);
+        cboVatTu.SelectedValue = duLieu.MaVatTu;
+        txtDonVi.Text = duLieu.DonViTinh;
+        SetEditMode(false);
+    }
+    private void SetEditMode(bool sua)
+    {
+        dangSua = sua;
+        KhoVatTuGiaoDien.MoKhoa(pnlThongTin, sua);
+        pnlThaoTac.Visibility = sua ? Visibility.Collapsed : Visibility.Visible;
+        pnlLuu.Visibility = sua ? Visibility.Visible : Visibility.Collapsed;
+        txtThongBao.Text = sua ? "Chỉnh sửa rồi nhấn Lưu thay đổi hoặc Hủy sửa." : "Nhấn Sửa để mở khóa thông tin tại đây.";
+    }
     private void btnDong_Click(object sender, RoutedEventArgs e) => Close();
-
+    private void btnHuySua_Click(object sender, RoutedEventArgs e) => HienThi();
     private void btnSua_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("KhoView", "btnChiTietPhieuKhoSuaThongTin")) return;
-        SetEditMode(true);
+        if (!dangSua && DemoSession.CanUseButton(view, quyenSua) && Tai()) SetEditMode(true);
     }
-
-    private void btnHuySua_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("KhoView", "btnChiTietPhieuKhoSuaThongTin")) return;
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
-    }
-
-    private void SetEditMode(bool editing)
-    {
-        _editing = editing;
-        txtPhieu.IsReadOnly = !editing || _lockParent;
-        txtVatTu.IsReadOnly = !editing;
-        txtSoLuong.IsReadOnly = !editing;
-        txtDonVi.IsReadOnly = !editing;
-        txtDonGia.IsReadOnly = !editing;
-        btnChiTietPhieuKhoSuaThongTin.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnChiTietPhieuKhoXoa.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnLuuSua.Visibility = btnHuySua.Visibility = editing ? Visibility.Visible : Visibility.Collapsed;
-        txtThongBao.Text = editing ? "Chỉnh sửa rồi nhấn Lưu thay đổi hoặc Hủy sửa." : "Nhấn Sửa để chỉnh sửa thông tin của dòng này.";
-    }
-
     private void btnLuuSua_Click(object sender, RoutedEventArgs e)
     {
-        if (!_editing || !CanSave) return;
-        if (string.IsNullOrWhiteSpace(txtPhieu.Text) ||
-            string.IsNullOrWhiteSpace(txtVatTu.Text) ||
-            string.IsNullOrWhiteSpace(txtSoLuong.Text) ||
-            string.IsNullOrWhiteSpace(txtDonVi.Text) ||
-            string.IsNullOrWhiteSpace(txtDonGia.Text))
+        if (!dangSua || !DemoSession.CanUseButton(view, quyenSua)) return;
+        try
         {
-            txtThongBao.Text = "Vui lòng nhập đầy đủ thông tin bắt buộc.";
-            return;
+            var x = (ChiTietPhieuKhoHienThi)DataContext;
+            x.MaVatTu = KhoVatTuGiaoDien.Ma(cboVatTu);
+            x.SoLuong = BUS_KhoVatTu.SoLuong(txtSoLuong.Text, "Số lượng");
+            // Thêm: cấp nội bộ dùng chung phần mở khóa nhưng không có giá hoặc ghi chú dòng.
+            if (cap) bus.Luu(new ChiTietCapVatTuNoiBo { MaChiTietCap = x.MaChiTietPhieuKho, MaPhieuCap = x.MaPhieu, MaVatTu = x.MaVatTu, SoLuong = x.SoLuong });
+            else
+            {
+                x.DonGia = string.IsNullOrWhiteSpace(txtDonGiaD.Text) ? null : BUS_KiemTra.SoTien(txtDonGiaD.Text, "Đơn giá");
+                bus.Luu((ChiTietPhieuKho)x);
+                x.ThanhTien = decimal.Round(x.SoLuong * (x.DonGia ?? 0), 2, MidpointRounding.AwayFromZero);
+            }
+            if (cboVatTu.SelectedItem is VatTu v) { x.TenVatTu = v.TenVatTu; x.DonViTinh = v.DonViTinh; }
+            duLieu = x; HienThi();
+            txtThongBao.Text = "Đã lưu vật tư trong phiếu.";
         }
-        if (!decimal.TryParse(txtSoLuong.Text.Trim().Replace(" đ", ""), NumberStyles.Number, CultureInfo.GetCultureInfo("vi-VN"), out var valueSoLuong) || valueSoLuong < 0)
-        {
-            txtThongBao.Text = "Số lượng: nhập số không âm theo định dạng Việt Nam.";
-            return;
-        }
-        if (!decimal.TryParse(txtDonGia.Text.Trim().Replace(" đ", ""), NumberStyles.Number, CultureInfo.GetCultureInfo("vi-VN"), out var valueDonGia) || valueDonGia < 0)
-        {
-            txtThongBao.Text = "Đơn giá: nhập số không âm theo định dạng Việt Nam.";
-            return;
-        }
-
-        if (valueSoLuong == 0)
-        {
-            txtThongBao.Text = "Số lượng phải lớn hơn 0.";
-            return;
-        }
-        decimal total;
-        try { total = valueSoLuong * valueDonGia; }
-        catch (OverflowException)
-        {
-            txtThongBao.Text = "Thành tiền vượt giới hạn cho phép.";
-            return;
-        }
-        if (_lockParent && txtPhieu.Text.Trim() != _item.Phieu)
-        {
-            txtThongBao.Text = "Không thể chuyển dòng sang mục khác tại đây.";
-            return;
-        }
-        if (_siblings?.Any(sibling => !ReferenceEquals(sibling, _item) &&
-            (string.Equals(sibling.VatTu, txtVatTu.Text.Trim(), StringComparison.CurrentCultureIgnoreCase))) == true)
-        {
-            txtThongBao.Text = "Thông tin bị trùng với một dòng đang có.";
-            return;
-        }
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"{(_creating ? "Thêm" : "Lưu thay đổi")} — Chi tiết phiếu: {_item.Phieu}?";
-        if (confirm.ShowDialog() != true) return;
-        // shortcut: sửa dữ liệu demo trong bộ nhớ, nối tầng lưu trữ khi triển khai nghiệp vụ thật.
-        _item.Phieu = txtPhieu.Text.Trim();
-        _item.VatTu = txtVatTu.Text.Trim();
-        _item.SoLuong = txtSoLuong.Text.Trim();
-        _item.DonVi = txtDonVi.Text.Trim();
-        _item.DonGia = txtDonGia.Text.Trim();
-        _item.ThanhTien = total.ToString("N0", CultureInfo.GetCultureInfo("vi-VN")) + " đ";
-        DataContext = null;
-        DataContext = _item;
-        if (_creating) { DialogResult = true; return; }
-        SetEditMode(false);
+        catch (Exception ex) { txtThongBao.Text = "Không lưu được. " + ex.Message; }
     }
-
     private void btnXoa_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("KhoView", "btnChiTietPhieuKhoXoa") || _editing) return;
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Xóa — Chi tiết phiếu: {_item.Phieu}?";
-        if (confirm.ShowDialog() != true) return;
-        DialogResult = true;
+        if (dangSua || !DemoSession.CanUseButton(view, quyenXoa) || !XacNhanXoa(this, "Xóa vật tư này khỏi phiếu")) return;
+        try { bus.XoaChiTiet(duLieu.MaChiTietPhieuKho, duLieu.MaPhieu, cap); DialogResult = true; }
+        catch (Exception ex) { txtThongBao.Text = ex.Message; }
     }
-
 }

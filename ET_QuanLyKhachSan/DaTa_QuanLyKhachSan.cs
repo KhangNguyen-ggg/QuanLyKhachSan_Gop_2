@@ -230,6 +230,8 @@ namespace ET_QuanLyKhachSan
         [Key]
         public int MaKho { get; set; } // SQL: int IDENTITY(1,1) NOT NULL
         public string TenKho { get; set; } = ""; // SQL: nvarchar(100) NOT NULL
+        // Thêm: cột bổ sung bằng CapNhat_KhoVaVatTu_20261016.sql, không tạo lại bảng cũ.
+        public string GhiChu { get; set; } = "";
         public bool TrangThai { get; set; } // SQL: bit NOT NULL
     }
 

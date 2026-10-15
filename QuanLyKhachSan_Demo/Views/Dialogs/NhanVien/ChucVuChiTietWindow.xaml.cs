@@ -1,4 +1,5 @@
 using System.Windows;
+using System.Windows.Controls;
 using BUS_QuanlyKhachSan;
 using BUS_QuanlyKhachSan.NhanSu;
 using ET_QuanLyKhachSan;
@@ -35,6 +36,8 @@ public partial class ChucVuChiTietWindow : Window
             TrangThai = chucVu.TrangThai
         };
         SetEditMode(false);
+        // Thêm: buộc ô lương OneWay trở về bản nháp mới sau Hủy sửa.
+        txtLuong.GetBindingExpression(TextBox.TextProperty)?.UpdateTarget();
     }
 
     private void btnDong_Click(object sender, RoutedEventArgs e) => Close();
@@ -47,7 +50,7 @@ public partial class ChucVuChiTietWindow : Window
 
     private void btnHuySua_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("NhanVienView", "btnChucVuSuaThongTin")) return;
+        // Thêm: hủy chỉ bỏ bản nháp, vẫn cho phép khi quyền lưu vừa bị thu hồi.
         HienThiChucVu();
     }
 

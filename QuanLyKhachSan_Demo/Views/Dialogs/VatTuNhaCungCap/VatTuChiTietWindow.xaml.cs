@@ -1,110 +1,98 @@
 using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using QuanLyKhachSan.Data;
+using BUS_QuanlyKhachSan;
+using BUS_QuanlyKhachSan.KhoVatTu;
+using ET_QuanLyKhachSan;
+using QuanLyKhachSan.Helpers;
+using static QuanLyKhachSan.Helpers.NhanSuGiaoDien;
 
 namespace QuanLyKhachSan.Views.Dialogs;
 
 public partial class VatTuChiTietWindow : Window
 {
-    private readonly VatTuMau _item;
-    private bool _editing;
+    private readonly BUS_KhoVatTu bus = new();
+    private VatTuHienThi duLieu;
+    private bool dangSua;
+    private const string View = "VatTuNhaCungCapView";
+    private const string QuyenSua = "btnVatTuSuaThongTin";
 
-    public VatTuChiTietWindow(VatTuMau? item = null)
+    public VatTuChiTietWindow(VatTuHienThi x)
     {
         InitializeComponent();
-        _item = item ?? new VatTuMau();
-        DataContext = _item;
-        btnVatTuThemMoi.IsEnabled = DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuThemMoi");
-        btnVatTuSuaThongTin.IsEnabled = DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuSuaThongTin");
-        btnVatTuXoa.IsEnabled = DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuXoa");
-        btnLuuSua.IsEnabled = DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuSuaThongTin");
-        btnHuySua.IsEnabled = DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuSuaThongTin");
+        duLieu = x;
+        btnVatTuSuaThongTin.IsEnabled = btnLuuSua.IsEnabled = DemoSession.CanUseButton(View, QuyenSua);
+        btnVatTuXoa.IsEnabled = DemoSession.CanUseButton(View, "btnVatTuXoa");
+        HienThi();
+        if (!DemoSession.CanOpen(View)) return;
+        try
+        {
+            TaiDanhMuc(); HienThi();
+
+        }
+        catch (Exception ex) { txtThongBao.Text = "Không tải được danh mục. " + ex.Message; }
     }
+    private void TaiDanhMuc()
+    {
+            DanhMuc(cboTrangThai, BUS_KhoVatTu.TrangThai, duLieu.TrangThai.ToString());
+            LuaChon(cboNhom, bus.DanhMuc<NhomVatTu>().Where(x => x.TrangThai || x.MaNhomVatTu == duLieu.MaNhomVatTu), "TenNhomVatTu", "MaNhomVatTu", duLieu.MaNhomVatTu);
+            LuaChon(cboKho, new[] { new Kho { TenKho = "— Không chọn —" } }.Concat(bus.DanhMuc<Kho>().Where(x => x.TrangThai || x.MaKho == duLieu.MaKhoMacDinh)), "TenKho", "MaKho", duLieu.MaKhoMacDinh ?? 0);
+    }
+    private void HienThi()
+    {
+        // Thêm: bản nháp riêng như Phòng ban; Hủy sửa/Đóng không đổi dòng gốc hoặc SQL.
+        DataContext = BanNhap(duLieu);
+        cboTrangThai.SelectedValue = duLieu.TrangThai.ToString();
+        cboNhom.SelectedValue = duLieu.MaNhomVatTu;
+        cboKho.SelectedValue = duLieu.MaKhoMacDinh ?? 0;
+        SetEditMode(false);
+    }
+    private void SetEditMode(bool sua)
+    {
+        dangSua = sua;
+        KhoVatTuGiaoDien.MoKhoa(pnlThongTin, sua);
+        pnlThaoTac.Visibility = sua ? Visibility.Collapsed : Visibility.Visible;
+        pnlLuu.Visibility = sua ? Visibility.Visible : Visibility.Collapsed;
 
+        txtThongBao.Text = sua ? "Chỉnh sửa rồi nhấn Lưu thay đổi hoặc Hủy sửa." : "Nhấn Sửa để mở khóa thông tin tại đây.";
+    }
     private void btnDong_Click(object sender, RoutedEventArgs e) => Close();
-
+    private void btnHuySua_Click(object sender, RoutedEventArgs e) => HienThi();
     private void btnSua_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuSuaThongTin")) return;
-        SetEditMode(true);
+        if (dangSua || !DemoSession.CanUseButton(View, QuyenSua)) return;
+        try
+        {
+            duLieu = bus.VatTu().Single(x => x.MaLoaiVatTu == duLieu.MaLoaiVatTu);
+            TaiDanhMuc(); HienThi();
+            // Bớt: không mở Form khác; mở khóa các ô trong chính cửa sổ này.
+            SetEditMode(true);
+        }
+        catch (Exception ex) { txtThongBao.Text = ex.Message; }
     }
-
-    private void btnHuySua_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuSuaThongTin")) return;
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
-    }
-
-    private void SetEditMode(bool editing)
-    {
-        _editing = editing;
-        txtTenVatTu.IsReadOnly = !editing;
-        txtNhom.IsReadOnly = !editing;
-        txtDonVi.IsReadOnly = !editing;
-        txtKhoMacDinh.IsReadOnly = !editing;
-        txtTonToiThieu.IsReadOnly = !editing;
-        txtTrangThai.IsReadOnly = !editing;
-        btnVatTuThemMoi.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnVatTuSuaThongTin.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnVatTuXoa.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
-        btnLuuSua.Visibility = btnHuySua.Visibility = editing ? Visibility.Visible : Visibility.Collapsed;
-        txtThongBao.Text = editing ? "Chỉnh sửa rồi nhấn Lưu thay đổi hoặc Hủy sửa." : "Nhấn Sửa để chỉnh sửa thông tin của dòng này.";
-    }
-
     private void btnLuuSua_Click(object sender, RoutedEventArgs e)
     {
-        if (!_editing || !DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuSuaThongTin")) return;
-        if (string.IsNullOrWhiteSpace(txtTenVatTu.Text) ||
-            string.IsNullOrWhiteSpace(txtNhom.Text) ||
-            string.IsNullOrWhiteSpace(txtDonVi.Text) ||
-            string.IsNullOrWhiteSpace(txtKhoMacDinh.Text) ||
-            string.IsNullOrWhiteSpace(txtTonToiThieu.Text) ||
-            string.IsNullOrWhiteSpace(txtTrangThai.Text))
+        if (!dangSua || !DemoSession.CanUseButton(View, QuyenSua)) return;
+        try
         {
-            txtThongBao.Text = "Vui lòng nhập đầy đủ thông tin bắt buộc.";
-            return;
+            var duLieuMoi = (VatTu)DataContext;
+            duLieuMoi.TrangThai = TrangThai(cboTrangThai) == "True";
+            duLieuMoi.MaNhomVatTu = KhoVatTuGiaoDien.Ma(cboNhom);
+            int kho = KhoVatTuGiaoDien.Ma(cboKho);
+            duLieuMoi.MaKhoMacDinh = kho == 0 ? null : kho;
+            // Thêm: số lượng có 4 số lẻ, đọc trực tiếp để không lưu lại số cũ khi gõ sai.
+            duLieuMoi.SoLuongToiThieu = BUS_KhoVatTu.SoLuong(txtTonToiThieu.Text, "Tồn tối thiểu", true);
+            bus.Luu(duLieuMoi);
+            duLieu = (VatTuHienThi)DataContext;
+            HienThi();
+            txtThongBao.Text = "Đã lưu vật tư.";
         }
-        if (!decimal.TryParse(txtTonToiThieu.Text.Trim().Replace(" đ", ""), NumberStyles.Number, CultureInfo.GetCultureInfo("vi-VN"), out var valueTonToiThieu) || valueTonToiThieu < 0)
-        {
-            txtThongBao.Text = "Tồn tối thiểu: nhập số không âm theo định dạng Việt Nam.";
-            return;
-        }
-
-
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Lưu thay đổi — Vật tư: {_item.Ma}?";
-        if (confirm.ShowDialog() != true) return;
-        // shortcut: sửa dữ liệu demo trong bộ nhớ, nối tầng lưu trữ khi triển khai nghiệp vụ thật.
-        _item.TenVatTu = txtTenVatTu.Text.Trim();
-        _item.Nhom = txtNhom.Text.Trim();
-        _item.DonVi = txtDonVi.Text.Trim();
-        _item.KhoMacDinh = txtKhoMacDinh.Text.Trim();
-        _item.TonToiThieu = txtTonToiThieu.Text.Trim();
-        _item.TrangThai = txtTrangThai.Text.Trim();
-
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
+        catch (Exception ex) { txtThongBao.Text = "Không lưu được. " + ex.Message; }
     }
-
     private void btnXoa_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuXoa") || _editing) return;
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Xóa — Vật tư: {_item.Ma}?";
-        if (confirm.ShowDialog() != true) return;
-        DialogResult = true;
+        if (dangSua || !DemoSession.CanUseButton(View, "btnVatTuXoa") || !XacNhanXoa(this, "Xóa vật tư này")) return;
+        try { bus.Xoa<VatTu>(duLieu.MaLoaiVatTu); DialogResult = true; }
+        catch (Exception ex) { txtThongBao.Text = ex.Message; }
     }
 
-    private void btnVatTuThemMoi_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("VatTuNhaCungCapView", "btnVatTuThemMoi")) return;
-                        VatTuForm form = new VatTuForm();
-            form.Owner = this;
-        // shortcut: giữ form nghiệp vụ demo có sẵn, nối tầng lưu trữ trước khi ghi giao dịch thật.
-        form.ShowDialog();
-    }
 }

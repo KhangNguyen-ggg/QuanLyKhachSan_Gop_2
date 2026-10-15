@@ -9,6 +9,27 @@ namespace QuanLyKhachSan.Helpers;
 
 public static class NhanSuGiaoDien
 {
+    // Thêm: Nhân sự và Kho dùng chung cách mở khóa; mã và trường tự tính luôn chỉ xem.
+    public static void MoKhoa(DependencyObject vung, bool sua)
+    {
+        foreach (var con in LogicalTreeHelper.GetChildren(vung).OfType<DependencyObject>())
+        {
+            bool choSua = sua && ((con as FrameworkElement)?.Tag as string) != "Khoa";
+            if (con is TextBox oNhap)
+            {
+                oNhap.IsReadOnly = !choSua;
+                // Thêm: OneWay không ghi số đang gõ vào ET; ép đọc lại để Hủy sửa trả đúng số cũ.
+                if (!sua) oNhap.GetBindingExpression(TextBox.TextProperty)?.UpdateTarget();
+            }
+            else if (con is ComboBox oChon) oChon.IsEnabled = choSua;
+            else if (con is DatePicker ngay)
+            {
+                ngay.IsEnabled = choSua;
+                if (!sua) ngay.GetBindingExpression(DatePicker.SelectedDateProperty)?.UpdateTarget();
+            }
+            else MoKhoa(con, sua);
+        }
+    }
     // Thêm: ET chỉ gồm các trường đơn; dùng chung bản sao độc lập cho form Thêm/Sửa, không sửa dòng gốc.
     public static T BanNhap<T>(T duLieu) where T : class =>
         JsonSerializer.Deserialize<T>(JsonSerializer.Serialize(duLieu))!;

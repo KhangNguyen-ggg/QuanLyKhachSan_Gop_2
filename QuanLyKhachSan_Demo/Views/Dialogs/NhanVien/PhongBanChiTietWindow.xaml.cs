@@ -39,7 +39,7 @@ public partial class PhongBanChiTietWindow : Window
 
     private void btnHuySua_Click(object sender, RoutedEventArgs e)
     {
-        if (!DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin")) return;
+        // Thêm: hủy chỉ bỏ bản nháp, vẫn cho phép khi quyền lưu vừa bị thu hồi.
         HienThiPhongBan();
     }
 
