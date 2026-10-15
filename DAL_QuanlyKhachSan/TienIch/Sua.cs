@@ -19,6 +19,7 @@ namespace DAL_QuanlyKhachSan.TienIch
             this.connStr = connStr;
         }
 
+        //
         public bool SuaTheoId<T>(T duLieu) where T : class
         {
             try {

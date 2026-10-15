@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using ET_QuanLyKhachSan;
 // Ghép Gop: dùng đúng namespace nghiệp vụ gốc, giữ nguyên luồng giao diện.
 using BUS_QuanlyKhachSan.LeTanValuuTru;
+using BUS_QuanlyKhachSan;
 
 namespace QuanLyKhachSan.Views.Dialogs;
 public partial class DatPhongForm : Window

@@ -1,5 +1,4 @@
-﻿using BUS_QuanlyKhachSan.LeTanValuuTru;
-using ET_QuanLyKhachSan;
+﻿using ET_QuanLyKhachSan;
 using System;
 using System.Collections.Generic;
 using System.Linq;

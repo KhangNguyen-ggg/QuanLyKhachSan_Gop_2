@@ -1,4 +1,3 @@
-using BUS_QuanlyKhachSan.LeTanValuuTru;
 using DAL_QuanlyKhachSan.NhanSu;
 using ET_QuanLyKhachSan;
 using System.Globalization;

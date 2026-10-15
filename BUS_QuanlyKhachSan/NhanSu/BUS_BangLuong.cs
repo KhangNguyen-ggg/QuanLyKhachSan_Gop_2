@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 using ET_QuanLyKhachSan;
 using DAL.NhanSu;
 
-namespace BUS
+namespace BUS_QuanlyKhachSan.NhanSu
 {
     public class BUS_BangLuong
     {

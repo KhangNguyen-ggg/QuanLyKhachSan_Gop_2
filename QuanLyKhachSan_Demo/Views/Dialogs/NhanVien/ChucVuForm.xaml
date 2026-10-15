@@ -29,7 +29,7 @@
             <StackPanel Margin="0,0,12,0">
                 <TextBlock Text="Tên chức vụ" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5"/>
                 <TextBox x:Name="txtTenChucVu" Text="Nhân viên lễ tân" Style="{StaticResource DarkTextBox}" MinHeight="38"/>
-                <TextBlock Text="Ghi chú" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5"/>
+                <TextBlock Text="Ghi chú/Mô tả" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5"/>
                 <TextBox x:Name="txtGhiChu" Text="" Style="{StaticResource DarkTextBox}" MinHeight="90" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
                 <TextBlock Text="Lương" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5"/>
                 <TextBox x:Name="txtLuong" Text="" Style="{StaticResource DarkTextBox}" MinHeight="38"/>

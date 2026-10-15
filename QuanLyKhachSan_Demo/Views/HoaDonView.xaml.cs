@@ -2,6 +2,8 @@ using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using BUS_QuanlyKhachSan;
+
 // Ghép Gop: dùng đúng namespace nghiệp vụ gốc, giữ nguyên luồng giao diện.
 using BUS_QuanlyKhachSan.LeTanValuuTru;
 using DAL;

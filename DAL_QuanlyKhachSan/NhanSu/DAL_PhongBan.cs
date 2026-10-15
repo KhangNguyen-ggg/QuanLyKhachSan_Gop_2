@@ -7,14 +7,14 @@ namespace DAL_QuanlyKhachSan.NhanSu;
 public class DAL_PhongBan
 {
     // Dùng lại các tiện ích SQL của dự án; kiểm tra dữ liệu đầu vào nằm ở BUS.
+    // SuaTheoId() bỏ qua kết quả connection.Update() rồi trả true nên có thể báo thành công dù không cập nhật được dòng nào.
+    //XoaTheoId() bắt mọi lỗi rồi trả false
     private readonly HienThi hienThi;
     private readonly Them them;
     private readonly ThuThiLenhCoDieuKien lenh;
-
     // Khởi tạo các tiện ích SQL với chuỗi kết nối từ QLKS_CONNECTION hoặc connection.txt.
     public DAL_PhongBan()
     {
-        // Các tiện ích cùng dùng chuỗi kết nối từ QLKS_CONNECTION hoặc connection.txt.
         string chuoi = CauHinhKetNoi.Chuoi;
         hienThi = new HienThi(chuoi);
         them = new Them(chuoi);
@@ -30,23 +30,36 @@ public class DAL_PhongBan
     // SQL tự sinh MaPhongBan; tiện ích thêm trả false nếu gặp lỗi, chẳng hạn trùng tên.
     public bool Them(PhongBan phongBan) => them.ThemKhongDieuKien(phongBan);
 
-    public bool TenDaTonTai(PhongBan phongBan) => lenh.TruyVan<int>(
-        "SELECT COUNT(1) FROM dbo.PhongBan WHERE TenPhongBan = @TenPhongBan AND MaPhongBan <> @MaPhongBan",
-        phongBan).Single() > 0;
+    // Kiểm tra tên phòng ban đã tồn tại hay chưa
+    public bool TenDaTonTai(PhongBan phongBan) 
+    {
+        return lenh.TruyVan<int>(
+        "SELECT COUNT(1) FROM dbo.PhongBan WHERE TenPhongBan = @TenPhongBan AND MaPhongBan <> @MaPhongBan",phongBan).Single() > 0;
+        //> 0 biến số đó thành true/false.
+    }
 
+    //XÓA 
     public bool Xoa(PhongBan phongBan)
     {
         try
         {
-            return lenh.ThucThiLenh("DELETE FROM dbo.PhongBan WHERE MaPhongBan = @MaPhongBan", phongBan) == 1;
+            return lenh.ThucThiLenh("DELETE FROM dbo.PhongBan WHERE MaPhongBan = @MaPhongBan", phongBan) == 1;//chỉ báo thành công khi tác động đúng một dòng
         }
+        // Lỗi vi phạm các ràng buộc dữ liệu (Constraint Violation) trong cơ sở dữ liệu SQL Server
         catch (SqlException ex) when (ex.Number == 547)
         {
             throw new InvalidOperationException(
                 "Không thể xóa phòng ban đang được nhân viên sử dụng. Có thể đổi trạng thái thành Ngừng hoạt động.", ex);
         }
+        // Nhận các lỗi SQL còn lại.
+        catch (SqlException ex)
+        {
+            throw new InvalidOperationException(
+                "Không thể xóa phòng ban. Vui lòng thử lại.", ex);
+        }
     }
 
+    // CẬP NHẬT
     public bool Sua(PhongBan phongBan)
     {
         // Các tham số @... lấy giá trị từ thuộc tính ET, không ghép nội dung người dùng vào SQL.

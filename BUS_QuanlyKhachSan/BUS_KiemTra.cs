@@ -2,7 +2,7 @@
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 
-namespace BUS_QuanlyKhachSan.LeTanValuuTru;
+namespace BUS_QuanlyKhachSan;
 
 public static class BUS_KiemTra
 {
@@ -93,7 +93,7 @@ public static class BUS_KiemTra
             string noiDung = string.Join(" ", dong.ItemArray);
             bool dungTuKhoa = noiDung.Contains(tuKhoa, StringComparison.CurrentCultureIgnoreCase);
             bool dungTrangThai = string.IsNullOrEmpty(trangThai) ||
-                (bang.Columns.Contains("TrangThai") && Convert.ToString(dong["TrangThai"]) == trangThai);
+                bang.Columns.Contains("TrangThai") && Convert.ToString(dong["TrangThai"]) == trangThai;
             if (dungTuKhoa && dungTrangThai) ketQua.ImportRow(dong);
         }
         return ketQua.DefaultView;

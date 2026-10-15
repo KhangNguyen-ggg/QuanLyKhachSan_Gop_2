@@ -1,5 +1,5 @@
 using System.Windows;
-using BUS;
+
 using BUS_QuanlyKhachSan;
 
 

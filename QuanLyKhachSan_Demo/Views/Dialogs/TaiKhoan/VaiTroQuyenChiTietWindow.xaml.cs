@@ -1,6 +1,6 @@
 using System.Windows;
+using BUS_QuanlyKhachSan;
 using BUS_QuanlyKhachSan.HeThong;
-using BUS_QuanlyKhachSan.LeTanValuuTru;
 using ET_QuanLyKhachSan;
 
 namespace QuanLyKhachSan.Views.Dialogs;
