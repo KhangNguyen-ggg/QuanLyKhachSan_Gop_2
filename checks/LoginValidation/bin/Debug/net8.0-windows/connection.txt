@@ -1,1 +1,0 @@
-Data Source=DESKTOP-TKFJPHH\SQLEXPRESS;Initial Catalog=QuanLyKhachSan5Sao2;Integrated Security=True;Trust Server Certificate=True
