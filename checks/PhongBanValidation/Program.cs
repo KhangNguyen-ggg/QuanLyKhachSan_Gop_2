@@ -3,6 +3,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using BUS_QuanlyKhachSan.NhanSu;
 using ET_QuanLyKhachSan;
@@ -176,6 +178,13 @@ internal static class Program
             }
             Assert(bus.HienThiTatCa("dao tao", true).Count == 0,
                 "Accent-insensitive search bypassed the status filter.");
+            foreach (string keyword in new[] { "nhan su@", "#", "$", "%", "_", "&", "le-tan", "nhan.su",
+                "'", "\"", "nhan/su", "nhan\\su", "nhan;su", "(nhan su)", "😀", "\u0301",
+                "nhan\tsu", "nhan\nsu", "nhan\u200Bsu", "nhan su'; DROP TABLE dbo.PhongBan;--" })
+                Reject(() => bus.HienThiTatCa(keyword), "Từ khóa tìm kiếm");
+            Assert(bus.HienThiTatCa("123").Count == 0, "Numeric search was rejected.");
+            Assert(bus.HienThiTatCa("   ").Count == 1 && bus.HienThiTatCa(null!).Count == 1,
+                "Empty keyword no longer displays all departments.");
             bus.Luu(boundary);
             Assert(bus.HienThiTheoId(boundary.MaPhongBan).MoTa.Length == 500, "Boundary round trip failed.");
             Reject(() => bus.Luu(new PhongBan { MaPhongBan = department.MaPhongBan,
@@ -262,13 +271,83 @@ internal static class Program
             SetText(view, "txtTimPhongBan", "  dA CAP NHAT  ");
             Click(view, "btnTimPhongBan");
             Assert(grid.Items.Count == 1, "Description search did not trim or ignore accents/case.");
-            SetText(view, "txtTimPhongBan", "__PhongBan_NotFound__");
+            var search = Field<TextBox>(view, "txtTimPhongBan");
+            var searchError = Field<TextBlock>(view, "txtLoiTimPhongBan");
+            search.Select(2, 2);
+            foreach (string input in new[] { "@", "#", "%", "_", "-", ".", "'", "😀", "\t", "\n" })
+            {
+                var typing = new TextCompositionEventArgs(Keyboard.PrimaryDevice,
+                    new TextComposition(InputManager.Current, search, input))
+                    { RoutedEvent = TextCompositionManager.PreviewTextInputEvent };
+                search.RaiseEvent(typing);
+                Assert(typing.Handled && search.Text == "  dA CAP NHAT  " && search.SelectionStart == 2 &&
+                    search.SelectionLength == 2 && searchError.Visibility == Visibility.Visible && grid.Items.Count == 1,
+                    "Invalid typing was not blocked immediately without changing text/selection/results: " + input);
+            }
+            Assert(search.BorderBrush == search.FindResource("DangerBrush"), "Invalid input did not highlight the field.");
+            view.UpdateLayout();
+            var searchPosition = search.TranslatePoint(new Point(), view);
+            var errorPosition = searchError.TranslatePoint(new Point(), view);
+            var searchButton = Field<Button>(view, "btnTimPhongBan");
+            Assert(Math.Abs(errorPosition.X - searchPosition.X) < 1 &&
+                errorPosition.Y >= searchPosition.Y + search.ActualHeight && searchError.ActualHeight > 0 &&
+                Math.Abs(searchButton.TranslatePoint(new Point(), view).Y - searchPosition.Y) < 1 &&
+                searchButton.ActualHeight < search.ActualHeight + searchError.ActualHeight,
+                "Inline error is misplaced or stretches toolbar buttons.");
+            if (Environment.GetEnvironmentVariable("QLKS_CHECK_SCREENSHOT") is string screenshotPath)
+            {
+                var screenshot = new RenderTargetBitmap((int)Math.Ceiling(view.ActualWidth),
+                    (int)Math.Ceiling(view.ActualHeight), 96, 96, PixelFormats.Pbgra32);
+                screenshot.Render(view);
+                var encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(screenshot));
+                using var output = File.Create(screenshotPath);
+                encoder.Save(output);
+            }
+            foreach (string input in new[] { "nhân sự@", "le-tan", "😀", "\u0301", "nhan\nsu" })
+            {
+                var pasting = new DataObjectPastingEventArgs(new DataObject(DataFormats.UnicodeText, input),
+                    false, DataFormats.UnicodeText);
+                search.RaiseEvent(pasting);
+                Assert(pasting.CommandCancelled && search.Text == "  dA CAP NHAT  " &&
+                    search.SelectionStart == 2 && search.SelectionLength == 2 && searchError.Visibility == Visibility.Visible,
+                    "Invalid paste was not blocked without losing the selection: " + input);
+            }
+            search.SelectAll();
+            foreach (string input in new[] { "Nhân sự", "nhan su", "Đào tạo 123", "Nhân sự".Normalize(System.Text.NormalizationForm.FormD) })
+            {
+                var typing = new TextCompositionEventArgs(Keyboard.PrimaryDevice,
+                    new TextComposition(InputManager.Current, search, input))
+                    { RoutedEvent = TextCompositionManager.PreviewTextInputEvent };
+                search.RaiseEvent(typing);
+                var pasting = new DataObjectPastingEventArgs(new DataObject(DataFormats.UnicodeText, input),
+                    false, DataFormats.UnicodeText);
+                search.RaiseEvent(pasting);
+                Assert(!typing.Handled && !pasting.CommandCancelled && searchError.Visibility == Visibility.Collapsed &&
+                    search.BorderBrush == search.FindResource("BorderBrush"),
+                    "Valid Vietnamese input/paste was blocked or did not clear the error: " + input);
+            }
+            SetText(view, "txtTimPhongBan", "nhan su@");
+            Assert(search.Text == "  dA CAP NHAT  " && searchError.Visibility == Visibility.Visible && grid.Items.Count == 1,
+                "TextChanged fallback did not restore valid text and display the inline error.");
+            SetText(view, "txtTimPhongBan", "nhan su");
+            Assert(searchError.Visibility == Visibility.Collapsed, "Valid editing did not clear the inline error.");
+            SetText(view, "txtTimPhongBan", "PhongBanKhongTonTai");
             Click(view, "btnTimPhongBan");
             Assert(grid.Items.Count == 0 && Field<TextBlock>(view, "txtThongBaoPhongBan").Text.Contains("0 dòng"),
                 "No-match search did not show an empty result.");
             Click(view, "btnMoiPhongBan");
             Assert(grid.Items.Count == 3 && Field<TextBox>(view, "txtTimPhongBan").Text == "" &&
                 Field<ComboBox>(view, "cboLocPhongBan").SelectedIndex == 0, "Refresh did not reset both filters.");
+            var emptyTyping = new TextCompositionEventArgs(Keyboard.PrimaryDevice,
+                new TextComposition(InputManager.Current, search, "@"))
+                { RoutedEvent = TextCompositionManager.PreviewTextInputEvent };
+            search.RaiseEvent(emptyTyping);
+            Assert(emptyTyping.Handled && search.Text == "" && searchError.Visibility == Visibility.Visible,
+                "Invalid first character was not rejected with an inline error.");
+            Click(view, "btnMoiPhongBan");
+            Assert(searchError.Visibility == Visibility.Collapsed && grid.Items.Count == 3,
+                "Refresh did not clear the error when the input was already empty.");
 
             Execute(testConnection, $"INSERT INTO dbo.NhanVien(MaPhongBan) VALUES ({added.MaPhongBan})");
             Reject(() => bus.Xoa(added.MaPhongBan), "nhân viên");
@@ -328,6 +407,7 @@ internal static class Program
             DemoSession.SignIn("admin", "admin123");
             Execute(testConnection, "DROP TABLE dbo.NhanVien");
             Execute(testConnection, "DROP TABLE dbo.PhongBan");
+            Reject(() => bus.HienThiTatCa("@"), "Từ khóa tìm kiếm");
             var failed = new PhongBanForm();
             CheckForm(failed, () =>
             {

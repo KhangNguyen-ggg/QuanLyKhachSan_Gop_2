@@ -18,6 +18,7 @@ public static class BUS_KiemTra
         return s;
     }
     public static void Ma(long ma, string ten) => YeuCau(ma > 0, $"Vui lòng chọn {ten}.");
+    // Kiểm tra giá trị người dùng chọn trước khi View mở form sửa/chi tiết.
     public static T Chon<T>(T giaTri, string ten) where T : class
     {
         YeuCau(giaTri != null, $"Vui lòng chọn {ten}.");

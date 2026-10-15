@@ -10,6 +10,7 @@ namespace QuanLyKhachSan.Views
     public partial class NhanVienView : UserControl
     {
         private readonly BUS_PhongBan? phongBan;
+        private string tuKhoaPhongBanHopLe = "";
 
         public NhanVienView()
         {
@@ -100,9 +101,56 @@ namespace QuanLyKhachSan.Views
             TaiLaiPhongBan();
         }
 
+        private void HienThiLoiTimPhongBan(bool coLoi)
+        {
+            txtLoiTimPhongBan.Visibility = coLoi ? Visibility.Visible : Visibility.Collapsed;
+            txtTimPhongBan.SetResourceReference(BorderBrushProperty, coLoi ? "DangerBrush" : "BorderBrush");
+        }
+
+        private bool ChoPhepNhapTuKhoaPhongBan(string vanBan)
+        {
+            string duKien = txtTimPhongBan.Text.Remove(txtTimPhongBan.SelectionStart, txtTimPhongBan.SelectionLength)
+                .Insert(txtTimPhongBan.SelectionStart, vanBan);
+            bool hopLe = BUS_PhongBan.TuKhoaTimKiemHopLe(duKien);
+            HienThiLoiTimPhongBan(!hopLe);
+            return hopLe;
+        }
+
+        private void txtTimPhongBan_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !ChoPhepNhapTuKhoaPhongBan(e.Text);
+        }
+
+        private void txtTimPhongBan_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+            string? vanBan = e.DataObject.GetData(DataFormats.UnicodeText, true) as string;
+            if (vanBan == null || !ChoPhepNhapTuKhoaPhongBan(vanBan))
+            {
+                e.CancelCommand();
+                HienThiLoiTimPhongBan(true);
+            }
+        }
+
+        private void txtTimPhongBan_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtLoiTimPhongBan == null) return;
+            if (BUS_PhongBan.TuKhoaTimKiemHopLe(txtTimPhongBan.Text))
+            {
+                tuKhoaPhongBanHopLe = txtTimPhongBan.Text;
+                HienThiLoiTimPhongBan(false);
+                return;
+            }
+
+            int viTriConTro = txtTimPhongBan.CaretIndex;
+            txtTimPhongBan.Text = tuKhoaPhongBanHopLe;
+            txtTimPhongBan.CaretIndex = Math.Min(viTriConTro, tuKhoaPhongBanHopLe.Length);
+            HienThiLoiTimPhongBan(true);
+        }
+
         private void btnMoiPhongBan_Click(object sender, RoutedEventArgs e)
         {
             txtTimPhongBan.Clear();
+            HienThiLoiTimPhongBan(false);
             cboLocPhongBan.SelectedIndex = 0;
             TaiLaiPhongBan();
         }

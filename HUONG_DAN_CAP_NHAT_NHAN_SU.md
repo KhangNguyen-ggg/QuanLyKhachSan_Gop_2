@@ -1,8 +1,10 @@
 # Nâng cấp DB cho Nhân sự
 
+Nếu muốn chạy **một file DB tổng duy nhất**, dùng **Database_QuanLyKhachSan_Tong.sql**: mở trong SSMS và Execute toàn bộ. File tự tạo DB/bảng và nạp mẫu khi khởi tạo mới; với DB đã có đủ bảng, file giữ dữ liệu và chỉ cập nhật cấu trúc/thủ tục cần thiết. Bản tổng đã gộp phần Nhân sự bên dưới, Lễ tân và Hệ thống; không cần chạy thêm các file SQL riêng.
+
 Mở **CapNhat_NhanSu.sql** trong SQL Server Management Studio và nhấn **Execute** toàn bộ file. Script mặc định dùng `QuanLyKhachSan5Sao2`; nếu DB có tên khác, sửa dòng `USE` ở đầu file.
 
-Không chạy lại file tạo database hoặc nhập lại dữ liệu mẫu. Script nâng cấp trực tiếp các bảng hiện có, có thể chạy lại và không xóa dữ liệu nhân viên, lịch, chấm công hay lương.
+`CapNhat_NhanSu.sql` vẫn dùng được nếu chỉ muốn cập nhật phần Nhân sự. Không chạy lại **Database_quanlykhachsan.sql** gốc vì file đó có bước xóa DB cũ. Không cần nhập lại dữ liệu mẫu khi nâng cấp DB đang có dữ liệu.
 
 ## Những gì được bổ sung
 

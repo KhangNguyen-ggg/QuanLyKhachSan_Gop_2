@@ -77,9 +77,20 @@
                     <ScrollViewer Grid.Row="0" Margin="0,6,0,14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Focusable="False">
                         <StackPanel Orientation="Horizontal">
                         
-                            <Button x:Name="btnPhongBanThemMoi" Content="Thêm mới" Click="btnPhongBanThemMoi_Click" Style="{StaticResource PrimaryButton}" Margin="0,0,8,8"/>
-                            <TextBox x:Name="txtTimPhongBan" Width="220" Style="{StaticResource DarkTextBox}" ToolTip="Từ khóa tìm kiếm" Margin="0,0,8,8"/>
-                            <ComboBox x:Name="cboLocPhongBan" Width="190" SelectedIndex="0" SelectedValuePath="Tag" Style="{StaticResource DarkComboBox}" Margin="0,0,8,8" SelectionChanged="cboLocPhongBan_SelectionChanged">
+                            <Button x:Name="btnPhongBanThemMoi" Content="Thêm mới" Click="btnPhongBanThemMoi_Click" Style="{StaticResource PrimaryButton}" Margin="0,0,8,8" VerticalAlignment="Top"/>
+                            <StackPanel Width="220" Margin="0,0,8,8" VerticalAlignment="Top">
+                                <TextBox x:Name="txtTimPhongBan" Style="{StaticResource DarkTextBox}" MinHeight="36"
+                                         ToolTip="Tìm theo tên hoặc mô tả, có dấu hoặc không dấu"
+                                         AutomationProperties.Name="Tìm kiếm phòng ban"
+                                         AutomationProperties.HelpText="Chỉ nhập chữ, số và khoảng trắng. Hỗ trợ tìm không dấu."
+                                         PreviewTextInput="txtTimPhongBan_PreviewTextInput"
+                                         DataObject.Pasting="txtTimPhongBan_Pasting"
+                                         TextChanged="txtTimPhongBan_TextChanged"/>
+                                <TextBlock x:Name="txtLoiTimPhongBan" Text="Chỉ nhập chữ, số và khoảng trắng."
+                                           Foreground="{StaticResource DangerBrush}" FontSize="11" TextWrapping="Wrap"
+                                           Margin="0,4,0,0" Visibility="Collapsed" AutomationProperties.LiveSetting="Assertive"/>
+                            </StackPanel>
+                            <ComboBox x:Name="cboLocPhongBan" Width="190" SelectedIndex="0" SelectedValuePath="Tag" Style="{StaticResource DarkComboBox}" Margin="0,0,8,8" VerticalAlignment="Top" SelectionChanged="cboLocPhongBan_SelectionChanged">
                                 <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Tất cả trạng thái"/>
                                 <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Đang hoạt động">
                                     <ComboBoxItem.Tag><sys:Boolean>True</sys:Boolean></ComboBoxItem.Tag>
@@ -88,8 +99,8 @@
                                     <ComboBoxItem.Tag><sys:Boolean>False</sys:Boolean></ComboBoxItem.Tag>
                                 </ComboBoxItem>
                             </ComboBox>
-                            <Button x:Name="btnTimPhongBan" Content="Tìm kiếm" Click="btnTimPhongBan_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8"/>
-                            <Button x:Name="btnMoiPhongBan" Content="Làm mới" Click="btnMoiPhongBan_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8"/>
+                            <Button x:Name="btnTimPhongBan" Content="Tìm kiếm" Click="btnTimPhongBan_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8" VerticalAlignment="Top"/>
+                            <Button x:Name="btnMoiPhongBan" Content="Làm mới" Click="btnMoiPhongBan_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8" VerticalAlignment="Top"/>
                         
                     
                         </StackPanel>
