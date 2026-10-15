@@ -1,6 +1,7 @@
 using BUS_QuanlyKhachSan.LeTanValuuTru;
 using DAL_QuanlyKhachSan.NhanSu;
 using ET_QuanLyKhachSan;
+using System.Globalization;
 
 namespace BUS_QuanlyKhachSan.NhanSu;
 
@@ -10,11 +11,16 @@ public class BUS_PhongBan
 
     public List<PhongBan> HienThiTatCa(string tuKhoa = "", bool? trangThai = null)
     {
-        tuKhoa = (tuKhoa ?? "").Trim();
+        // So sánh bỏ dấu và không phân biệt chữ hoa chữ thường.
+        // Đ/đ là chữ riêng nên cần đổi về D/d trước khi so sánh bỏ dấu.
+        tuKhoa = (tuKhoa ?? "").Trim().Replace('đ', 'd').Replace('Đ', 'D');
+        bool ChuaTuKhoa(string noiDung) => CultureInfo.InvariantCulture.CompareInfo.IndexOf(
+            noiDung.Replace('đ', 'd').Replace('Đ', 'D'), tuKhoa,
+            CompareOptions.IgnoreCase | CompareOptions.IgnoreNonSpace) >= 0;
+
         return dal.HienThiTatCaPB().Where(x =>
         {
-            bool khopTuKhoa = x.TenPhongBan.Contains(tuKhoa, StringComparison.CurrentCultureIgnoreCase) ||
-                (x.MoTa ?? "").Contains(tuKhoa, StringComparison.CurrentCultureIgnoreCase);
+            bool khopTuKhoa = ChuaTuKhoa(x.TenPhongBan) || ChuaTuKhoa(x.MoTa ?? "");
             bool khopTrangThai = !trangThai.HasValue || x.TrangThai == trangThai.Value;
             return khopTuKhoa && khopTrangThai;
         })

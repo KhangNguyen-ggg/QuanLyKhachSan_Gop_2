@@ -151,7 +151,9 @@ internal static class Program
             var bus = new BUS_PhongBan();
             Reject(() => bus.Xoa(0));
             Reject(() => bus.Xoa(int.MaxValue), "không còn tồn tại");
-            var department = new PhongBan { TenPhongBan = "  Phòng kiểm tra  ", MoTa = "Ghi chú", TrangThai = true };
+            var department = new PhongBan { TenPhongBan = "  Phòng kiểm tra  ",
+                MoTa = "Nhân sự và đào tạo; lễ tân, quản lý buồng phòng".Normalize(System.Text.NormalizationForm.FormD),
+                TrangThai = true };
             bus.Luu(department);
             Assert(department.MaPhongBan > 0 && bus.HienThiTatCa().Count == 1, "Insert/identity failed.");
             Assert(bus.HienThiTheoId(department.MaPhongBan).TenPhongBan == "Phòng kiểm tra", "SQL read failed.");
@@ -164,6 +166,16 @@ internal static class Program
             Assert(bus.HienThiTheoId(department.MaPhongBan).TenPhongBan == "Phòng đã sửa", "SQL update failed.");
             Assert(bus.HienThiTatCa("ĐÃ SỬA", false).Count == 1 && bus.HienThiTatCa("", true).Count == 0,
                 "Keyword/status filter failed.");
+            foreach (string keyword in new[] { "  PHONG DA SUA  ", "phong da sua",
+                "Phòng đã sửa".Normalize(System.Text.NormalizationForm.FormD),
+                "nhan su", "dao tao", "le tan", "quan ly", "buong phong" })
+            {
+                var matches = bus.HienThiTatCa(keyword, false);
+                Assert(matches.Count == 1 && matches[0].MaPhongBan == department.MaPhongBan,
+                    "Accent-insensitive name/description search failed: " + keyword);
+            }
+            Assert(bus.HienThiTatCa("dao tao", true).Count == 0,
+                "Accent-insensitive search bypassed the status filter.");
             bus.Luu(boundary);
             Assert(bus.HienThiTheoId(boundary.MaPhongBan).MoTa.Length == 500, "Boundary round trip failed.");
             Reject(() => bus.Luu(new PhongBan { MaPhongBan = department.MaPhongBan,
@@ -240,16 +252,16 @@ internal static class Program
             var grid = Field<DataGrid>(view, "dgvPhongBan");
             Assert(grid.ItemsSource is List<PhongBan> && grid.Items.Count == 3, "List is not loaded from SQL.");
             Assert(grid.SelectedValuePath == "MaPhongBan" && grid.SelectedValue != null, "Selected ID binding failed.");
-            SetText(view, "txtTimPhongBan", "Đã sửa từ chi tiết");
+            SetText(view, "txtTimPhongBan", "  DA SUA TU CHI TIET  ");
             Click(view, "btnTimPhongBan");
-            Assert(grid.Items.Count == 1, "Search did not reload SQL data.");
+            Assert(grid.Items.Count == 1, "Accent-insensitive name search did not reload SQL data.");
             Field<ComboBox>(view, "cboLocPhongBan").SelectedIndex = 1;
             Assert(grid.Items.Count == 0, "Active filter did not apply immediately.");
             Field<ComboBox>(view, "cboLocPhongBan").SelectedIndex = 2;
             Assert(grid.Items.Count == 1, "Inactive filter did not apply immediately or lost the keyword.");
-            SetText(view, "txtTimPhongBan", "  đÃ CẬp nHẬT  ");
+            SetText(view, "txtTimPhongBan", "  dA CAP NHAT  ");
             Click(view, "btnTimPhongBan");
-            Assert(grid.Items.Count == 1, "Description search did not trim or ignore case.");
+            Assert(grid.Items.Count == 1, "Description search did not trim or ignore accents/case.");
             SetText(view, "txtTimPhongBan", "__PhongBan_NotFound__");
             Click(view, "btnTimPhongBan");
             Assert(grid.Items.Count == 0 && Field<TextBlock>(view, "txtThongBaoPhongBan").Text.Contains("0 dòng"),
