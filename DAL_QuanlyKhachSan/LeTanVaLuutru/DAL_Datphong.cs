@@ -12,6 +12,7 @@ public class DAL_Datphong
     private readonly Sua sua;
     private readonly Xoa xoa;
     private readonly ThuThiLenhCoDieuKien lenh;
+
     public DAL_Datphong()
     {
         hienThi = new HienThi(str);
@@ -20,6 +21,7 @@ public class DAL_Datphong
         xoa = new Xoa(str);
         lenh = new ThuThiLenhCoDieuKien(str);
     }
+
     public System.Data.DataTable hienThiDPAll() => lenh.TruyVanBang("EXEC dbo.sp_HienThiDatPhong");
     public List<KhachHang> HienThiKhachHang() => hienThi.HienThiTatCa<KhachHang>();
     public List<LoaiPhong> HienThiLoaiPhong() => hienThi.HienThiTatCa<LoaiPhong>();

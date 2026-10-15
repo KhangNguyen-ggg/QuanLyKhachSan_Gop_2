@@ -1,6 +1,7 @@
 <Window x:Class="QuanLyKhachSan.Views.Dialogs.PhongBanForm"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -24,17 +25,24 @@
         <StackPanel Grid.Row="0" Margin="0,0,0,14">
             <TextBlock x:Name="txtTieuDe" Text="Thông tin phòng ban" FontSize="22" FontWeight="SemiBold"
                        Foreground="{StaticResource GoldBrush}" TextWrapping="Wrap"/>
+            <TextBlock x:Name="txtThongBao" Text="Nhập thông tin rồi nhấn Xác nhận để lưu phòng ban."
+                       Foreground="{StaticResource TextSecondaryBrush}" Margin="0,4,0,0" TextWrapping="Wrap"/>
             </StackPanel>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="0,0,12,0">
                 <TextBlock Text="Tên phòng ban" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5"/>
-                <TextBox x:Name="txtTenPhongBan" Text="Lễ tân" Style="{StaticResource DarkTextBox}" MinHeight="38"/>
+                <TextBox x:Name="txtTenPhongBan" Text="{Binding TenPhongBan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DarkTextBox}" MinHeight="38"/>
                 <TextBlock Text="Ghi chú" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5"/>
-                <TextBox x:Name="txtGhiChu" Text="" Style="{StaticResource DarkTextBox}" MinHeight="90" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+                <TextBox x:Name="txtGhiChu" Text="{Binding MoTa, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DarkTextBox}" MinHeight="90" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
                 <TextBlock Text="Trạng thái" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5"/>
-                <ComboBox x:Name="cboTrangThai" Style="{StaticResource DarkComboBox}" SelectedIndex="0" MinHeight="36">
-                    <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Đang hoạt động"/>
-                    <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Ngừng hoạt động"/>
+                <ComboBox x:Name="cboTrangThai" Style="{StaticResource DarkComboBox}" MinHeight="36"
+                          SelectedValuePath="Tag" SelectedValue="{Binding TrangThai, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Đang hoạt động">
+                        <ComboBoxItem.Tag><sys:Boolean>True</sys:Boolean></ComboBoxItem.Tag>
+                    </ComboBoxItem>
+                    <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Ngừng hoạt động">
+                        <ComboBoxItem.Tag><sys:Boolean>False</sys:Boolean></ComboBoxItem.Tag>
+                    </ComboBoxItem>
                 </ComboBox>
             </StackPanel>
         </ScrollViewer>

@@ -1,25 +1,32 @@
-using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using QuanLyKhachSan.Data;
+using BUS_QuanlyKhachSan.NhanSu;
+using ET_QuanLyKhachSan;
 
 namespace QuanLyKhachSan.Views.Dialogs;
 
 public partial class PhongBanChiTietWindow : Window
 {
-    private readonly PhongBanMau _item;
+    private readonly BUS_PhongBan bus = new();
+    private PhongBan phongBan;
     private bool _editing;
 
-    public PhongBanChiTietWindow(PhongBanMau? item = null)
+    public PhongBanChiTietWindow(PhongBan duLieu)
     {
         InitializeComponent();
-        _item = item ?? new PhongBanMau();
-        DataContext = _item;
+        phongBan = duLieu;
         btnPhongBanThemMoi.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanThemMoi");
         btnPhongBanSuaThongTin.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin");
-        btnPhongBanXoa.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanXoa");
         btnLuuSua.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin");
         btnHuySua.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin");
+        HienThiPhongBan();
+    }
+
+    private void HienThiPhongBan()
+    {
+        // Sửa trên bản nháp để Hủy sửa hoặc Đóng không đổi dữ liệu đang hiển thị.
+        DataContext = new PhongBan { MaPhongBan = phongBan.MaPhongBan, TenPhongBan = phongBan.TenPhongBan,
+            MoTa = phongBan.MoTa, TrangThai = phongBan.TrangThai };
+        SetEditMode(false);
     }
 
     private void btnDong_Click(object sender, RoutedEventArgs e) => Close();
@@ -33,9 +40,7 @@ public partial class PhongBanChiTietWindow : Window
     private void btnHuySua_Click(object sender, RoutedEventArgs e)
     {
         if (!DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin")) return;
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
+        HienThiPhongBan();
     }
 
     private void SetEditMode(bool editing)
@@ -43,7 +48,7 @@ public partial class PhongBanChiTietWindow : Window
         _editing = editing;
         txtTenPhongBan.IsReadOnly = !editing;
         txtMoTa.IsReadOnly = !editing;
-        txtTrangThai.IsReadOnly = !editing;
+        cboTrangThai.IsEnabled = editing;
         btnPhongBanThemMoi.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnPhongBanSuaThongTin.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
         btnPhongBanXoa.Visibility = editing ? Visibility.Collapsed : Visibility.Visible;
@@ -54,41 +59,25 @@ public partial class PhongBanChiTietWindow : Window
     private void btnLuuSua_Click(object sender, RoutedEventArgs e)
     {
         if (!_editing || !DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin")) return;
-        if (string.IsNullOrWhiteSpace(txtTenPhongBan.Text) ||
-            string.IsNullOrWhiteSpace(txtTrangThai.Text))
+        try
         {
-            txtThongBao.Text = "Vui lòng nhập đầy đủ thông tin bắt buộc.";
-            return;
+            var duLieu = (PhongBan)DataContext;
+            bus.Luu(duLieu);
+            phongBan = duLieu;
+            HienThiPhongBan();
+            txtThongBao.Text = "Đã lưu thông tin phòng ban.";
         }
-
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Lưu thay đổi — Phòng ban: {_item.Ma}?";
-        if (confirm.ShowDialog() != true) return;
-        // shortcut: sửa dữ liệu demo trong bộ nhớ, nối tầng lưu trữ khi triển khai nghiệp vụ thật.
-        _item.TenPhongBan = txtTenPhongBan.Text.Trim();
-        _item.MoTa = txtMoTa.Text.Trim();
-        _item.TrangThai = txtTrangThai.Text.Trim();
-
-        DataContext = null;
-        DataContext = _item;
-        SetEditMode(false);
-    }
-
-    private void btnXoa_Click(object sender, RoutedEventArgs e)
-    {
-        if (!DemoSession.CanUseButton("NhanVienView", "btnPhongBanXoa") || _editing) return;
-        var confirm = new XacNhanDemoWindow { Owner = this };
-        confirm.txtNoiDung.Text = $"Xóa — Phòng ban: {_item.Ma}?";
-        if (confirm.ShowDialog() != true) return;
-        DialogResult = true;
+        catch (Exception ex) { txtThongBao.Text = ex.Message; }
     }
 
     private void btnPhongBanThemMoi_Click(object sender, RoutedEventArgs e)
     {
         if (!DemoSession.CanUseButton("NhanVienView", "btnPhongBanThemMoi")) return;
-        PhongBanForm form = new PhongBanForm();
-        form.Owner = this;
-        // shortcut: giữ form nghiệp vụ demo có sẵn, nối tầng lưu trữ trước khi ghi giao dịch thật.
-        form.ShowDialog();
+        try
+        {
+            var form = new PhongBanForm { Owner = this };
+            if (form.ShowDialog() == true) Close();
+        }
+        catch (Exception ex) { txtThongBao.Text = ex.Message; }
     }
 }

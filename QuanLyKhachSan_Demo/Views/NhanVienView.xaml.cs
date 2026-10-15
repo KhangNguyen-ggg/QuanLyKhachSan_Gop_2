@@ -1,15 +1,42 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using BUS_QuanlyKhachSan.NhanSu;
+using ET_QuanLyKhachSan;
 using QuanLyKhachSan.Views.Dialogs;
 
 namespace QuanLyKhachSan.Views
 {
     public partial class NhanVienView : UserControl
     {
+        private readonly BUS_PhongBan? phongBan;
+
         public NhanVienView()
         {
             InitializeComponent();
+            if (DAL.CauHinhKetNoi.DaCauHinh) phongBan = new BUS_PhongBan();
+            btnPhongBanThemMoi.IsEnabled = phongBan != null && DemoSession.CanUseButton(nameof(NhanVienView), "btnPhongBanThemMoi");
+            Loaded += (_, _) => TaiLaiPhongBan();
+        }
+
+        private void TaiLaiPhongBan()
+        {
+            if (!DemoSession.CanOpen(nameof(NhanVienView))) return;
+            var maDaChon = dgvPhongBan.SelectedValue;
+            dgvPhongBan.ItemsSource = null;
+            if (phongBan == null)
+            {
+                txtThongBaoPhongBan.Text = "Cấu hình connection.txt hoặc QLKS_CONNECTION để dùng chức năng Phòng ban.";
+                return;
+            }
+            try
+            {
+                dgvPhongBan.ItemsSource = phongBan.HienThiTatCa(txtTimPhongBan.Text, cboLocPhongBan.SelectedValue as bool?);
+                dgvPhongBan.SelectedValue = maDaChon;
+                if (dgvPhongBan.SelectedIndex < 0 && dgvPhongBan.Items.Count > 0) dgvPhongBan.SelectedIndex = 0;
+                txtThongBaoPhongBan.Text = $"{dgvPhongBan.Items.Count} dòng · Nhấp đúp để xem chi tiết / sửa";
+            }
+            catch (Exception ex) { txtThongBaoPhongBan.Text = "Không tải được phòng ban: " + ex.Message; }
         }
 
         private void btnNhanVienThemMoi_Click(object sender, RoutedEventArgs e)
@@ -44,32 +71,40 @@ namespace QuanLyKhachSan.Views
 
         private void btnPhongBanThemMoi_Click(object sender, RoutedEventArgs e)
         {
-            if (!DemoSession.CanUseButton("NhanVienView", "btnPhongBanThemMoi")) return;
-            // Chỉ mở cửa sổ XAML có sẵn; không tạo control bằng code.
-            PhongBanForm form = new PhongBanForm();
-            form.Owner = Window.GetWindow(this);
-            form.ShowDialog();
+            if (phongBan == null || !DemoSession.CanUseButton(nameof(NhanVienView), "btnPhongBanThemMoi")) return;
+            try
+            {
+                var form = new PhongBanForm { Owner = Window.GetWindow(this) };
+                form.ShowDialog();
+                TaiLaiPhongBan();
+            }
+            catch (Exception ex) { txtThongBaoPhongBan.Text = ex.Message; }
         }
 
         private void PhongBan_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (!DemoSession.CanOpen("NhanVienView") || e.OriginalSource is not DependencyObject source ||
+            if (phongBan == null || !DemoSession.CanOpen(nameof(NhanVienView)) || e.OriginalSource is not DependencyObject source ||
                 ItemsControl.ContainerFromElement(dgvPhongBan, source) is not DataGridRow row ||
-                row.Item is not Data.PhongBanMau item) return;
-            var form = new PhongBanChiTietWindow(item) { Owner = Window.GetWindow(this) };
-            if (form.ShowDialog() == true) dgvPhongBan.Items.Remove(item);
-            dgvPhongBan.Items.Refresh();
+                row.Item is not PhongBan item) return;
+            try
+            {
+                var form = new PhongBanChiTietWindow(phongBan.HienThiTheoId(item.MaPhongBan)) { Owner = Window.GetWindow(this) };
+                form.ShowDialog();
+                TaiLaiPhongBan();
+            }
+            catch (Exception ex) { txtThongBaoPhongBan.Text = ex.Message; }
         }
 
         private void btnTimPhongBan_Click(object sender, RoutedEventArgs e)
         {
-            // Chưa triển khai tìm kiếm.
+            TaiLaiPhongBan();
         }
 
         private void btnMoiPhongBan_Click(object sender, RoutedEventArgs e)
         {
             txtTimPhongBan.Clear();
             cboLocPhongBan.SelectedIndex = 0;
+            TaiLaiPhongBan();
         }
 
         private void btnChucVuThemMoi_Click(object sender, RoutedEventArgs e)

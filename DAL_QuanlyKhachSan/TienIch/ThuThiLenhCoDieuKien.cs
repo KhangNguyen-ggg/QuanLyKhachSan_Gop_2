@@ -13,11 +13,13 @@ namespace DAL_QuanlyKhachSan.TienIch
     {
         private readonly string connStr;
 
+        //Nhận và lưu chuỗi kết nối SQL Server để các phương thức khác sử dụng
         public ThuThiLenhCoDieuKien(string connStr)
         {
             this.connStr = connStr;
         }
 
+        //Thực hiện các câu lệnh SQL không cần trả về danh sách dữ liệu, là INSERT, UPDATE, DELETE. Trả về số dòng bị ảnh hưởng
         public int ThucThiLenh(string sql, object thamSo = null)
         {
             using (var connection = new SqlConnection(connStr))
@@ -26,6 +28,7 @@ namespace DAL_QuanlyKhachSan.TienIch
             }
         }
 
+        //Thực hiện các câu lệnh SQL trả về danh sách dữ liệu, là SELECT. Trả về danh sách đối tượng kiểu T
         public List<T> TruyVan<T>(string sql, object thamSo = null)
         {
             using (var connection = new SqlConnection(connStr))
@@ -33,6 +36,8 @@ namespace DAL_QuanlyKhachSan.TienIch
                 return connection.Query<T>(sql, thamSo).ToList();
             }
         }
+
+        //Thực hiện các câu lệnh SQL trả về danh sách dữ liệu, là SELECT. Trả về DataTable
         public DataTable TruyVanBang(string sql, object thamSo = null)
         {
             using var connection = new SqlConnection(connStr);
