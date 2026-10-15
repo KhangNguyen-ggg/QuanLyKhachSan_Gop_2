@@ -1,0 +1,148 @@
+<UserControl x:Class="QuanLyKhachSan.Views.BuongPhongView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:mau="clr-namespace:QuanLyKhachSan.Data"
+    d:DesignWidth="1120" d:DesignHeight="720"
+    Background="{StaticResource BackgroundBrush}" FontFamily="Segoe UI">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QuanLyKhachSan;component/Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <!-- Mở file này bằng Designer. Mọi tab, nút và bảng đều khai báo cố định. -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="tabChinh" Grid.Row="1" Style="{StaticResource DarkTabControl}">
+            <TabItem x:Name="tabDonPhong" Header="Dọn phòng" Style="{StaticResource DarkTabItem}">
+                <Grid Margin="0,14,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0" Margin="0,6,0,14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Focusable="False">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnDonPhongThemCongViec" Content="Thêm công việc" Click="btnDonPhongThemCongViec_Click" Style="{StaticResource PrimaryButton}" Margin="0,0,8,8"/>
+                            <TextBox x:Name="txtTimDonPhong" Width="200" Style="{StaticResource DarkTextBox}" ToolTip="Từ khóa tìm kiếm" Margin="0,0,8,8"/>
+                            <ComboBox x:Name="cboLocDonPhong" Width="180" SelectedIndex="0" Style="{StaticResource DarkComboBox}" Margin="0,0,8,8">
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Tất cả trạng thái"/>
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Chưa bắt đầu"/>
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Đang làm"/>
+                            </ComboBox>
+                            <Button x:Name="btnTimDonPhong" Content="Tìm kiếm" Click="btnTimDonPhong_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8"/>
+                            <Button x:Name="btnMoiDonPhong" Content="Làm mới" Click="btnMoiDonPhong_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <DataGrid Grid.Row="1" x:Name="dgvDonPhong" MouseDoubleClick="DonPhong_DoubleClick" Style="{StaticResource DarkDataGrid}"
+                              CellStyle="{StaticResource DarkDataGridCell}" RowStyle="{StaticResource DarkDataGridRow}"
+                              ColumnHeaderStyle="{StaticResource DarkColumnHeader}" IsReadOnly="True" SelectedIndex="0"
+                              AutoGenerateColumns="False" CanUserAddRows="False" MinHeight="180">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã" Binding="{Binding Ma}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Phòng" Binding="{Binding Phong}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Nhân viên" Binding="{Binding NhanVien}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Ngày giao" Binding="{Binding NgayGiao}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Loại việc" Binding="{Binding LoaiViec}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="*" MinWidth="110"/>
+                        </DataGrid.Columns>
+                        <!-- Dữ liệu minh họa khai báo trực tiếp trong XAML. -->
+                        <mau:DonPhongMau Ma="DPH001" Phong="201" NhanVien="Lê Mỹ Duyên" NgayGiao="27/09/2026" LoaiViec="Dọn sau trả phòng" TrangThai="Chưa bắt đầu"/>
+                        <mau:DonPhongMau Ma="DPH002" Phong="202" NhanVien="Nguyễn Văn An" NgayGiao="27/09/2026" LoaiViec="Dọn hằng ngày" TrangThai="Đang làm"/>
+                    </DataGrid>
+                    <TextBlock Grid.Row="2" Text="Nhấp đúp để xem chi tiết"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,0" TextWrapping="Wrap"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabBaoTri" Header="Bảo trì" Style="{StaticResource DarkTabItem}">
+                <Grid Margin="0,14,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0" Margin="0,6,0,14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Focusable="False">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnBaoTriTaoYeuCau" Content="Tạo yêu cầu" Click="btnBaoTriTaoYeuCau_Click" Style="{StaticResource PrimaryButton}" Margin="0,0,8,8"/>
+                            <TextBox x:Name="txtTimBaoTri" Width="200" Style="{StaticResource DarkTextBox}" ToolTip="Từ khóa tìm kiếm" Margin="0,0,8,8"/>
+                            <ComboBox x:Name="cboLocBaoTri" Width="180" SelectedIndex="0" Style="{StaticResource DarkComboBox}" Margin="0,0,8,8">
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Tất cả trạng thái"/>
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Đang xử lý"/>
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Chờ xử lý"/>
+                            </ComboBox>
+                            <Button x:Name="btnTimBaoTri" Content="Tìm kiếm" Click="btnTimBaoTri_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8"/>
+                            <Button x:Name="btnMoiBaoTri" Content="Làm mới" Click="btnMoiBaoTri_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <DataGrid Grid.Row="1" x:Name="dgvBaoTri" MouseDoubleClick="BaoTri_DoubleClick" Style="{StaticResource DarkDataGrid}"
+                              CellStyle="{StaticResource DarkDataGridCell}" RowStyle="{StaticResource DarkDataGridRow}"
+                              ColumnHeaderStyle="{StaticResource DarkColumnHeader}" IsReadOnly="True" SelectedIndex="0"
+                              AutoGenerateColumns="False" CanUserAddRows="False" MinHeight="180">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã" Binding="{Binding Ma}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Phòng" Binding="{Binding Phong}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Thiết bị" Binding="{Binding ThietBi}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Nội dung" Binding="{Binding NoiDung}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Mức độ" Binding="{Binding MucDo}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Người phụ trách" Binding="{Binding NguoiPhuTrach}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="*" MinWidth="110"/>
+                        </DataGrid.Columns>
+                        <!-- Dữ liệu minh họa khai báo trực tiếp trong XAML. -->
+                        <mau:BaoTriMau Ma="BT001" Phong="301" ThietBi="Điều hòa" NoiDung="Không làm lạnh" MucDo="Cao" NguoiPhuTrach="Nguyễn Văn An" TrangThai="Đang xử lý"/>
+                        <mau:BaoTriMau Ma="BT002" Phong="302" ThietBi="TV Samsung" NoiDung="Kiểm tra tín hiệu" MucDo="Thấp" NguoiPhuTrach="Trần Ngọc Bảo" TrangThai="Chờ xử lý"/>
+                    </DataGrid>
+                    <TextBlock Grid.Row="2" Text="Nhấp đúp để xem chi tiết"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,0" TextWrapping="Wrap"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabThietBi" Header="Thiết bị" Style="{StaticResource DarkTabItem}">
+                <Grid Margin="0,14,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0" Margin="0,6,0,14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Focusable="False">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnThietBiThemMoi" Content="Thêm mới" Click="btnThietBiThemMoi_Click" Style="{StaticResource PrimaryButton}" Margin="0,0,8,8"/>
+                            <TextBox x:Name="txtTimThietBi" Width="200" Style="{StaticResource DarkTextBox}" ToolTip="Từ khóa tìm kiếm" Margin="0,0,8,8"/>
+                            <ComboBox x:Name="cboLocThietBi" Width="180" SelectedIndex="0" Style="{StaticResource DarkComboBox}" Margin="0,0,8,8">
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Tất cả trạng thái"/>
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Cần bảo trì"/>
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Hoạt động tốt"/>
+                            </ComboBox>
+                            <Button x:Name="btnTimThietBi" Content="Tìm kiếm" Click="btnTimThietBi_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8"/>
+                            <Button x:Name="btnMoiThietBi" Content="Làm mới" Click="btnMoiThietBi_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <DataGrid Grid.Row="1" x:Name="dgvThietBi" MouseDoubleClick="ThietBi_DoubleClick" Style="{StaticResource DarkDataGrid}"
+                              CellStyle="{StaticResource DarkDataGridCell}" RowStyle="{StaticResource DarkDataGridRow}"
+                              ColumnHeaderStyle="{StaticResource DarkColumnHeader}" IsReadOnly="True" SelectedIndex="0"
+                              AutoGenerateColumns="False" CanUserAddRows="False" MinHeight="180">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã" Binding="{Binding Ma}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Tên thiết bị" Binding="{Binding TenThietBi}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Phòng" Binding="{Binding Phong}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Nhà cung cấp" Binding="{Binding NhaCungCap}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Ngày mua" Binding="{Binding NgayMua}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Hạn bảo hành" Binding="{Binding HanBaoHanh}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="*" MinWidth="110"/>
+                        </DataGrid.Columns>
+                        <!-- Dữ liệu minh họa khai báo trực tiếp trong XAML. -->
+                        <mau:ThietBiMau Ma="TB001" TenThietBi="Điều hòa" Phong="301" NhaCungCap="Công ty An Phát" NgayMua="01/01/2026" HanBaoHanh="01/01/2028" TrangThai="Cần bảo trì"/>
+                        <mau:ThietBiMau Ma="TB002" TenThietBi="TV Samsung" Phong="302" NhaCungCap="Công ty An Phát" NgayMua="01/01/2026" HanBaoHanh="01/01/2028" TrangThai="Hoạt động tốt"/>
+                    </DataGrid>
+                    <TextBlock Grid.Row="2" Text="Nhấp đúp để xem chi tiết"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,0" TextWrapping="Wrap"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

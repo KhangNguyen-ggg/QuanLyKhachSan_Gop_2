@@ -1,0 +1,2127 @@
+﻿{
+    "interface":  "QuanLyKhachSan5Sao",
+    "business":  "QuanLyKhachSan_Gop",
+    "files":  [
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\App.xaml",
+                      "kind":  "login-routing",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\App.xaml",
+                      "sourceSha256":  "3780E6D46FC55BC2C888387FEDD0540424D0C098291B6B3744B8111ECE370083",
+                      "sha256":  "6643F961EF2F48CA01627DB3F5FE5CF91B5873EDE193D7F06CF89227A05EB91C"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\App.xaml.cs",
+                      "kind":  "login-routing",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\App.xaml.cs",
+                      "sourceSha256":  "7F522DB10EAD9C50839CB25858ED495815263D581310AA519BA2AE50A12D8566",
+                      "sha256":  "2400191DC3B9826CA3177FD4A8B206DC725C1C78BF66FC7F0E38068BD9E98BB4"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\DataStore.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\DataStore.cs",
+                      "sourceSha256":  "22CBAAFF242B2F8611B6F11292E7E3F04CED8800025609249E69A424EBB8A500",
+                      "sha256":  "22CBAAFF242B2F8611B6F11292E7E3F04CED8800025609249E69A424EBB8A500"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\DemoSession.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\DemoSession.cs",
+                      "sourceSha256":  "F1C84FB9F1ED9690809265DC2BF650FC45AC73729FB2E59648955217AFC3F031",
+                      "sha256":  "F1C84FB9F1ED9690809265DC2BF650FC45AC73729FB2E59648955217AFC3F031"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Models.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Models.cs",
+                      "sourceSha256":  "0A01A43A20B605BC6F239D1747461A9BB83F6DF2B716B27A3CF280E22CDCDFBD",
+                      "sha256":  "0A01A43A20B605BC6F239D1747461A9BB83F6DF2B716B27A3CF280E22CDCDFBD"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Data\\DuLieuMau.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Data\\DuLieuMau.cs",
+                      "sourceSha256":  "DB276432841728F9E0A676546259EBA3EB3C8F187B98CFF4ED9D0EAD87BD3F69",
+                      "sha256":  "DB276432841728F9E0A676546259EBA3EB3C8F187B98CFF4ED9D0EAD87BD3F69"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Helpers\\ThemeHelper.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Helpers\\ThemeHelper.cs",
+                      "sourceSha256":  "96FC82EF9E2710DD677090F75111BEE1AAFAED216E9FFCF701E445D7916D8954",
+                      "sha256":  "96FC82EF9E2710DD677090F75111BEE1AAFAED216E9FFCF701E445D7916D8954"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Resources\\Styles.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Resources\\Styles.xaml",
+                      "sourceSha256":  "7B5224CA1705913F403E80D6BAB3320F5C30AC8E46449AE66037B1F1AF4183C2",
+                      "sha256":  "7B5224CA1705913F403E80D6BAB3320F5C30AC8E46449AE66037B1F1AF4183C2"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\BaoCaoView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\BaoCaoView.xaml",
+                      "sourceSha256":  "C472D3DD5A355DEA173676F07B49BBC075B2D4312D8533E9A23AB52D5528E2F1",
+                      "sha256":  "C472D3DD5A355DEA173676F07B49BBC075B2D4312D8533E9A23AB52D5528E2F1"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\BaoCaoView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\BaoCaoView.xaml.cs",
+                      "sourceSha256":  "37D60127BB812086D93FE186D3A6B8A037CF366E614CA898AD503E1487BC45DC",
+                      "sha256":  "37D60127BB812086D93FE186D3A6B8A037CF366E614CA898AD503E1487BC45DC"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\BuongPhongView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\BuongPhongView.xaml",
+                      "sourceSha256":  "A9D79C6907D74CE225BAB26AC69DEC8CAEFE4A4982E5D5C58031E71FEFE5FA04",
+                      "sha256":  "A9D79C6907D74CE225BAB26AC69DEC8CAEFE4A4982E5D5C58031E71FEFE5FA04"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\BuongPhongView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\BuongPhongView.xaml.cs",
+                      "sourceSha256":  "683D898B2F177140B604516165CE4AD6A322E0D930CD661081029BC57FCCC8E6",
+                      "sha256":  "683D898B2F177140B604516165CE4AD6A322E0D930CD661081029BC57FCCC8E6"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DanhMucPhongView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DanhMucPhongView.xaml",
+                      "sourceSha256":  "0A5AD5FA31EF7A574E705929B64DF28605389D4A278129B20C1820C799CB8C8F",
+                      "sha256":  "0A5AD5FA31EF7A574E705929B64DF28605389D4A278129B20C1820C799CB8C8F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DanhMucPhongView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DanhMucPhongView.xaml.cs",
+                      "sourceSha256":  "4EBDDD09CD1F6C14139CB766C9CC5C40E70D1D55AE9B9F281399C9DDAE2A76F3",
+                      "sha256":  "4EBDDD09CD1F6C14139CB766C9CC5C40E70D1D55AE9B9F281399C9DDAE2A76F3"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DashboardView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DashboardView.xaml",
+                      "sourceSha256":  "CD03774D69D04958B6108C2A25C09F089B1F538687D175E2D71D7C3C6C512E3B",
+                      "sha256":  "CD03774D69D04958B6108C2A25C09F089B1F538687D175E2D71D7C3C6C512E3B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DashboardView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DashboardView.xaml.cs",
+                      "sourceSha256":  "E305DC1E6C0544CFD781AB18580AA1712209447FE7B58A9865CA07C73DE41F4C",
+                      "sha256":  "E305DC1E6C0544CFD781AB18580AA1712209447FE7B58A9865CA07C73DE41F4C"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DatPhongView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DatPhongView.xaml",
+                      "sourceSha256":  "531BF5F8681DA71C43583B501E3CFA54AE929579C64F76FEB269074746085F7B",
+                      "sha256":  "531BF5F8681DA71C43583B501E3CFA54AE929579C64F76FEB269074746085F7B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DatPhongView.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DatPhongView.xaml.cs",
+                      "sourceSha256":  "A906F2A600B665F6B0CBAB699E951490C605300C648DE798E7FF43EB3A70026B",
+                      "sha256":  "4A4A950A63CBC80ADEEB0782C9AB6A5ACEC07681D15A3A9C010A405F32DFDD99"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DichVuKhachSanGroupView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DichVuKhachSanGroupView.xaml",
+                      "sourceSha256":  "EDE7C76EB24C490FD5BF743944B2715AA6E16E37936C6862F0D848F2E638E433",
+                      "sha256":  "EDE7C76EB24C490FD5BF743944B2715AA6E16E37936C6862F0D848F2E638E433"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DichVuKhachSanGroupView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DichVuKhachSanGroupView.xaml.cs",
+                      "sourceSha256":  "17121D967E50626BA1EDF23DB4D3C22CCF17E8AED6324AA79966FC2333792520",
+                      "sha256":  "17121D967E50626BA1EDF23DB4D3C22CCF17E8AED6324AA79966FC2333792520"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DichVuView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DichVuView.xaml",
+                      "sourceSha256":  "22FCD02EC47C91D96811110E6773634AF126A2530DB92C538003B4DB2AEAF181",
+                      "sha256":  "22FCD02EC47C91D96811110E6773634AF126A2530DB92C538003B4DB2AEAF181"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\DichVuView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\DichVuView.xaml.cs",
+                      "sourceSha256":  "24DD98B64E6E85D17613BCB5A6165F4F115A07E437351A8B21082BB7954F66CF",
+                      "sha256":  "24DD98B64E6E85D17613BCB5A6165F4F115A07E437351A8B21082BB7954F66CF"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\GoiUuDaiView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\GoiUuDaiView.xaml",
+                      "sourceSha256":  "DD380031139E9B7C30F16A2ED166A3B5F49BCD38BECCFE4849C491A42C6D3B9B",
+                      "sha256":  "DD380031139E9B7C30F16A2ED166A3B5F49BCD38BECCFE4849C491A42C6D3B9B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\GoiUuDaiView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\GoiUuDaiView.xaml.cs",
+                      "sourceSha256":  "411065AB348C4D70E9FDBA114B0EC44719564CB98935A186772C901ACCC5E9EF",
+                      "sha256":  "411065AB348C4D70E9FDBA114B0EC44719564CB98935A186772C901ACCC5E9EF"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\HeThongGroupView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\HeThongGroupView.xaml",
+                      "sourceSha256":  "397BFD291E1DA9A88CE7E6E6108811F2F47753149E002FAC661BAC82B0038A93",
+                      "sha256":  "397BFD291E1DA9A88CE7E6E6108811F2F47753149E002FAC661BAC82B0038A93"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\HeThongGroupView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\HeThongGroupView.xaml.cs",
+                      "sourceSha256":  "B31C226FEA5EF4B413B2B3AA699CD7348C6C98DEEAD5A1FB9A8BBF95E76290A8",
+                      "sha256":  "B31C226FEA5EF4B413B2B3AA699CD7348C6C98DEEAD5A1FB9A8BBF95E76290A8"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\HoaDonView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\HoaDonView.xaml",
+                      "sourceSha256":  "CF4608943AE220BEADF2C9A6549CC8C05AC2B393D9062BE8788A0F971C787663",
+                      "sha256":  "CF4608943AE220BEADF2C9A6549CC8C05AC2B393D9062BE8788A0F971C787663"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\HoaDonView.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\HoaDonView.xaml.cs",
+                      "sourceSha256":  "6C8678536CDBF53C710E5ABBEEDF7015764ADD3B23778D30621EAE6C0B9193BB",
+                      "sha256":  "0046B4BFFC98AE476BA928EB0FF44DEBCDE2FD881BAEAFF6E60EE49A80476DE1"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\KhachHangView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\KhachHangView.xaml",
+                      "sourceSha256":  "5A891A0C9DDB923A5FFDAFEB8BDCC87B0AE7F8C86139EC6B1112525C31B9F9A5",
+                      "sha256":  "5A891A0C9DDB923A5FFDAFEB8BDCC87B0AE7F8C86139EC6B1112525C31B9F9A5"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\KhachHangView.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\KhachHangView.xaml.cs",
+                      "sourceSha256":  "D9FCF9A14AB6C47AA984930E199990F9887983D890356D93613F1AEA93162964",
+                      "sha256":  "51C02045ED4FF8FACD66F700101CDA34AD8D78E6B9DE8658D6431D7976C7CFDC"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\KhoVatTuGroupView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\KhoVatTuGroupView.xaml",
+                      "sourceSha256":  "920204E11823D9C829421CDAC844BC124EA0D159E3623AFDA13190AAEC56D8EE",
+                      "sha256":  "920204E11823D9C829421CDAC844BC124EA0D159E3623AFDA13190AAEC56D8EE"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\KhoVatTuGroupView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\KhoVatTuGroupView.xaml.cs",
+                      "sourceSha256":  "9FE7D3BB9649CC5793CA56DC161939DA7AD59C8581971FF710C940972CE98CF0",
+                      "sha256":  "9FE7D3BB9649CC5793CA56DC161939DA7AD59C8581971FF710C940972CE98CF0"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\KhoView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\KhoView.xaml",
+                      "sourceSha256":  "038E512CCDDE34FF8B1C2EEF98B9F1EE2ED3BEF17D8751C9054CA587347148E8",
+                      "sha256":  "038E512CCDDE34FF8B1C2EEF98B9F1EE2ED3BEF17D8751C9054CA587347148E8"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\KhoView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\KhoView.xaml.cs",
+                      "sourceSha256":  "9A75CC24E27847C330F3ABB4C169722C8A7CDB10F79C8C79BFD0CEDF8D6D0E37",
+                      "sha256":  "9A75CC24E27847C330F3ABB4C169722C8A7CDB10F79C8C79BFD0CEDF8D6D0E37"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LeTanGroupView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LeTanGroupView.xaml",
+                      "sourceSha256":  "A50B84531FADC3C7FCB276DF1D9B1CB4873A5E2F9DA9565C67252B96C59076B1",
+                      "sha256":  "A50B84531FADC3C7FCB276DF1D9B1CB4873A5E2F9DA9565C67252B96C59076B1"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LeTanGroupView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LeTanGroupView.xaml.cs",
+                      "sourceSha256":  "9447A1B48E9DE5A0029BB49A1D7E8741D0274A09A84CC3BCF19B9BB8E19881F2",
+                      "sha256":  "9447A1B48E9DE5A0029BB49A1D7E8741D0274A09A84CC3BCF19B9BB8E19881F2"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LichSuLuuTruView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LichSuLuuTruView.xaml",
+                      "sourceSha256":  "B5F5FA1C5EF6CC42662D1F03E34226944D66D826DAD29E94F6BBCF324534009C",
+                      "sha256":  "B5F5FA1C5EF6CC42662D1F03E34226944D66D826DAD29E94F6BBCF324534009C"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LichSuLuuTruView.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LichSuLuuTruView.xaml.cs",
+                      "sourceSha256":  "F6F4ED076624252E6C97652FEB5F12A8C65B5ACDC40AAEC421D28D4AA2338F07",
+                      "sha256":  "83127311C5237A140B3A369E387EE2F1682CF5531A33B67E9C923EEF9A07A03B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LichSuThuTienView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LichSuThuTienView.xaml",
+                      "sourceSha256":  "1C428CC1651F99DB83C1EB4A15E52F7C1D7EA86290B203A56181AE39F6B0E8DD",
+                      "sha256":  "1C428CC1651F99DB83C1EB4A15E52F7C1D7EA86290B203A56181AE39F6B0E8DD"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LichSuThuTienView.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LichSuThuTienView.xaml.cs",
+                      "sourceSha256":  "3741A12C947A5FFEB38BDA08BB0E839578F6B0468ECFBF4834D8838051DEA309",
+                      "sha256":  "7DF7B1DA19ACC4EFA98084DF67DA67D006F2392BF99859C6450AF4202B6B1AE6"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LoginWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LoginWindow.xaml",
+                      "sourceSha256":  "4A6209DBAE78751DAE9CE1A500483E76A3594015B2BFD628957E8BF7832ADA87",
+                      "sha256":  "4A6209DBAE78751DAE9CE1A500483E76A3594015B2BFD628957E8BF7832ADA87"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LoginWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LoginWindow.xaml.cs",
+                      "sourceSha256":  "5665F96E43CA07125F6866EEC1B2843C032BFD6577F260C6AFC24B924BBF196E",
+                      "sha256":  "5665F96E43CA07125F6866EEC1B2843C032BFD6577F260C6AFC24B924BBF196E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LuuTruView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LuuTruView.xaml",
+                      "sourceSha256":  "B848664EEC03CF26EFF30B692FD112046DBBB781AA252BC24E7AFC8750CDC1FB",
+                      "sha256":  "B848664EEC03CF26EFF30B692FD112046DBBB781AA252BC24E7AFC8750CDC1FB"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LuuTruView.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\LuuTruView.xaml.cs",
+                      "sourceSha256":  "3A37177CD611309734F138461C6821EE99CCCB441A63038C6CFA38E4C71C367D",
+                      "sha256":  "81DB3E162AD761CB8FC06B9A45A2DD51B18F0954455D399CEAD40CC3316C54EE"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\MainWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\MainWindow.xaml",
+                      "sourceSha256":  "AF5DF86D5694B52D9F616C1F81EE1DF8DB8CB26F069C3305F23ED75879DEF2BB",
+                      "sha256":  "AF5DF86D5694B52D9F616C1F81EE1DF8DB8CB26F069C3305F23ED75879DEF2BB"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\MainWindow.xaml.cs",
+                      "kind":  "login-routing",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\MainWindow.xaml.cs",
+                      "sourceSha256":  "9FB60D652CA082A45EABC22A4C11A95AA37911AF5107FCF530D6674335EC05C1",
+                      "sha256":  "3C6F97B607FB8A6DD1A08A9ED2ABA5C8DDEA87CE086E129703445DC1EDB3CADB"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\NhanSuView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\NhanSuView.xaml",
+                      "sourceSha256":  "3A445FB53B3723DEDADEC540737FB11156C8F6F558878011201C2BFC0CC25552",
+                      "sha256":  "3A445FB53B3723DEDADEC540737FB11156C8F6F558878011201C2BFC0CC25552"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\NhanSuView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\NhanSuView.xaml.cs",
+                      "sourceSha256":  "7778341B28B4A2212D541C2ADD272B8D1ECB09B0C34E7E327D5934D6480CD907",
+                      "sha256":  "7778341B28B4A2212D541C2ADD272B8D1ECB09B0C34E7E327D5934D6480CD907"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\NhanVienView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\NhanVienView.xaml",
+                      "sourceSha256":  "EE90B9C65593F0EEA95098D5278A2BF7653E9D11526A3D43455CA93B0C228858",
+                      "sha256":  "EE90B9C65593F0EEA95098D5278A2BF7653E9D11526A3D43455CA93B0C228858"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\NhanVienView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\NhanVienView.xaml.cs",
+                      "sourceSha256":  "AC921B980FDA2C3382A7C09FBA772EC69AEF9F6ED0ACB49CD11B7EF36604FED8",
+                      "sha256":  "AC921B980FDA2C3382A7C09FBA772EC69AEF9F6ED0ACB49CD11B7EF36604FED8"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\NhatKyView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\NhatKyView.xaml",
+                      "sourceSha256":  "D57081D6428E2A1D01BB3441FF539DFA8ABBCA7452B12DF1A8F991EE7F8D18CA",
+                      "sha256":  "D57081D6428E2A1D01BB3441FF539DFA8ABBCA7452B12DF1A8F991EE7F8D18CA"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\NhatKyView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\NhatKyView.xaml.cs",
+                      "sourceSha256":  "2B2F9F910CD27ECFF786BE1B142AFD4A5D5809F1068941CC0C23B09B85C16C25",
+                      "sha256":  "2B2F9F910CD27ECFF786BE1B142AFD4A5D5809F1068941CC0C23B09B85C16C25"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\PhanBoPhongView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\PhanBoPhongView.xaml",
+                      "sourceSha256":  "D5A1E54F29DDB749B60271FA40066A39A824ECD4F269BB44699AE56AAD94D42E",
+                      "sha256":  "D5A1E54F29DDB749B60271FA40066A39A824ECD4F269BB44699AE56AAD94D42E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\PhanBoPhongView.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\PhanBoPhongView.xaml.cs",
+                      "sourceSha256":  "0F91BD8C0274B19B119E1FBBFC836B2676B5CC34EDDF74A3AF39C5AD095E484D",
+                      "sha256":  "E11B8E7C7F859023DA01DA6CAD0F86E873916A3D132F4F117049FA6A6F50DB4E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\PhongBuongGroupView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\PhongBuongGroupView.xaml",
+                      "sourceSha256":  "76D8A7F7D6DE817562DE40CD5CB806E967FA714B17285B33F10A7E2BCA0ECB85",
+                      "sha256":  "76D8A7F7D6DE817562DE40CD5CB806E967FA714B17285B33F10A7E2BCA0ECB85"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\PhongBuongGroupView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\PhongBuongGroupView.xaml.cs",
+                      "sourceSha256":  "7B52E7C91C815D75C24A2DF8E3DB26621D71E4644A6F91A44BA29A82661E08D4",
+                      "sha256":  "7B52E7C91C815D75C24A2DF8E3DB26621D71E4644A6F91A44BA29A82661E08D4"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\PhongView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\PhongView.xaml",
+                      "sourceSha256":  "3A6C472AB6FB53F5510656173381002F81AC4F8ADFF77061C592537EAA63EE85",
+                      "sha256":  "3A6C472AB6FB53F5510656173381002F81AC4F8ADFF77061C592537EAA63EE85"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\PhongView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\PhongView.xaml.cs",
+                      "sourceSha256":  "B2A4C27EE31CE3050D620CDF640AE5DB9B220FA3459E22FCB9B8E75141A48655",
+                      "sha256":  "B2A4C27EE31CE3050D620CDF640AE5DB9B220FA3459E22FCB9B8E75141A48655"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\QuanLyNhanSuGroupView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\QuanLyNhanSuGroupView.xaml",
+                      "sourceSha256":  "62B477E04D98AF6F7B803F819504E9B36FB9B8998A50F70340EAF870D6ECFDB3",
+                      "sha256":  "62B477E04D98AF6F7B803F819504E9B36FB9B8998A50F70340EAF870D6ECFDB3"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\QuanLyNhanSuGroupView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\QuanLyNhanSuGroupView.xaml.cs",
+                      "sourceSha256":  "7A91CA3A80F4BD39E33B8767E5E9651D91B898FC8F013AE5D35C0DE42428A63F",
+                      "sha256":  "7A91CA3A80F4BD39E33B8767E5E9651D91B898FC8F013AE5D35C0DE42428A63F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\TaiKhoanView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\TaiKhoanView.xaml",
+                      "sourceSha256":  "FA2497A027CBE68A43543A319F838C4F955C6A336814624788149D79F3DDD3F2",
+                      "sha256":  "FA2497A027CBE68A43543A319F838C4F955C6A336814624788149D79F3DDD3F2"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\TaiKhoanView.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\TaiKhoanView.xaml.cs",
+                      "sourceSha256":  "D5EB86ECA09D04499C00C5D7F94452FDC782E6CFF0952D30121985A22611A3BA",
+                      "sha256":  "7755623F633E48A46FC7EC668EE58B2A23BE17B6EB821305FDFD34A1445069CA"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\TieuHaoView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\TieuHaoView.xaml",
+                      "sourceSha256":  "7D4EAB19FB0A460459C6168F638EC0FE89D47AC85EE3ABB0A6ECA4261E8ACAE0",
+                      "sha256":  "7D4EAB19FB0A460459C6168F638EC0FE89D47AC85EE3ABB0A6ECA4261E8ACAE0"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\TieuHaoView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\TieuHaoView.xaml.cs",
+                      "sourceSha256":  "4EE02333B9897012DA9E2DE6794C86B8FB0545A26F16782F00A38BBE3BB93CD2",
+                      "sha256":  "4EE02333B9897012DA9E2DE6794C86B8FB0545A26F16782F00A38BBE3BB93CD2"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\TuVanAIView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\TuVanAIView.xaml",
+                      "sourceSha256":  "08E60616B6DAFA24A33971B9F179C40E8CFB90C5A3528BB2918E5AABE63D7889",
+                      "sha256":  "08E60616B6DAFA24A33971B9F179C40E8CFB90C5A3528BB2918E5AABE63D7889"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\TuVanAIView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\TuVanAIView.xaml.cs",
+                      "sourceSha256":  "A1433C70D34681ABBE469E588E7D46106949EFA66FDF7F04FFCAFD0C2C1E094B",
+                      "sha256":  "A1433C70D34681ABBE469E588E7D46106949EFA66FDF7F04FFCAFD0C2C1E094B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\VatTuNhaCungCapView.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\VatTuNhaCungCapView.xaml",
+                      "sourceSha256":  "798F0AF7BC1A5CA01FD7CB295F54CCE0BE7035EC0BA0CF36CDEE4D404BD9972B",
+                      "sha256":  "798F0AF7BC1A5CA01FD7CB295F54CCE0BE7035EC0BA0CF36CDEE4D404BD9972B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\VatTuNhaCungCapView.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\VatTuNhaCungCapView.xaml.cs",
+                      "sourceSha256":  "D0CC3E3828CE622EF150F7D7E6181EAF3ECAB1646DAB762F291670264EB42B19",
+                      "sha256":  "D0CC3E3828CE622EF150F7D7E6181EAF3ECAB1646DAB762F291670264EB42B19"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\BaoTriChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\BaoTriChiTietWindow.xaml",
+                      "sourceSha256":  "B0793EBD52D9CC7E8291C87EB4E5F243FF359FA07219A1039E07641B86F45A31",
+                      "sha256":  "B0793EBD52D9CC7E8291C87EB4E5F243FF359FA07219A1039E07641B86F45A31"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\BaoTriChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\BaoTriChiTietWindow.xaml.cs",
+                      "sourceSha256":  "87A86DF39FB4C158EF74A44CB3C05FE16ABDE87A6C593C69F03B51D9EAD0DE13",
+                      "sha256":  "87A86DF39FB4C158EF74A44CB3C05FE16ABDE87A6C593C69F03B51D9EAD0DE13"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\BaoTriForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\BaoTriForm.xaml",
+                      "sourceSha256":  "FC646FFE1D132C8A94E335EB2E8ED027D94C42883BC60E7B8ED87F14FEDF868F",
+                      "sha256":  "FC646FFE1D132C8A94E335EB2E8ED027D94C42883BC60E7B8ED87F14FEDF868F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\BaoTriForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\BaoTriForm.xaml.cs",
+                      "sourceSha256":  "5E1AD27DDAB26CD324103A14E1771EB64520F35160AFA92F84904D788C229E10",
+                      "sha256":  "5E1AD27DDAB26CD324103A14E1771EB64520F35160AFA92F84904D788C229E10"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\BaoTriHoanThanhBaoTriWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\BaoTriHoanThanhBaoTriWindow.xaml",
+                      "sourceSha256":  "F4DA6AA1CACEE0BA45A685C6348D13C9E7F7CB786AC32481B4C4DF57E5AA246D",
+                      "sha256":  "F4DA6AA1CACEE0BA45A685C6348D13C9E7F7CB786AC32481B4C4DF57E5AA246D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\BaoTriHoanThanhBaoTriWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\BaoTriHoanThanhBaoTriWindow.xaml.cs",
+                      "sourceSha256":  "0B3B1139F4A4CDA2E27935986C288C74CFDE374C7234C463BABB7EC928EF5E6A",
+                      "sha256":  "0B3B1139F4A4CDA2E27935986C288C74CFDE374C7234C463BABB7EC928EF5E6A"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\BaoTriPhanCongXuLyWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\BaoTriPhanCongXuLyWindow.xaml",
+                      "sourceSha256":  "F28D16C6F095708421EE876EDF18FEB9B3B70F27D20CD29BB5471A137B836988",
+                      "sha256":  "F28D16C6F095708421EE876EDF18FEB9B3B70F27D20CD29BB5471A137B836988"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\BaoTriPhanCongXuLyWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\BaoTriPhanCongXuLyWindow.xaml.cs",
+                      "sourceSha256":  "2293E707BC6603963654AB6D5166A716FBD03463E8A3D205D7C5C7A5D4DD6E06",
+                      "sha256":  "2293E707BC6603963654AB6D5166A716FBD03463E8A3D205D7C5C7A5D4DD6E06"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\DonPhongChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\DonPhongChiTietWindow.xaml",
+                      "sourceSha256":  "BB4CF32A7CFAC45F052529EC974D081D61877E4F3E7B07FB3E91471749D592C8",
+                      "sha256":  "BB4CF32A7CFAC45F052529EC974D081D61877E4F3E7B07FB3E91471749D592C8"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\DonPhongChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\DonPhongChiTietWindow.xaml.cs",
+                      "sourceSha256":  "462C2C61B0702297C3C718594222A55F9F23F78356C2CDF86A67486BBAEDCC30",
+                      "sha256":  "462C2C61B0702297C3C718594222A55F9F23F78356C2CDF86A67486BBAEDCC30"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\DonPhongForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\DonPhongForm.xaml",
+                      "sourceSha256":  "4BC0DDF49766646DAD0F239405757DAB8A2887F8D58D512109C1FB2331B698CD",
+                      "sha256":  "4BC0DDF49766646DAD0F239405757DAB8A2887F8D58D512109C1FB2331B698CD"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\DonPhongForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\DonPhongForm.xaml.cs",
+                      "sourceSha256":  "24AC83C138396B96001577383C7FA75DE069C0CE249F65E0BAD38CAEC947864E",
+                      "sha256":  "24AC83C138396B96001577383C7FA75DE069C0CE249F65E0BAD38CAEC947864E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\DonPhongPhanCongWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\DonPhongPhanCongWindow.xaml",
+                      "sourceSha256":  "0841AAFB552AC0293BE2EF91DDAE930D4CDE0D5CAEE95F16DCE1482D72FF62F5",
+                      "sha256":  "0841AAFB552AC0293BE2EF91DDAE930D4CDE0D5CAEE95F16DCE1482D72FF62F5"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\DonPhongPhanCongWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\DonPhongPhanCongWindow.xaml.cs",
+                      "sourceSha256":  "DED1C6E15DB40A19CFA207A53D2D96293438FAA6FFE47BA1293271A72BCC3B07",
+                      "sha256":  "DED1C6E15DB40A19CFA207A53D2D96293438FAA6FFE47BA1293271A72BCC3B07"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\ThietBiChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\ThietBiChiTietWindow.xaml",
+                      "sourceSha256":  "9240849E831EB5FF143E5801D3EDD5F7B5FF6A197A0FD1A519872A1C18CC6364",
+                      "sha256":  "9240849E831EB5FF143E5801D3EDD5F7B5FF6A197A0FD1A519872A1C18CC6364"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\ThietBiChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\ThietBiChiTietWindow.xaml.cs",
+                      "sourceSha256":  "E66E47DC4A4683BCA25764072BC5FF5834FDA013107D2AA083834A9507233CF5",
+                      "sha256":  "E66E47DC4A4683BCA25764072BC5FF5834FDA013107D2AA083834A9507233CF5"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\ThietBiForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\ThietBiForm.xaml",
+                      "sourceSha256":  "4D686F365DC5EDD5FA8398661A130477772A073A23D032CDC87DDBC82BA56954",
+                      "sha256":  "4D686F365DC5EDD5FA8398661A130477772A073A23D032CDC87DDBC82BA56954"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\BuongPhong\\ThietBiForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\BuongPhong\\ThietBiForm.xaml.cs",
+                      "sourceSha256":  "4D6BA9150C20EA41B39C9A5B99D9AF8FE7CE80A1B9D4E07E7BCB7238E69F1986",
+                      "sha256":  "4D6BA9150C20EA41B39C9A5B99D9AF8FE7CE80A1B9D4E07E7BCB7238E69F1986"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Chung\\PhanQuyenWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Chung\\PhanQuyenWindow.xaml",
+                      "sourceSha256":  "971FA53E084B06F80340CC3825F22FC8B1F035DDFF62D7A1D56900514057AB3F",
+                      "sha256":  "971FA53E084B06F80340CC3825F22FC8B1F035DDFF62D7A1D56900514057AB3F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Chung\\PhanQuyenWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Chung\\PhanQuyenWindow.xaml.cs",
+                      "sourceSha256":  "9D878E8744B74F821F5FB944113936F679F86DB0852833D2A58D1C09891C52D8",
+                      "sha256":  "9D878E8744B74F821F5FB944113936F679F86DB0852833D2A58D1C09891C52D8"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Chung\\XacNhanDemoWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Chung\\XacNhanDemoWindow.xaml",
+                      "sourceSha256":  "F546E1293EF61CCF3D3AA4BF6B1D91E044B8635356B13591C39D1698C2F1DCDE",
+                      "sha256":  "F546E1293EF61CCF3D3AA4BF6B1D91E044B8635356B13591C39D1698C2F1DCDE"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Chung\\XacNhanDemoWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Chung\\XacNhanDemoWindow.xaml.cs",
+                      "sourceSha256":  "9A03F163EB8AEA13F44F05111C436D34577E08A8F4288FF076EDF6D3A635E036",
+                      "sha256":  "9A03F163EB8AEA13F44F05111C436D34577E08A8F4288FF076EDF6D3A635E036"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\KhuVucChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\KhuVucChiTietWindow.xaml",
+                      "sourceSha256":  "B9F9D4133E824C4A460B4F622709C28677FDFCD1EEF2BA0869D3F7E5BA5AA1CF",
+                      "sha256":  "B9F9D4133E824C4A460B4F622709C28677FDFCD1EEF2BA0869D3F7E5BA5AA1CF"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\KhuVucChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\KhuVucChiTietWindow.xaml.cs",
+                      "sourceSha256":  "111A9764002600D5CCA3222BCE770CEAF3FBCD340BC0611AFC0D5C1A481FF475",
+                      "sha256":  "111A9764002600D5CCA3222BCE770CEAF3FBCD340BC0611AFC0D5C1A481FF475"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\KhuVucForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\KhuVucForm.xaml",
+                      "sourceSha256":  "9FCCD106D8B17DB15D7160E731F1568D1A207ADE6D294F98B3CAC7F592A10FD8",
+                      "sha256":  "9FCCD106D8B17DB15D7160E731F1568D1A207ADE6D294F98B3CAC7F592A10FD8"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\KhuVucForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\KhuVucForm.xaml.cs",
+                      "sourceSha256":  "C428361FFB5BA3C3ED452C3BEDE6004DF8FAAB2247CCBC466D83CD9D06B0A3B0",
+                      "sha256":  "C428361FFB5BA3C3ED452C3BEDE6004DF8FAAB2247CCBC466D83CD9D06B0A3B0"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\LoaiPhongChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\LoaiPhongChiTietWindow.xaml",
+                      "sourceSha256":  "79D830DB827CE2382EF447833BCE1DB50E3DF12D4E2B5B059EB075040577649D",
+                      "sha256":  "79D830DB827CE2382EF447833BCE1DB50E3DF12D4E2B5B059EB075040577649D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\LoaiPhongChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\LoaiPhongChiTietWindow.xaml.cs",
+                      "sourceSha256":  "7FDFA547DF2116C8EB935E96CB5E64935D4850ADDADB5A9DC22938731DD88834",
+                      "sha256":  "7FDFA547DF2116C8EB935E96CB5E64935D4850ADDADB5A9DC22938731DD88834"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\LoaiPhongForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\LoaiPhongForm.xaml",
+                      "sourceSha256":  "1C8A587BDD1020F4D9CC8F15DFE6F992DD7BD33D78DB05B0079292B076651208",
+                      "sha256":  "1C8A587BDD1020F4D9CC8F15DFE6F992DD7BD33D78DB05B0079292B076651208"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\LoaiPhongForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\LoaiPhongForm.xaml.cs",
+                      "sourceSha256":  "E597254B9142B80B43F0B63BBC458DD3737FC7DF660330B566A966C1463E40BD",
+                      "sha256":  "E597254B9142B80B43F0B63BBC458DD3737FC7DF660330B566A966C1463E40BD"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TangChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TangChiTietWindow.xaml",
+                      "sourceSha256":  "48DA91974243E307332D7898CB9A275B9BA626D4A757F2E988AA9C19F94649A3",
+                      "sha256":  "48DA91974243E307332D7898CB9A275B9BA626D4A757F2E988AA9C19F94649A3"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TangChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TangChiTietWindow.xaml.cs",
+                      "sourceSha256":  "AABA17C57BA4FE999454663179B480024D02399DCA81A1E2DD42479E1FC68C6B",
+                      "sha256":  "AABA17C57BA4FE999454663179B480024D02399DCA81A1E2DD42479E1FC68C6B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TangForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TangForm.xaml",
+                      "sourceSha256":  "749047B519CCFA8E5A22509F5039446D19C8D82697CEF2F159D54F1038C4E4DA",
+                      "sha256":  "749047B519CCFA8E5A22509F5039446D19C8D82697CEF2F159D54F1038C4E4DA"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TangForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TangForm.xaml.cs",
+                      "sourceSha256":  "3337618A057D3FAA94AA54E1E34F58106AC5E517992EFC9C2233A96E21116E06",
+                      "sha256":  "3337618A057D3FAA94AA54E1E34F58106AC5E517992EFC9C2233A96E21116E06"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TienNghiChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TienNghiChiTietWindow.xaml",
+                      "sourceSha256":  "7B789165C90C944DEEF3EE29C30969B5162CF5B491ACC3979AD6B478FD7B32D6",
+                      "sha256":  "7B789165C90C944DEEF3EE29C30969B5162CF5B491ACC3979AD6B478FD7B32D6"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TienNghiChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TienNghiChiTietWindow.xaml.cs",
+                      "sourceSha256":  "507ADA729FC6C2BB4BB496C2DA8EEF1A79DF779FCE37FC716228AE7FFCE9E249",
+                      "sha256":  "507ADA729FC6C2BB4BB496C2DA8EEF1A79DF779FCE37FC716228AE7FFCE9E249"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TienNghiForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TienNghiForm.xaml",
+                      "sourceSha256":  "D1E18313054AEA262050E13323360BD002BF05C4021CEB09D64329536197B198",
+                      "sha256":  "D1E18313054AEA262050E13323360BD002BF05C4021CEB09D64329536197B198"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TienNghiForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TienNghiForm.xaml.cs",
+                      "sourceSha256":  "739EDACF6FFEB2F86020F0D57C4E9268ED48F1401F2259A83C8F0DA7420D9404",
+                      "sha256":  "739EDACF6FFEB2F86020F0D57C4E9268ED48F1401F2259A83C8F0DA7420D9404"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TienNghiTheoLoaiChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TienNghiTheoLoaiChiTietWindow.xaml",
+                      "sourceSha256":  "000276946365060FEA63CAAD09E8ADD68102B4919ED02FD56E4B7905D9F97C70",
+                      "sha256":  "000276946365060FEA63CAAD09E8ADD68102B4919ED02FD56E4B7905D9F97C70"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TienNghiTheoLoaiChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TienNghiTheoLoaiChiTietWindow.xaml.cs",
+                      "sourceSha256":  "10E793BD4F34B25FA77DA140DCC6361F52C720E013A4F45236133AEB770999A6",
+                      "sha256":  "10E793BD4F34B25FA77DA140DCC6361F52C720E013A4F45236133AEB770999A6"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TienNghiTheoLoaiForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TienNghiTheoLoaiForm.xaml",
+                      "sourceSha256":  "9CE650E5B1B07427594254BD8C15A44745BE366D87B51D681A6DBE294B2C5926",
+                      "sha256":  "9CE650E5B1B07427594254BD8C15A44745BE366D87B51D681A6DBE294B2C5926"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DanhMucPhong\\TienNghiTheoLoaiForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DanhMucPhong\\TienNghiTheoLoaiForm.xaml.cs",
+                      "sourceSha256":  "0380653E8EBF9FB6D6B98A25164C4800874AFEAB7F6DA3872CB926D593404594",
+                      "sha256":  "0380653E8EBF9FB6D6B98A25164C4800874AFEAB7F6DA3872CB926D593404594"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DatPhong\\DatPhongChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DatPhong\\DatPhongChiTietWindow.xaml",
+                      "sourceSha256":  "61A21DCBEFB7AEC7558D6FC5BEA13BEE534D8CD8436C093B40099458289E84CA",
+                      "sha256":  "61A21DCBEFB7AEC7558D6FC5BEA13BEE534D8CD8436C093B40099458289E84CA"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DatPhong\\DatPhongChiTietWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DatPhong\\DatPhongChiTietWindow.xaml.cs",
+                      "sourceSha256":  "4D5843ED63A7C26438B70B5611CEA414E13F2C9E895140EA6607E0261C8C5116",
+                      "sha256":  "C6CAA6B48C68F6F4B869FC648563C370B21811341FB1B94BE77EB07C74762823"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DatPhong\\DatPhongForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DatPhong\\DatPhongForm.xaml",
+                      "sourceSha256":  "0C2CC44E4E6D5D4E49E688E33F5CC139A0958189EFC86D83D3FF64B4A5AC1135",
+                      "sha256":  "0C2CC44E4E6D5D4E49E688E33F5CC139A0958189EFC86D83D3FF64B4A5AC1135"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DatPhong\\DatPhongForm.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DatPhong\\DatPhongForm.xaml.cs",
+                      "sourceSha256":  "462FFA7C53DCFC4D9F9C812B315C52F7895672899DE40A9CBC7BD505ADFDA114",
+                      "sha256":  "B3C81468364CD8429492EA20CF28F1F061C473C5784D247DC9195A3C777B51F1"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DatPhong\\PhanBoPhongChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DatPhong\\PhanBoPhongChiTietWindow.xaml",
+                      "sourceSha256":  "A34C1F9FAFD448DCC9D9A7564BA279FF219637B1655F4E23DEB0DA97DB9FB62B",
+                      "sha256":  "A34C1F9FAFD448DCC9D9A7564BA279FF219637B1655F4E23DEB0DA97DB9FB62B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DatPhong\\PhanBoPhongChiTietWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DatPhong\\PhanBoPhongChiTietWindow.xaml.cs",
+                      "sourceSha256":  "14CE16312899D1A6CDB5449F8024A44FA2118D4212CE2689DB274670A5AB6896",
+                      "sha256":  "5D8DC5EF1531167883CC72351719DD13C5E45DA5C1D961DAA8272AB4E9BB0C0F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DatPhong\\PhanBoPhongForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DatPhong\\PhanBoPhongForm.xaml",
+                      "sourceSha256":  "6A1E659CC85CE4CCA1E0419A88F0BA2FBD2E3DAEAA1672C5CAE944230A0351C0",
+                      "sha256":  "6A1E659CC85CE4CCA1E0419A88F0BA2FBD2E3DAEAA1672C5CAE944230A0351C0"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DatPhong\\PhanBoPhongForm.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DatPhong\\PhanBoPhongForm.xaml.cs",
+                      "sourceSha256":  "31BF0012E4C1E1EAC2927DF525B441AF9F4A6460EBCD869F825CF6C076944F9D",
+                      "sha256":  "0D57F55AE01D7092192B8A140CE7BD42510A62A80EA6EF401E94C225F236E290"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\DichVuChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\DichVuChiTietWindow.xaml",
+                      "sourceSha256":  "FAC1A29870A4FE24A76E64600BC3D536178975C42F2CC9A1A69E9DC08355AD8E",
+                      "sha256":  "FAC1A29870A4FE24A76E64600BC3D536178975C42F2CC9A1A69E9DC08355AD8E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\DichVuChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\DichVuChiTietWindow.xaml.cs",
+                      "sourceSha256":  "18700641D3D55A71BDA5FC6468848A520FCD7361D8CA3671CA7A6D1CD39B0B39",
+                      "sha256":  "18700641D3D55A71BDA5FC6468848A520FCD7361D8CA3671CA7A6D1CD39B0B39"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\DichVuForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\DichVuForm.xaml",
+                      "sourceSha256":  "9A43B24114472F3358C43E4893A30F3A6D0391FC747A26B6075A931CCD8B0A05",
+                      "sha256":  "9A43B24114472F3358C43E4893A30F3A6D0391FC747A26B6075A931CCD8B0A05"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\DichVuForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\DichVuForm.xaml.cs",
+                      "sourceSha256":  "D65FDD8895B2FCE6A69E87663B12260318E8F191DB7A13486E028E36AB90EC8E",
+                      "sha256":  "D65FDD8895B2FCE6A69E87663B12260318E8F191DB7A13486E028E36AB90EC8E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\LoaiDichVuChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\LoaiDichVuChiTietWindow.xaml",
+                      "sourceSha256":  "DA908214A6988A096011B3B72041DB3803CE5CEC21DD67DBADA09DB8CBD38703",
+                      "sha256":  "DA908214A6988A096011B3B72041DB3803CE5CEC21DD67DBADA09DB8CBD38703"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\LoaiDichVuChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\LoaiDichVuChiTietWindow.xaml.cs",
+                      "sourceSha256":  "2807891B6BB55979ED0D44FF8D6460FC4DC0F1228AD2ACB4F3A6CC17EDCF912E",
+                      "sha256":  "2807891B6BB55979ED0D44FF8D6460FC4DC0F1228AD2ACB4F3A6CC17EDCF912E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\LoaiDichVuForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\LoaiDichVuForm.xaml",
+                      "sourceSha256":  "F2C87F39C8C3D71D9028B95713B1EC1D64D9C35D263023E3FAD7E8B57AC3B3F3",
+                      "sha256":  "F2C87F39C8C3D71D9028B95713B1EC1D64D9C35D263023E3FAD7E8B57AC3B3F3"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\LoaiDichVuForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\LoaiDichVuForm.xaml.cs",
+                      "sourceSha256":  "3595BF1C0B8A7CD8979FEC16C77A01372AAD120134AAACFB092B4D887F14080F",
+                      "sha256":  "3595BF1C0B8A7CD8979FEC16C77A01372AAD120134AAACFB092B4D887F14080F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\SuDungDichVuChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\SuDungDichVuChiTietWindow.xaml",
+                      "sourceSha256":  "FA172C4620440EB87436517B789949FB8DEA6FB0BE71E1D9900A1D61825FBD96",
+                      "sha256":  "FA172C4620440EB87436517B789949FB8DEA6FB0BE71E1D9900A1D61825FBD96"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\SuDungDichVuChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\SuDungDichVuChiTietWindow.xaml.cs",
+                      "sourceSha256":  "AC2E41CFAC52A9E79CECC270A1387B9EFB4F7194C42BDF32381042D8F0146C88",
+                      "sha256":  "AC2E41CFAC52A9E79CECC270A1387B9EFB4F7194C42BDF32381042D8F0146C88"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\SuDungDichVuForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\SuDungDichVuForm.xaml",
+                      "sourceSha256":  "07EE5739A621C683B8C006918FFCC236CE5B2E3245D70A27A50FE21B775793B2",
+                      "sha256":  "07EE5739A621C683B8C006918FFCC236CE5B2E3245D70A27A50FE21B775793B2"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\DichVu\\SuDungDichVuForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\DichVu\\SuDungDichVuForm.xaml.cs",
+                      "sourceSha256":  "2FC23F87BD4E43D09DED74CC1CA2D41FA97CA36D78B9909852A113B9E5D5F8D0",
+                      "sha256":  "2FC23F87BD4E43D09DED74CC1CA2D41FA97CA36D78B9909852A113B9E5D5F8D0"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\GoiDichVuChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\GoiDichVuChiTietWindow.xaml",
+                      "sourceSha256":  "1D513DB74DF9A39316032A14FDBFC39F314047343D0036D1B2DC4521ACE89605",
+                      "sha256":  "1D513DB74DF9A39316032A14FDBFC39F314047343D0036D1B2DC4521ACE89605"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\GoiDichVuChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\GoiDichVuChiTietWindow.xaml.cs",
+                      "sourceSha256":  "4419571620319B53C2AF0F23ADEA0C31D35D594971401D628B2460AE80E9DBA4",
+                      "sha256":  "4419571620319B53C2AF0F23ADEA0C31D35D594971401D628B2460AE80E9DBA4"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\GoiDichVuForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\GoiDichVuForm.xaml",
+                      "sourceSha256":  "45661DA7A609A6C24D4CB741ED2D7C302656B6F1A415467C1FF8D4FCAD6983B0",
+                      "sha256":  "45661DA7A609A6C24D4CB741ED2D7C302656B6F1A415467C1FF8D4FCAD6983B0"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\GoiDichVuForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\GoiDichVuForm.xaml.cs",
+                      "sourceSha256":  "0B3926CEA25DE6615F8BE56059468F5CDF71FA9831C56AA6475D0935A0556E8C",
+                      "sha256":  "0B3926CEA25DE6615F8BE56059468F5CDF71FA9831C56AA6475D0935A0556E8C"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\ThanhPhanGoiChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\ThanhPhanGoiChiTietWindow.xaml",
+                      "sourceSha256":  "B4C21F21E03D8772CFE92C3663C6C2669127AEF07D58CE5017768E7280547DCC",
+                      "sha256":  "B4C21F21E03D8772CFE92C3663C6C2669127AEF07D58CE5017768E7280547DCC"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\ThanhPhanGoiChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\ThanhPhanGoiChiTietWindow.xaml.cs",
+                      "sourceSha256":  "B152A050EFA0BBB886162524289C332C73C1A4629CA0E3AD839C41902AEAB8C1",
+                      "sha256":  "B152A050EFA0BBB886162524289C332C73C1A4629CA0E3AD839C41902AEAB8C1"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\ThanhPhanGoiForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\ThanhPhanGoiForm.xaml",
+                      "sourceSha256":  "60BF7C605C04D53D56B4F59379326DD763060607B7ACBA4FF6F94ED972543A92",
+                      "sha256":  "60BF7C605C04D53D56B4F59379326DD763060607B7ACBA4FF6F94ED972543A92"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\ThanhPhanGoiForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\ThanhPhanGoiForm.xaml.cs",
+                      "sourceSha256":  "C865FAAAEFB3B82667972E622DEFD48EF0676F7DBB2EE830F0FF54F35EBB745F",
+                      "sha256":  "C865FAAAEFB3B82667972E622DEFD48EF0676F7DBB2EE830F0FF54F35EBB745F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\UuDaiChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\UuDaiChiTietWindow.xaml",
+                      "sourceSha256":  "4DD187FEC954F0441E2EC9F9747EED0B4A78C6B516BCB2C77AD5C0F03ABF03F3",
+                      "sha256":  "4DD187FEC954F0441E2EC9F9747EED0B4A78C6B516BCB2C77AD5C0F03ABF03F3"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\UuDaiChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\UuDaiChiTietWindow.xaml.cs",
+                      "sourceSha256":  "E1E2A1F5061B66B602E0E153DB259867E178F35C2EEC6547F793F2B7796967E3",
+                      "sha256":  "E1E2A1F5061B66B602E0E153DB259867E178F35C2EEC6547F793F2B7796967E3"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\UuDaiForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\UuDaiForm.xaml",
+                      "sourceSha256":  "6609E8F36152146B7B0D283925365E778D8C646EBF7BA53F5255C2F8B1291D42",
+                      "sha256":  "6609E8F36152146B7B0D283925365E778D8C646EBF7BA53F5255C2F8B1291D42"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\GoiUuDai\\UuDaiForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\GoiUuDai\\UuDaiForm.xaml.cs",
+                      "sourceSha256":  "420AC545CC808BC8028B6C1FFE69676E51D498907C6BC1D8CAC14F4F888C909D",
+                      "sha256":  "420AC545CC808BC8028B6C1FFE69676E51D498907C6BC1D8CAC14F4F888C909D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\HoaDonApDungUuDaiWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\HoaDonApDungUuDaiWindow.xaml",
+                      "sourceSha256":  "7CED1E4DDE95C1721E6402C39D18E17FDC79D94BA399F9B347BD2C6052608806",
+                      "sha256":  "7CED1E4DDE95C1721E6402C39D18E17FDC79D94BA399F9B347BD2C6052608806"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\HoaDonApDungUuDaiWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\HoaDonApDungUuDaiWindow.xaml.cs",
+                      "sourceSha256":  "59AB14198AD6D343627B3C13555B1FC7366BE5A5629FF8D7C04B2037ABFEED9C",
+                      "sha256":  "C2F4E712C258AB323574FF43E5FBED762A4DF0A48D445FEFD509C0917BBB8E1F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\HoaDonChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\HoaDonChiTietWindow.xaml",
+                      "sourceSha256":  "D4C9447612CE39183B20BB462AAC6BCE364C68C751BFE3179D22338C0111256E",
+                      "sha256":  "D4C9447612CE39183B20BB462AAC6BCE364C68C751BFE3179D22338C0111256E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\HoaDonChiTietWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\HoaDonChiTietWindow.xaml.cs",
+                      "sourceSha256":  "5C1E17855C45FA44F4556CE4B5390CE6D5DF70CFB4AC22574616D9F54A51ABDC",
+                      "sha256":  "EC5D9FEB4B55776EC6757562B7FD521957CC37747B2D717D9891B76BEB6DC48A"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\HoaDonForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\HoaDonForm.xaml",
+                      "sourceSha256":  "0C70C1E8AEA4F700D3D061339023EECB27D8509F9155A371C0D84667CDCB0CDE",
+                      "sha256":  "0C70C1E8AEA4F700D3D061339023EECB27D8509F9155A371C0D84667CDCB0CDE"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\HoaDonForm.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\HoaDonForm.xaml.cs",
+                      "sourceSha256":  "D2FBF3FDC8C455702E055FA433314E324F5F9C96C9F49CBCE07044B4ABC4B862",
+                      "sha256":  "3D72846ECC75BF258FEC16B20A1D23B87476FA9C396D74AB57324427198FA914"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\HoaDonThuTienMatWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\HoaDonThuTienMatWindow.xaml",
+                      "sourceSha256":  "C6494E281608BC67FCA12888102F3F90B3A3F1029BFD0D697F581999477B51F1",
+                      "sha256":  "C6494E281608BC67FCA12888102F3F90B3A3F1029BFD0D697F581999477B51F1"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\HoaDonThuTienMatWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\HoaDonThuTienMatWindow.xaml.cs",
+                      "sourceSha256":  "51134F3A0AA17D5D94A229A45741662BE4308B5008EC3ACB0FB8C5829A2891A7",
+                      "sha256":  "4A64B4D7D324E8A9383787A3396901D850E60E98A9EA493CB55747FF04059A85"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\LichSuThuTienChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\LichSuThuTienChiTietWindow.xaml",
+                      "sourceSha256":  "0382F8C407845CC6F0DB305B89622E7C595360B8AEB3CB5DE8C18992B519220F",
+                      "sha256":  "0382F8C407845CC6F0DB305B89622E7C595360B8AEB3CB5DE8C18992B519220F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\HoaDon\\LichSuThuTienChiTietWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\HoaDon\\LichSuThuTienChiTietWindow.xaml.cs",
+                      "sourceSha256":  "D6D44299C404346067FE54E1AB33E32E2E99307D3777F3E59A21104EFF61870B",
+                      "sha256":  "373432337069A47B6368804234B1E78D1F37871E66F473843BCAE7DACAD5DF61"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\KhachHang\\KhachHangChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\KhachHang\\KhachHangChiTietWindow.xaml",
+                      "sourceSha256":  "02D22FE230CDED3490399B6F46A23973571820A1DBE0E3567A65A3C059406B7A",
+                      "sha256":  "02D22FE230CDED3490399B6F46A23973571820A1DBE0E3567A65A3C059406B7A"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\KhachHang\\KhachHangChiTietWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\KhachHang\\KhachHangChiTietWindow.xaml.cs",
+                      "sourceSha256":  "4A3E7E042C10CE1EC36FC084150F4C87630BE2A3034F11BDE2C0EA4880310B0E",
+                      "sha256":  "ECEE37CC844C8EE0F1C990DE8D0BF57465758394434D6152986F94D39DD8B912"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\KhachHang\\KhachHangForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\KhachHang\\KhachHangForm.xaml",
+                      "sourceSha256":  "1F7039DEE4F88FBECC3E58B64EF1F97C9F30597B4C8DB6A4B6446850DC200637",
+                      "sha256":  "1F7039DEE4F88FBECC3E58B64EF1F97C9F30597B4C8DB6A4B6446850DC200637"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\KhachHang\\KhachHangForm.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\KhachHang\\KhachHangForm.xaml.cs",
+                      "sourceSha256":  "0CBE259C7556DC4140261E8401619C8F7C67140E2D111D42A28F25542CD02599",
+                      "sha256":  "312C807E9A72F35654E20C38E6B60697A38E8A766E6B75BE893F669783C66E4D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\ChiTietPhieuKhoChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\ChiTietPhieuKhoChiTietWindow.xaml",
+                      "sourceSha256":  "9C018AAC3DDEEA711EE6BCED01E3C36F5714240C65D76F5008F099C4B00BB3E9",
+                      "sha256":  "9C018AAC3DDEEA711EE6BCED01E3C36F5714240C65D76F5008F099C4B00BB3E9"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\ChiTietPhieuKhoChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\ChiTietPhieuKhoChiTietWindow.xaml.cs",
+                      "sourceSha256":  "66D2E01D59DAC08A0064C3645A4413DE2D6B30C3D4A83A6475C287725EFDA42A",
+                      "sha256":  "66D2E01D59DAC08A0064C3645A4413DE2D6B30C3D4A83A6475C287725EFDA42A"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\ChiTietPhieuKhoForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\ChiTietPhieuKhoForm.xaml",
+                      "sourceSha256":  "8C7B484ED55CFCD87FF18FEDFF7A70B34293C2414A5D19C884E108298A58719D",
+                      "sha256":  "8C7B484ED55CFCD87FF18FEDFF7A70B34293C2414A5D19C884E108298A58719D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\ChiTietPhieuKhoForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\ChiTietPhieuKhoForm.xaml.cs",
+                      "sourceSha256":  "811DD242934FF22858ADC02D68387A4B21191392076044AC9BB5614EDB56E3C2",
+                      "sha256":  "811DD242934FF22858ADC02D68387A4B21191392076044AC9BB5614EDB56E3C2"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\KhoChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\KhoChiTietWindow.xaml",
+                      "sourceSha256":  "8E52808618A1784029CDB8F6295F67233FC0691F6D245A7BFA7B80715AE3858D",
+                      "sha256":  "8E52808618A1784029CDB8F6295F67233FC0691F6D245A7BFA7B80715AE3858D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\KhoChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\KhoChiTietWindow.xaml.cs",
+                      "sourceSha256":  "FD936000567F52CA77E56FF5C63D3C4A3513C2657A3DC9E37A04D5CE7E16C279",
+                      "sha256":  "FD936000567F52CA77E56FF5C63D3C4A3513C2657A3DC9E37A04D5CE7E16C279"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\KhoForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\KhoForm.xaml",
+                      "sourceSha256":  "C9EDE84410B664D2FE6AADEDA93572DB2F6B52C058BCEF5BC780A24C32AA8051",
+                      "sha256":  "C9EDE84410B664D2FE6AADEDA93572DB2F6B52C058BCEF5BC780A24C32AA8051"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\KhoForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\KhoForm.xaml.cs",
+                      "sourceSha256":  "518060914D817D50C928616EBBB72A485B9AA0125B2334F9B97CAC9F70AC46FA",
+                      "sha256":  "518060914D817D50C928616EBBB72A485B9AA0125B2334F9B97CAC9F70AC46FA"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\PhieuNhapXuatChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\PhieuNhapXuatChiTietWindow.xaml",
+                      "sourceSha256":  "BAC851505FBAEC467385108188CF533F2745CE899D135500C017311B58611667",
+                      "sha256":  "BAC851505FBAEC467385108188CF533F2745CE899D135500C017311B58611667"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\PhieuNhapXuatChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\PhieuNhapXuatChiTietWindow.xaml.cs",
+                      "sourceSha256":  "5EE89473E4734221E97E307261E0106146144701D379C442C776927C5396C2AC",
+                      "sha256":  "5EE89473E4734221E97E307261E0106146144701D379C442C776927C5396C2AC"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\PhieuNhapXuatForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\PhieuNhapXuatForm.xaml",
+                      "sourceSha256":  "B4F069787C35E97D98B6E02DD4CC4115AA7272F3C67133ADEC3E75492D55F447",
+                      "sha256":  "B4F069787C35E97D98B6E02DD4CC4115AA7272F3C67133ADEC3E75492D55F447"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\PhieuNhapXuatForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\PhieuNhapXuatForm.xaml.cs",
+                      "sourceSha256":  "46A753B736071588560E1D872AC9ADE0120E888E20BC984A550603BCB7BC530B",
+                      "sha256":  "46A753B736071588560E1D872AC9ADE0120E888E20BC984A550603BCB7BC530B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\TonKhoChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\TonKhoChiTietWindow.xaml",
+                      "sourceSha256":  "A73862063213401429E42CB6B5B67B7BCA0CB24A8655025D09D42D3C72A6923E",
+                      "sha256":  "A73862063213401429E42CB6B5B67B7BCA0CB24A8655025D09D42D3C72A6923E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\TonKhoChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\TonKhoChiTietWindow.xaml.cs",
+                      "sourceSha256":  "415EAF6D89E815B3C485781CB1B052A0CBB0CC49250AD35121D5F8D211ADFB80",
+                      "sha256":  "415EAF6D89E815B3C485781CB1B052A0CBB0CC49250AD35121D5F8D211ADFB80"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\TonKhoForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\TonKhoForm.xaml",
+                      "sourceSha256":  "0BE2AFEA2E0AE8D36F191C6682C1E5B9205F47DE9955735B5314821FC687EA08",
+                      "sha256":  "0BE2AFEA2E0AE8D36F191C6682C1E5B9205F47DE9955735B5314821FC687EA08"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\TonKhoForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\TonKhoForm.xaml.cs",
+                      "sourceSha256":  "F9E51486A2B24B0D5D77E59419901C401BA834A44843318E19B3FEC5E019D513",
+                      "sha256":  "F9E51486A2B24B0D5D77E59419901C401BA834A44843318E19B3FEC5E019D513"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\TonKhoNhapKhoWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\TonKhoNhapKhoWindow.xaml",
+                      "sourceSha256":  "2A795DAD052AC3DBF5146D9B2E78EF104518D5A053B53ADD6ED42B9BA3523A7D",
+                      "sha256":  "2A795DAD052AC3DBF5146D9B2E78EF104518D5A053B53ADD6ED42B9BA3523A7D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\TonKhoNhapKhoWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\TonKhoNhapKhoWindow.xaml.cs",
+                      "sourceSha256":  "45318FCB440098B020CC1954475758CAEF0AA33257708A30A26F8F14EE2BCBFD",
+                      "sha256":  "45318FCB440098B020CC1954475758CAEF0AA33257708A30A26F8F14EE2BCBFD"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\TonKhoXuatKhoWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\TonKhoXuatKhoWindow.xaml",
+                      "sourceSha256":  "1874EB3F47DF54F6B5898FA69B6C3DBF8C5476910BBA85D7DCE66917FBAA159B",
+                      "sha256":  "1874EB3F47DF54F6B5898FA69B6C3DBF8C5476910BBA85D7DCE66917FBAA159B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Kho\\TonKhoXuatKhoWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Kho\\TonKhoXuatKhoWindow.xaml.cs",
+                      "sourceSha256":  "2185A0500378E8C02F729DD129BAF5657D2262B6F35556CC20AF4F74E84D1CFA",
+                      "sha256":  "2185A0500378E8C02F729DD129BAF5657D2262B6F35556CC20AF4F74E84D1CFA"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruChiTietWindow.xaml",
+                      "sourceSha256":  "9863CBA156FE0514D00F92587C96657C22A762C003C3AE7716CC35B1AF483955",
+                      "sha256":  "9863CBA156FE0514D00F92587C96657C22A762C003C3AE7716CC35B1AF483955"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruChiTietWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruChiTietWindow.xaml.cs",
+                      "sourceSha256":  "BB3F9B7B0AF0C12C7A1949360524CAC4116E0FDE6222947613C83E8DF3CFFB3E",
+                      "sha256":  "C3DE6E7B90E02EC664250766CF49F08D792FD2D91C19A703C9191F18F73BCC1D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruChuyenPhongWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruChuyenPhongWindow.xaml",
+                      "sourceSha256":  "D9B5132F63D18480DDB8535716EFEE153CA6C0B08ED0BE9FE49314383684F009",
+                      "sha256":  "D9B5132F63D18480DDB8535716EFEE153CA6C0B08ED0BE9FE49314383684F009"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruChuyenPhongWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruChuyenPhongWindow.xaml.cs",
+                      "sourceSha256":  "51865AB13EEFF848F29D8CF21F606C88CCFB9A4DA62C66538E758165AEB92B8A",
+                      "sha256":  "4D0902E3EB9D7C06C669E9D45570013CA5156664538D69BDDADAD163BF01C967"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruForm.xaml",
+                      "sourceSha256":  "3997A9687F980B05ACFCC96233C17B4720363E636700D688E32B65D5145A9840",
+                      "sha256":  "3997A9687F980B05ACFCC96233C17B4720363E636700D688E32B65D5145A9840"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruForm.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruForm.xaml.cs",
+                      "sourceSha256":  "696387FBD06D6D1D95D6528E5644DC1EDB5F7CFA6BE27FE72345DAE190E938C3",
+                      "sha256":  "749D8B72B31298E379985327A3E2CBA5856FE2374211497C6E638AF97DBE56AC"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruNhanPhongWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruNhanPhongWindow.xaml",
+                      "sourceSha256":  "EE51B166D37F8B6908C8A2034B4C9DA6158EC6EF1A932A81FE1EC7931981788D",
+                      "sha256":  "EE51B166D37F8B6908C8A2034B4C9DA6158EC6EF1A932A81FE1EC7931981788D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruNhanPhongWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruNhanPhongWindow.xaml.cs",
+                      "sourceSha256":  "6241246C53450E85BA2C6133CA50CE5749A55DCEB9DFC1FEF2CFE9106CAEF02B",
+                      "sha256":  "3CBCCB4AE472A169C6D2A36FFAC94D08D6DF17694899EA1D3A0C123A28ED9EF5"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruTraPhongWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruTraPhongWindow.xaml",
+                      "sourceSha256":  "BDBC683AFCE4747F0868B6C3CCDA6B2B38B1FCEC334CBC8F612DC1BBA02FCB93",
+                      "sha256":  "BDBC683AFCE4747F0868B6C3CCDA6B2B38B1FCEC334CBC8F612DC1BBA02FCB93"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\KhachLuuTruTraPhongWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\KhachLuuTruTraPhongWindow.xaml.cs",
+                      "sourceSha256":  "46E85ECBC5DA89DCAB6968C26F90172F8DEC332F89D19007D12A287E02F2DA17",
+                      "sha256":  "F37449D57E3EB93A57EB200E718FF28ABF08257BF25A1D8072CE5CEAC00CBEE1"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\LichSuLuuTruChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\LichSuLuuTruChiTietWindow.xaml",
+                      "sourceSha256":  "D340DAE569C90CAF4642033C465880CD3B708DF6E1A2DD0C0A9DE25B9F863646",
+                      "sha256":  "D340DAE569C90CAF4642033C465880CD3B708DF6E1A2DD0C0A9DE25B9F863646"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\LuuTru\\LichSuLuuTruChiTietWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\LuuTru\\LichSuLuuTruChiTietWindow.xaml.cs",
+                      "sourceSha256":  "863CDAC14305492691365C430C76E361FA8F0022BCC07FACA2A59D0071F76760",
+                      "sha256":  "C3E1CA88C16653D7D6BBABD4809F5C2FF65B54937E1B835B6CB4570D3F25DA3A"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\BangLuongChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\BangLuongChiTietWindow.xaml",
+                      "sourceSha256":  "5AE354E60A8BC3B2A6EF91C8AD3328772539BFF7C1BAC0452CE03852061189FA",
+                      "sha256":  "5AE354E60A8BC3B2A6EF91C8AD3328772539BFF7C1BAC0452CE03852061189FA"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\BangLuongChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\BangLuongChiTietWindow.xaml.cs",
+                      "sourceSha256":  "A694C0EF63CC73E23A62F2D5A3283C8B769E5B35F39A52A17D2AA22DDC9524A2",
+                      "sha256":  "A694C0EF63CC73E23A62F2D5A3283C8B769E5B35F39A52A17D2AA22DDC9524A2"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\BangLuongForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\BangLuongForm.xaml",
+                      "sourceSha256":  "2554BDA1A09641469F57A5CD622DED6EDAB81EEB2A768F8E458EDC23C24273FC",
+                      "sha256":  "2554BDA1A09641469F57A5CD622DED6EDAB81EEB2A768F8E458EDC23C24273FC"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\BangLuongForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\BangLuongForm.xaml.cs",
+                      "sourceSha256":  "2E8E3BBB78D026F35DC75A9FD9FF1EBF3AB595AB7C0335F2132C5E0BA276803E",
+                      "sha256":  "2E8E3BBB78D026F35DC75A9FD9FF1EBF3AB595AB7C0335F2132C5E0BA276803E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\CaLamViecChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\CaLamViecChiTietWindow.xaml",
+                      "sourceSha256":  "387063805770BB5665FD06933261E5227F16E8737E1AC1150101F02EF9374689",
+                      "sha256":  "387063805770BB5665FD06933261E5227F16E8737E1AC1150101F02EF9374689"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\CaLamViecChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\CaLamViecChiTietWindow.xaml.cs",
+                      "sourceSha256":  "65DBD7199A5A9749533FB2CE22597709B6CD1DA469C8E60F5E48C5B02B9DBE19",
+                      "sha256":  "65DBD7199A5A9749533FB2CE22597709B6CD1DA469C8E60F5E48C5B02B9DBE19"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\CaLamViecForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\CaLamViecForm.xaml",
+                      "sourceSha256":  "D0603CF2A4DC1A2B562FF7582567BE7DD8354E4CDBD3A41F3D987605A88AF775",
+                      "sha256":  "D0603CF2A4DC1A2B562FF7582567BE7DD8354E4CDBD3A41F3D987605A88AF775"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\CaLamViecForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\CaLamViecForm.xaml.cs",
+                      "sourceSha256":  "B1868FF4791A67D37FDF0CE1C41178DDD712004DC9F8C9AAFA496B450941A014",
+                      "sha256":  "B1868FF4791A67D37FDF0CE1C41178DDD712004DC9F8C9AAFA496B450941A014"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\ChamCongChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\ChamCongChiTietWindow.xaml",
+                      "sourceSha256":  "3A904E3EB83516E922A751212B3292DB2045894B961D438EE1E31939CC3C47D4",
+                      "sha256":  "3A904E3EB83516E922A751212B3292DB2045894B961D438EE1E31939CC3C47D4"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\ChamCongChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\ChamCongChiTietWindow.xaml.cs",
+                      "sourceSha256":  "2576516D3AD929C2B8FC6F097D5BBB5145E85FF2CC0C169AC0F62828225D6C09",
+                      "sha256":  "2576516D3AD929C2B8FC6F097D5BBB5145E85FF2CC0C169AC0F62828225D6C09"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\ChamCongForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\ChamCongForm.xaml",
+                      "sourceSha256":  "8EC882E5198CFC01C52B490371E74604210BF1A5DD76029CE2F25F650C2EA8F3",
+                      "sha256":  "8EC882E5198CFC01C52B490371E74604210BF1A5DD76029CE2F25F650C2EA8F3"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\ChamCongForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\ChamCongForm.xaml.cs",
+                      "sourceSha256":  "C089D31781CDD058AE9E14724315DD929B9AA0024B06ED99869F4D79F318E18C",
+                      "sha256":  "C089D31781CDD058AE9E14724315DD929B9AA0024B06ED99869F4D79F318E18C"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\KhenThuongChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\KhenThuongChiTietWindow.xaml",
+                      "sourceSha256":  "4ECEC4D495DFF2DB3D92FD5BCCDA12EFFBB18D1A62268BEBF06180F85830A8D4",
+                      "sha256":  "4ECEC4D495DFF2DB3D92FD5BCCDA12EFFBB18D1A62268BEBF06180F85830A8D4"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\KhenThuongChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\KhenThuongChiTietWindow.xaml.cs",
+                      "sourceSha256":  "ADCEB33D586D4ECAF16795392E56F4BE9F45F45BFDFAF90CC758EB7B95283399",
+                      "sha256":  "ADCEB33D586D4ECAF16795392E56F4BE9F45F45BFDFAF90CC758EB7B95283399"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\KhenThuongForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\KhenThuongForm.xaml",
+                      "sourceSha256":  "277326DA09A301AF791BA91BB9EA98E9D32C0EAEBED91BAD04BF04D697EDEFCA",
+                      "sha256":  "277326DA09A301AF791BA91BB9EA98E9D32C0EAEBED91BAD04BF04D697EDEFCA"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\KhenThuongForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\KhenThuongForm.xaml.cs",
+                      "sourceSha256":  "6B256729F31C104DE9D0AD4666DB7E39BA26281FB275DD0C67FDAAEB9FCFA4C4",
+                      "sha256":  "6B256729F31C104DE9D0AD4666DB7E39BA26281FB275DD0C67FDAAEB9FCFA4C4"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\LichLamViecChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\LichLamViecChiTietWindow.xaml",
+                      "sourceSha256":  "82EEB28EB7054E989BEAD888C0088A35FE77AB18FD77C43256F2DB0CD1FCDF93",
+                      "sha256":  "82EEB28EB7054E989BEAD888C0088A35FE77AB18FD77C43256F2DB0CD1FCDF93"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\LichLamViecChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\LichLamViecChiTietWindow.xaml.cs",
+                      "sourceSha256":  "7297BD39D30DB5A195A02928122DD69DC106C316DAD8DFF34F563BE1F039FC0B",
+                      "sha256":  "7297BD39D30DB5A195A02928122DD69DC106C316DAD8DFF34F563BE1F039FC0B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\LichLamViecForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\LichLamViecForm.xaml",
+                      "sourceSha256":  "97B5732A56AB3B0CD8450FBA500C6F887F52A0B4B891524A350BB647D565FD97",
+                      "sha256":  "97B5732A56AB3B0CD8450FBA500C6F887F52A0B4B891524A350BB647D565FD97"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanSu\\LichLamViecForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanSu\\LichLamViecForm.xaml.cs",
+                      "sourceSha256":  "0A03DAADA6A4F049B84E2CA4A0BEACB777CECFEA0DC21A9842877590305AA451",
+                      "sha256":  "0A03DAADA6A4F049B84E2CA4A0BEACB777CECFEA0DC21A9842877590305AA451"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\ChucVuChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\ChucVuChiTietWindow.xaml",
+                      "sourceSha256":  "14F7311593026F23DD0721EB84F3B95A67D10B741C8A70C4EF158C00ED71F4C8",
+                      "sha256":  "14F7311593026F23DD0721EB84F3B95A67D10B741C8A70C4EF158C00ED71F4C8"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\ChucVuChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\ChucVuChiTietWindow.xaml.cs",
+                      "sourceSha256":  "FED0415E9C1DD194EB8A360B3B0F1428FF9070A10D52B60BDFC63DDF6407053D",
+                      "sha256":  "FED0415E9C1DD194EB8A360B3B0F1428FF9070A10D52B60BDFC63DDF6407053D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\ChucVuForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\ChucVuForm.xaml",
+                      "sourceSha256":  "430B6BEEBC1BAB4225039696579C7B9B3470AA35E9CF5B9D12BEBA21604AC4A5",
+                      "sha256":  "430B6BEEBC1BAB4225039696579C7B9B3470AA35E9CF5B9D12BEBA21604AC4A5"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\ChucVuForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\ChucVuForm.xaml.cs",
+                      "sourceSha256":  "976262DEF91EE541FF22BFFA035665B94CC226E955F343C6229F87C9DDED8832",
+                      "sha256":  "976262DEF91EE541FF22BFFA035665B94CC226E955F343C6229F87C9DDED8832"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\NhanVienChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\NhanVienChiTietWindow.xaml",
+                      "sourceSha256":  "511F4A40F81C44DCFAD59E97092A39FD610999F283EE5522A3283C20241508B9",
+                      "sha256":  "511F4A40F81C44DCFAD59E97092A39FD610999F283EE5522A3283C20241508B9"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\NhanVienChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\NhanVienChiTietWindow.xaml.cs",
+                      "sourceSha256":  "CF5C2F0B63ACCB7872759A91DDC8F3871B61E8354FD6816A61BC899B53C63DAE",
+                      "sha256":  "CF5C2F0B63ACCB7872759A91DDC8F3871B61E8354FD6816A61BC899B53C63DAE"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\NhanVienForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\NhanVienForm.xaml",
+                      "sourceSha256":  "01ABE640E88336988808AFEA60DC32EA5059BA98101978E94DC9E1C3C8C98CD9",
+                      "sha256":  "01ABE640E88336988808AFEA60DC32EA5059BA98101978E94DC9E1C3C8C98CD9"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\NhanVienForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\NhanVienForm.xaml.cs",
+                      "sourceSha256":  "2547B64D63D8ED65701233AB4A4FBFA6A68CDC2B8856FCF8F341C50E62EC29A7",
+                      "sha256":  "2547B64D63D8ED65701233AB4A4FBFA6A68CDC2B8856FCF8F341C50E62EC29A7"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\PhongBanChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\PhongBanChiTietWindow.xaml",
+                      "sourceSha256":  "FAB54D99AE9EC714186A5D25772A84F60B38C0CBC2A70540CE64CF0DCC6BF418",
+                      "sha256":  "FAB54D99AE9EC714186A5D25772A84F60B38C0CBC2A70540CE64CF0DCC6BF418"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\PhongBanChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\PhongBanChiTietWindow.xaml.cs",
+                      "sourceSha256":  "51B0977E78B5ED29CC48C6269FA7E2C95EA232FEF45FA31508CCC0E241C32BC4",
+                      "sha256":  "51B0977E78B5ED29CC48C6269FA7E2C95EA232FEF45FA31508CCC0E241C32BC4"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\PhongBanForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\PhongBanForm.xaml",
+                      "sourceSha256":  "3908F338A03E6471E746FCFEDAF10C5738EA1E8F108F05EB30B36965B78A2097",
+                      "sha256":  "3908F338A03E6471E746FCFEDAF10C5738EA1E8F108F05EB30B36965B78A2097"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhanVien\\PhongBanForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhanVien\\PhongBanForm.xaml.cs",
+                      "sourceSha256":  "397A433B93706064F6621F717FAE9DD102E2E510C452A3B43BED45AEBC328F3D",
+                      "sha256":  "397A433B93706064F6621F717FAE9DD102E2E510C452A3B43BED45AEBC328F3D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhatKy\\NhatKyThaoTacChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhatKy\\NhatKyThaoTacChiTietWindow.xaml",
+                      "sourceSha256":  "21E23991711C2421722DA3ABB6E5AD7EAAB6E1746E5C6CF9A911C712D3802F70",
+                      "sha256":  "21E23991711C2421722DA3ABB6E5AD7EAAB6E1746E5C6CF9A911C712D3802F70"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhatKy\\NhatKyThaoTacChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhatKy\\NhatKyThaoTacChiTietWindow.xaml.cs",
+                      "sourceSha256":  "42DF47ADE154B73E2E829048E08CC49BE0AE12AC6A308C7063A5A24C406D68FF",
+                      "sha256":  "42DF47ADE154B73E2E829048E08CC49BE0AE12AC6A308C7063A5A24C406D68FF"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhatKy\\NhatKyThaoTacForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhatKy\\NhatKyThaoTacForm.xaml",
+                      "sourceSha256":  "7BD89475FFEC2510E664679FA7BF2DBBA20E3FE5005F203F222FAE78346F1C9A",
+                      "sha256":  "7BD89475FFEC2510E664679FA7BF2DBBA20E3FE5005F203F222FAE78346F1C9A"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\NhatKy\\NhatKyThaoTacForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\NhatKy\\NhatKyThaoTacForm.xaml.cs",
+                      "sourceSha256":  "AB8A0B0BCD09F86D83929782D2AF45F2C109D108BC80E5F217A367E21ED41A2D",
+                      "sha256":  "AB8A0B0BCD09F86D83929782D2AF45F2C109D108BC80E5F217A367E21ED41A2D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Phong\\PhongChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Phong\\PhongChiTietWindow.xaml",
+                      "sourceSha256":  "EECE5ED89C6B9CC5C796DB08542F8F2AE3A237260238D96DF727A464ABC4AE09",
+                      "sha256":  "EECE5ED89C6B9CC5C796DB08542F8F2AE3A237260238D96DF727A464ABC4AE09"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Phong\\PhongChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Phong\\PhongChiTietWindow.xaml.cs",
+                      "sourceSha256":  "258D2F26FD04DED0291D979F7DA40A9515098CACDA1526C3AD2A4750E839A0FB",
+                      "sha256":  "258D2F26FD04DED0291D979F7DA40A9515098CACDA1526C3AD2A4750E839A0FB"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Phong\\PhongForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Phong\\PhongForm.xaml",
+                      "sourceSha256":  "E6C8D9A22C06D2BE05913FE7B2030F71E94DD993841997E10C33F7989A7C807D",
+                      "sha256":  "E6C8D9A22C06D2BE05913FE7B2030F71E94DD993841997E10C33F7989A7C807D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Phong\\PhongForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Phong\\PhongForm.xaml.cs",
+                      "sourceSha256":  "BC4898B0F059FC8F9E21342345F3E6C10F55443FB0A5EE8F97A1FFC206BB875B",
+                      "sha256":  "BC4898B0F059FC8F9E21342345F3E6C10F55443FB0A5EE8F97A1FFC206BB875B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Phong\\TinhTrangPhongChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Phong\\TinhTrangPhongChiTietWindow.xaml",
+                      "sourceSha256":  "645BD263C6A4B5AD7E2AF05EBCFA4A3B5B12C47AE23C322A8B3072572F30FF0D",
+                      "sha256":  "645BD263C6A4B5AD7E2AF05EBCFA4A3B5B12C47AE23C322A8B3072572F30FF0D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Phong\\TinhTrangPhongChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Phong\\TinhTrangPhongChiTietWindow.xaml.cs",
+                      "sourceSha256":  "0CBBF324F1FBDF351C154CEEDFE3D582B4670C58208B2D9F79480723276D7801",
+                      "sha256":  "0CBBF324F1FBDF351C154CEEDFE3D582B4670C58208B2D9F79480723276D7801"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Phong\\TinhTrangPhongForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Phong\\TinhTrangPhongForm.xaml",
+                      "sourceSha256":  "DD9B5EEFB55C2C9F291A9BF4DA493F629E61091427FAABCA448D98DAA5F4FEAA",
+                      "sha256":  "DD9B5EEFB55C2C9F291A9BF4DA493F629E61091427FAABCA448D98DAA5F4FEAA"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\Phong\\TinhTrangPhongForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\Phong\\TinhTrangPhongForm.xaml.cs",
+                      "sourceSha256":  "DD8FA54E79E96408B53151E210F3FFEC8B8BB11452E48157A8EFB4E60AA7260A",
+                      "sha256":  "DD8FA54E79E96408B53151E210F3FFEC8B8BB11452E48157A8EFB4E60AA7260A"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\TaiKhoanChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\TaiKhoanChiTietWindow.xaml",
+                      "sourceSha256":  "3F20434387A7DE2B1FD989DC9E2D4F0D83682580D29A4F1474EFD113AB81E8D8",
+                      "sha256":  "3F20434387A7DE2B1FD989DC9E2D4F0D83682580D29A4F1474EFD113AB81E8D8"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\TaiKhoanChiTietWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\TaiKhoanChiTietWindow.xaml.cs",
+                      "sourceSha256":  "A129BA33829354540EC8763F6E5A550F819248C7A86DE4F9AD90EA9C5B7BC07D",
+                      "sha256":  "05261719C261C08226C57870F953C72F199B29B82217220872AA95F97737E14F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\TaiKhoanDatLaiMatKhauWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\TaiKhoanDatLaiMatKhauWindow.xaml",
+                      "sourceSha256":  "A5950D7415B266507DA4EC9BE26A58CC93920409F47508B7D469A56F7BA4923F",
+                      "sha256":  "A5950D7415B266507DA4EC9BE26A58CC93920409F47508B7D469A56F7BA4923F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\TaiKhoanDatLaiMatKhauWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\TaiKhoanDatLaiMatKhauWindow.xaml.cs",
+                      "sourceSha256":  "887A4F010A6BF8A7860B681904214BCF624A9C8CDAF858A2533D05AEE42AE104",
+                      "sha256":  "887A4F010A6BF8A7860B681904214BCF624A9C8CDAF858A2533D05AEE42AE104"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\TaiKhoanForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\TaiKhoanForm.xaml",
+                      "sourceSha256":  "2C0ABFB45F933F6019E5DCCAEEEE7DD804814A4F280A2388CFEB2ED4321969E7",
+                      "sha256":  "2C0ABFB45F933F6019E5DCCAEEEE7DD804814A4F280A2388CFEB2ED4321969E7"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\TaiKhoanForm.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\TaiKhoanForm.xaml.cs",
+                      "sourceSha256":  "BD950BF51F215ABBEC83F9EB2C239B7AD4D218AE4449329D66204021CE256458",
+                      "sha256":  "D58E830BB7043994ED9E806C5963454121899DD95152E0349ACA3AF32ECCB840"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\TaiKhoanGanVaiTroWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\TaiKhoanGanVaiTroWindow.xaml",
+                      "sourceSha256":  "01C5FC9CE4879549EFF1E36044EEB897A79B511A17D9505F96C7B872F952228D",
+                      "sha256":  "01C5FC9CE4879549EFF1E36044EEB897A79B511A17D9505F96C7B872F952228D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\TaiKhoanGanVaiTroWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\TaiKhoanGanVaiTroWindow.xaml.cs",
+                      "sourceSha256":  "B27C30FB2683CD3974ECE1FF34C8054F40B412DCC241C6F60995E84DA139B635",
+                      "sha256":  "B27C30FB2683CD3974ECE1FF34C8054F40B412DCC241C6F60995E84DA139B635"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\VaiTroQuyenChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\VaiTroQuyenChiTietWindow.xaml",
+                      "sourceSha256":  "8AE37BEDBCF393B88848FB9DB26BB0477E966E4E5D037714A9B590714321B824",
+                      "sha256":  "8AE37BEDBCF393B88848FB9DB26BB0477E966E4E5D037714A9B590714321B824"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\VaiTroQuyenChiTietWindow.xaml.cs",
+                      "kind":  "ui-binding",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\VaiTroQuyenChiTietWindow.xaml.cs",
+                      "sourceSha256":  "AC2FDA3AE35CAA61C3005A7382165C81D0F1456079485836935FC77467391651",
+                      "sha256":  "EE5E8FD02A0BFB1AA659DE1FCE69AB043AD94F66E1887F5B1F4E92FC5CAEFA2A"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\VaiTroQuyenForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\VaiTroQuyenForm.xaml",
+                      "sourceSha256":  "63131FE5A0A312AD9EE8AE45A73B493B3974A42B148EA4503ADC475231845458",
+                      "sha256":  "63131FE5A0A312AD9EE8AE45A73B493B3974A42B148EA4503ADC475231845458"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TaiKhoan\\VaiTroQuyenForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TaiKhoan\\VaiTroQuyenForm.xaml.cs",
+                      "sourceSha256":  "8F10B5A2335789D4792B771B80CEFAA00B0047558F6FC8F479682B5E36A57148",
+                      "sha256":  "8F10B5A2335789D4792B771B80CEFAA00B0047558F6FC8F479682B5E36A57148"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TieuHao\\CapVatTuNoiBoChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TieuHao\\CapVatTuNoiBoChiTietWindow.xaml",
+                      "sourceSha256":  "470048DE45FD2C053D7E9A3620E2C8E5F00FABE0EE56602E31A6053937D15B53",
+                      "sha256":  "470048DE45FD2C053D7E9A3620E2C8E5F00FABE0EE56602E31A6053937D15B53"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TieuHao\\CapVatTuNoiBoChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TieuHao\\CapVatTuNoiBoChiTietWindow.xaml.cs",
+                      "sourceSha256":  "CB9330579D593864CBA6F01F0DC7AC9DFCCFEA73E57347D412E0F51BB39DC4DC",
+                      "sha256":  "CB9330579D593864CBA6F01F0DC7AC9DFCCFEA73E57347D412E0F51BB39DC4DC"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TieuHao\\CapVatTuNoiBoForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TieuHao\\CapVatTuNoiBoForm.xaml",
+                      "sourceSha256":  "CA11A25BD2913382F3C47C1D3CA1B6BF7665A07FC277673B94D294BD1880014F",
+                      "sha256":  "CA11A25BD2913382F3C47C1D3CA1B6BF7665A07FC277673B94D294BD1880014F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TieuHao\\CapVatTuNoiBoForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TieuHao\\CapVatTuNoiBoForm.xaml.cs",
+                      "sourceSha256":  "82C3C5CDCEC7B852F142B466B700AE31BF338A0A85377EF2AE89A16D88AE5FE7",
+                      "sha256":  "82C3C5CDCEC7B852F142B466B700AE31BF338A0A85377EF2AE89A16D88AE5FE7"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TieuHao\\DinhMucTieuHaoChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TieuHao\\DinhMucTieuHaoChiTietWindow.xaml",
+                      "sourceSha256":  "24779A1BC62C534C04A092BF60D876EEB9B2B1F97DB2DF95721510EF56F47CA1",
+                      "sha256":  "24779A1BC62C534C04A092BF60D876EEB9B2B1F97DB2DF95721510EF56F47CA1"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TieuHao\\DinhMucTieuHaoChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TieuHao\\DinhMucTieuHaoChiTietWindow.xaml.cs",
+                      "sourceSha256":  "C9D8F6AC50A243A325AF2F1B946DDC2A42FEA90D18DDB87E211C36211919F641",
+                      "sha256":  "C9D8F6AC50A243A325AF2F1B946DDC2A42FEA90D18DDB87E211C36211919F641"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TieuHao\\DinhMucTieuHaoForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TieuHao\\DinhMucTieuHaoForm.xaml",
+                      "sourceSha256":  "D797C002A3A4D5CE587F1B6C5ECE8AC447187DDED4238CBEDC7792988E683B6F",
+                      "sha256":  "D797C002A3A4D5CE587F1B6C5ECE8AC447187DDED4238CBEDC7792988E683B6F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\TieuHao\\DinhMucTieuHaoForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\TieuHao\\DinhMucTieuHaoForm.xaml.cs",
+                      "sourceSha256":  "27E69D8671776081D94BA8F0AA1D3821B748470D2CC6617859F154EC93F5B05B",
+                      "sha256":  "27E69D8671776081D94BA8F0AA1D3821B748470D2CC6617859F154EC93F5B05B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\NhaCungCapChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\NhaCungCapChiTietWindow.xaml",
+                      "sourceSha256":  "1E8D9C25CAA63C1583799B64BDDB4743D0138FB577262EB65649172BAFBC730C",
+                      "sha256":  "1E8D9C25CAA63C1583799B64BDDB4743D0138FB577262EB65649172BAFBC730C"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\NhaCungCapChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\NhaCungCapChiTietWindow.xaml.cs",
+                      "sourceSha256":  "461EB716A802768C3DEC1088758A3EE0D6162D66DA16078EB605EE84EF826AEF",
+                      "sha256":  "461EB716A802768C3DEC1088758A3EE0D6162D66DA16078EB605EE84EF826AEF"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\NhaCungCapForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\NhaCungCapForm.xaml",
+                      "sourceSha256":  "D8A99DBD8F228985C0AC57634F5FEB99CE478EE22E1243A60A3E8C2B905C48BC",
+                      "sha256":  "D8A99DBD8F228985C0AC57634F5FEB99CE478EE22E1243A60A3E8C2B905C48BC"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\NhaCungCapForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\NhaCungCapForm.xaml.cs",
+                      "sourceSha256":  "69101130AFDA3D19E57FDC553C8C5B30EA7B48680FDF74B07D66D28C90B42742",
+                      "sha256":  "69101130AFDA3D19E57FDC553C8C5B30EA7B48680FDF74B07D66D28C90B42742"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\NhomVatTuChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\NhomVatTuChiTietWindow.xaml",
+                      "sourceSha256":  "DBB0A304A38604E6E3ABD9A27A379488657E515C268819ADBB98D071862C3F0D",
+                      "sha256":  "DBB0A304A38604E6E3ABD9A27A379488657E515C268819ADBB98D071862C3F0D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\NhomVatTuChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\NhomVatTuChiTietWindow.xaml.cs",
+                      "sourceSha256":  "81EE539140E21C26A2159F4E056C0A4740BF976730D319D54EB7D04D149D081D",
+                      "sha256":  "81EE539140E21C26A2159F4E056C0A4740BF976730D319D54EB7D04D149D081D"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\NhomVatTuForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\NhomVatTuForm.xaml",
+                      "sourceSha256":  "8A585AD4CAABCCFBAC0A5ACB64BB885B4088074005C18084EE6AF1A41ABA1902",
+                      "sha256":  "8A585AD4CAABCCFBAC0A5ACB64BB885B4088074005C18084EE6AF1A41ABA1902"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\NhomVatTuForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\NhomVatTuForm.xaml.cs",
+                      "sourceSha256":  "615C4C901397F49DF18EFDEDC1420CDC55E1A63A272A1ED26189C80F1706284F",
+                      "sha256":  "615C4C901397F49DF18EFDEDC1420CDC55E1A63A272A1ED26189C80F1706284F"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuChiTietWindow.xaml",
+                      "sourceSha256":  "E9FA3D6654128D05AED2D5B974D12FBF286E56BCFD8CE5E8F7984C8D817326AD",
+                      "sha256":  "E9FA3D6654128D05AED2D5B974D12FBF286E56BCFD8CE5E8F7984C8D817326AD"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuChiTietWindow.xaml.cs",
+                      "sourceSha256":  "60C059E6D833C4898B1740729494574FAD003B64A006F5E7E1E662F80CC97538",
+                      "sha256":  "60C059E6D833C4898B1740729494574FAD003B64A006F5E7E1E662F80CC97538"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuForm.xaml",
+                      "sourceSha256":  "6DC3E3165F4F9C6E6723BA7228220C2D0644A0D29FD2B771196A845D53810868",
+                      "sha256":  "6DC3E3165F4F9C6E6723BA7228220C2D0644A0D29FD2B771196A845D53810868"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuForm.xaml.cs",
+                      "sourceSha256":  "1AA20A31A77F4D8F0CA632B0956AA337ED5C1197F18A3450C761080D5357F84E",
+                      "sha256":  "1AA20A31A77F4D8F0CA632B0956AA337ED5C1197F18A3450C761080D5357F84E"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuNhaCungCapChiTietWindow.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuNhaCungCapChiTietWindow.xaml",
+                      "sourceSha256":  "0B42D2036243A350DE81550702F5FE3C9A05FB87850FD9FED7C76A3C17E87C9B",
+                      "sha256":  "0B42D2036243A350DE81550702F5FE3C9A05FB87850FD9FED7C76A3C17E87C9B"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuNhaCungCapChiTietWindow.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuNhaCungCapChiTietWindow.xaml.cs",
+                      "sourceSha256":  "6601066258AFE9C5535FDB41985579CA192CF97E8CA49A5D8AE72CEC6B8810D5",
+                      "sha256":  "6601066258AFE9C5535FDB41985579CA192CF97E8CA49A5D8AE72CEC6B8810D5"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuNhaCungCapForm.xaml",
+                      "kind":  "ui-xaml",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuNhaCungCapForm.xaml",
+                      "sourceSha256":  "61FB6B02E67153A07433C2A21B382FE3D7C166299FF2C9B44103B06BB6892962",
+                      "sha256":  "61FB6B02E67153A07433C2A21B382FE3D7C166299FF2C9B44103B06BB6892962"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuNhaCungCapForm.xaml.cs",
+                      "kind":  "ui-code",
+                      "source":  "QuanLyKhachSan5Sao\\QuanLyKhachSan_Demo_0.3\\Views\\Dialogs\\VatTuNhaCungCap\\VatTuNhaCungCapForm.xaml.cs",
+                      "sourceSha256":  "6882D685C2CCDE339A09C3AB378FF55E2360C933CA1CC18C43493529ECB56417",
+                      "sha256":  "6882D685C2CCDE339A09C3AB378FF55E2360C933CA1CC18C43493529ECB56417"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LoginThuCongWindow.xaml",
+                      "kind":  "manual-login",
+                      "source":  "Form đăng nhập nhập tay bổ sung",
+                      "sourceSha256":  null,
+                      "sha256":  "24D4FB3FE3150303BDABA024291946208C7D7B714B27A52257E44F0735BFB1FE"
+                  },
+                  {
+                      "target":  "QuanLyKhachSan_Demo\\Views\\LoginThuCongWindow.xaml.cs",
+                      "kind":  "manual-login",
+                      "source":  "Form đăng nhập nhập tay bổ sung",
+                      "sourceSha256":  null,
+                      "sha256":  "AEAA2AFD542101946EFA561D98464009D9093F94806164C1761E82A80CDD37E5"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\BUS_QuanlyKhachSan.csproj",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\BUS_QuanlyKhachSan.csproj",
+                      "sourceSha256":  "DC5F5D52F81012845CF6661DAC9F6BC3B996DEC424D6F6A662D3574A6F593399",
+                      "sha256":  "DC5F5D52F81012845CF6661DAC9F6BC3B996DEC424D6F6A662D3574A6F593399"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\HeThong\\BUS_Taikhoang.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\HeThong\\BUS_Taikhoang.cs",
+                      "sourceSha256":  "4293E3D54B8BB1932AF92342ADC9B0DC0840D58F255A9933430A2E162FF2183B",
+                      "sha256":  "4293E3D54B8BB1932AF92342ADC9B0DC0840D58F255A9933430A2E162FF2183B"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\HeThong\\BUS_VaiTro.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\HeThong\\BUS_VaiTro.cs",
+                      "sourceSha256":  "EA0FB954C14E92F5ABB34DA74E44C950FCD81B35D7C00358C6140763CB5DA097",
+                      "sha256":  "EA0FB954C14E92F5ABB34DA74E44C950FCD81B35D7C00358C6140763CB5DA097"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_DatPhong.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_DatPhong.cs",
+                      "sourceSha256":  "EDBC3451C0F691AE1B8B588237BBDBB3793D467320741009AA7AD3DCECA4F2FD",
+                      "sha256":  "EDBC3451C0F691AE1B8B588237BBDBB3793D467320741009AA7AD3DCECA4F2FD"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_HoaDon.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_HoaDon.cs",
+                      "sourceSha256":  "787280A02D4008F2D602C4686B95EAB011AAC4CC66EBD18DB1B200F21DCAFBE0",
+                      "sha256":  "787280A02D4008F2D602C4686B95EAB011AAC4CC66EBD18DB1B200F21DCAFBE0"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_KhachHang.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_KhachHang.cs",
+                      "sourceSha256":  "83FDA6F6941D8781F3A6944DA220D078F5E8DB2CA26F9D126A5260F2377BC7AE",
+                      "sha256":  "83FDA6F6941D8781F3A6944DA220D078F5E8DB2CA26F9D126A5260F2377BC7AE"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_KhachTheoPhong.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_KhachTheoPhong.cs",
+                      "sourceSha256":  "34021FC6CF3F6B5DC59B303D29F368E4E2B08EE246DCC7DB2ADD4E0C3DAF68C0",
+                      "sha256":  "34021FC6CF3F6B5DC59B303D29F368E4E2B08EE246DCC7DB2ADD4E0C3DAF68C0"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_KiemTra.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_KiemTra.cs",
+                      "sourceSha256":  "B514624D4BF8171C6FE7354A96FF9961DAC151FC66A8716DF82A9316865A89BA",
+                      "sha256":  "B514624D4BF8171C6FE7354A96FF9961DAC151FC66A8716DF82A9316865A89BA"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_LichSuThuTien.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_LichSuThuTien.cs",
+                      "sourceSha256":  "3F958ECF5BC75DECEE2430B117D8437B5FBF82CCEC0265CCC4ADB6136DB7C2CF",
+                      "sha256":  "3F958ECF5BC75DECEE2430B117D8437B5FBF82CCEC0265CCC4ADB6136DB7C2CF"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_LichSuXepPhong.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_LichSuXepPhong.cs",
+                      "sourceSha256":  "33579D3E4D16C39C2616E3CFE204AC7499FC1C1D1D35F38B4B9059C567EA99D5",
+                      "sha256":  "33579D3E4D16C39C2616E3CFE204AC7499FC1C1D1D35F38B4B9059C567EA99D5"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_PhanBoPhong.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\LeTanValuuTru\\BUS_PhanBoPhong.cs",
+                      "sourceSha256":  "1D6F2E1D7E50971ED378D7A68571D8C96E7975709D2542230A9F269DC2606A54",
+                      "sha256":  "1D6F2E1D7E50971ED378D7A68571D8C96E7975709D2542230A9F269DC2606A54"
+                  },
+                  {
+                      "target":  "BUS_QuanlyKhachSan\\Properties\\AssemblyInfo.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\BUS_QuanlyKhachSan\\Properties\\AssemblyInfo.cs",
+                      "sourceSha256":  "54A015F140D359B19034D69931353570EA4AAD8F91F94A36A0BFEF65273E835B",
+                      "sha256":  "54A015F140D359B19034D69931353570EA4AAD8F91F94A36A0BFEF65273E835B"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\DAL_QuanlyKhachSan.csproj",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\DAL_QuanlyKhachSan.csproj",
+                      "sourceSha256":  "9E95F9F2B68A41305044725F0AC771A4CF42CF02F34DDFAFF051F24005D5F2CF",
+                      "sha256":  "9E95F9F2B68A41305044725F0AC771A4CF42CF02F34DDFAFF051F24005D5F2CF"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\TienIch.zip",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\TienIch.zip",
+                      "sourceSha256":  "A0F561866BE6DDEE7AEEE561BF98074FD5B364DC67CD2CE3A86C62215B2B2833",
+                      "sha256":  "A0F561866BE6DDEE7AEEE561BF98074FD5B364DC67CD2CE3A86C62215B2B2833"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\HeThong\\DAL_Taikhoang.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\HeThong\\DAL_Taikhoang.cs",
+                      "sourceSha256":  "EC53CE1F87B69B1BB7214559A81DB9774F1B3B7B9A3A7D0888B5599F008CD3EB",
+                      "sha256":  "EC53CE1F87B69B1BB7214559A81DB9774F1B3B7B9A3A7D0888B5599F008CD3EB"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\HeThong\\DAL_VaiTro.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\HeThong\\DAL_VaiTro.cs",
+                      "sourceSha256":  "07FFAD4931E20D04E17A1AD85A0142965759767F050E96D9D4C4BC45EE7B13A4",
+                      "sha256":  "07FFAD4931E20D04E17A1AD85A0142965759767F050E96D9D4C4BC45EE7B13A4"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_Datphong.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_Datphong.cs",
+                      "sourceSha256":  "965B186692513052409BE3A85FC213A3D972794E4633345BD396CE8B289C1765",
+                      "sha256":  "965B186692513052409BE3A85FC213A3D972794E4633345BD396CE8B289C1765"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_HoaDon.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_HoaDon.cs",
+                      "sourceSha256":  "221D955E871690A3B8021F710DA44A0DB3D3D6E6B350E8D96D5603155F992BA6",
+                      "sha256":  "221D955E871690A3B8021F710DA44A0DB3D3D6E6B350E8D96D5603155F992BA6"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_KhachHang.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_KhachHang.cs",
+                      "sourceSha256":  "61F4B865C292F62B43BC5BC81A06364B8EDB07653E43EA0F05E7AB0EC4841969",
+                      "sha256":  "61F4B865C292F62B43BC5BC81A06364B8EDB07653E43EA0F05E7AB0EC4841969"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_KhachTheoPhong.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_KhachTheoPhong.cs",
+                      "sourceSha256":  "31A0F3E324290E4C3856D1B8D43F892374724EC10470DD7B6A04601DDE30BB7F",
+                      "sha256":  "31A0F3E324290E4C3856D1B8D43F892374724EC10470DD7B6A04601DDE30BB7F"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_LichSuThuTien.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_LichSuThuTien.cs",
+                      "sourceSha256":  "59A65C7AEC6F1AC8D627FD07F54F540B4F964B8023F104529E02E7D1FFB9E22D",
+                      "sha256":  "59A65C7AEC6F1AC8D627FD07F54F540B4F964B8023F104529E02E7D1FFB9E22D"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_LichSuXepPhong.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_LichSuXepPhong.cs",
+                      "sourceSha256":  "CDA428301EF32FAAAF8B069157E8905A537EF5A3551F46135CC37F69FCB09F05",
+                      "sha256":  "CDA428301EF32FAAAF8B069157E8905A537EF5A3551F46135CC37F69FCB09F05"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_PhanBoPhong.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\LeTanVaLuutru\\DAL_PhanBoPhong.cs",
+                      "sourceSha256":  "4D65728C64A87E33DF3CE350B331706B2618C5A77F57313AEF5561BDE1F023C4",
+                      "sha256":  "4D65728C64A87E33DF3CE350B331706B2618C5A77F57313AEF5561BDE1F023C4"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\Properties\\AssemblyInfo.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\Properties\\AssemblyInfo.cs",
+                      "sourceSha256":  "631D2C53A62546255F3A4FAF15607C026AADADFD9E1996F1B53753B557FD402F",
+                      "sha256":  "631D2C53A62546255F3A4FAF15607C026AADADFD9E1996F1B53753B557FD402F"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\TienIch\\CauHinhKetNoi.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\TienIch\\CauHinhKetNoi.cs",
+                      "sourceSha256":  "8B7B68CC49AD454678818A1BF36C07F7AAC8815F98291F180705F2312B0FEDA8",
+                      "sha256":  "8B7B68CC49AD454678818A1BF36C07F7AAC8815F98291F180705F2312B0FEDA8"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\TienIch\\HienThi.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\TienIch\\HienThi.cs",
+                      "sourceSha256":  "20A2E93047A42F0B47B3DD05568AE060D4E285D8A9D4DC8C02809D1A6E504808",
+                      "sha256":  "20A2E93047A42F0B47B3DD05568AE060D4E285D8A9D4DC8C02809D1A6E504808"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\TienIch\\Sua.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\TienIch\\Sua.cs",
+                      "sourceSha256":  "489422F85523FC334E2E526110AD9893F2E42A43627E35FACE546D655F0B89F7",
+                      "sha256":  "489422F85523FC334E2E526110AD9893F2E42A43627E35FACE546D655F0B89F7"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\TienIch\\Them.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\TienIch\\Them.cs",
+                      "sourceSha256":  "B8516A451DBFD4958C1BC7355F127C0B087AFB516AB3630ACACD20AF9AB1523A",
+                      "sha256":  "B8516A451DBFD4958C1BC7355F127C0B087AFB516AB3630ACACD20AF9AB1523A"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\TienIch\\ThuThiLenhCoDieuKien.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\TienIch\\ThuThiLenhCoDieuKien.cs",
+                      "sourceSha256":  "FFD6C700A4175845251D8181CF8E013121DB211A220AB10410BFEDFE812A1DE8",
+                      "sha256":  "FFD6C700A4175845251D8181CF8E013121DB211A220AB10410BFEDFE812A1DE8"
+                  },
+                  {
+                      "target":  "DAL_QuanlyKhachSan\\TienIch\\Xoa.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\DAL_QuanlyKhachSan\\TienIch\\Xoa.cs",
+                      "sourceSha256":  "C969A706AE0D8260AA1867E01446D54324E823D8215E171AE7159DCD241DDF93",
+                      "sha256":  "C969A706AE0D8260AA1867E01446D54324E823D8215E171AE7159DCD241DDF93"
+                  },
+                  {
+                      "target":  "ET_QuanLyKhachSan\\DaTa_QuanLyKhachSan.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\ET_QuanLyKhachSan\\DaTa_QuanLyKhachSan.cs",
+                      "sourceSha256":  "ECA97DD82D57DB698E6954F4E99B5FE44D67168F225B54C7DB23DA19259664DC",
+                      "sha256":  "ECA97DD82D57DB698E6954F4E99B5FE44D67168F225B54C7DB23DA19259664DC"
+                  },
+                  {
+                      "target":  "ET_QuanLyKhachSan\\ET_QuanLyKhachSan.csproj",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\ET_QuanLyKhachSan\\ET_QuanLyKhachSan.csproj",
+                      "sourceSha256":  "BDF68242599A842691C261A630D91D0B8D4BF9776F4400E9BA742412DC252306",
+                      "sha256":  "BDF68242599A842691C261A630D91D0B8D4BF9776F4400E9BA742412DC252306"
+                  },
+                  {
+                      "target":  "ET_QuanLyKhachSan\\Properties\\AssemblyInfo.cs",
+                      "kind":  "gop-core",
+                      "source":  "QuanLyKhachSan_Gop\\ET_QuanLyKhachSan\\Properties\\AssemblyInfo.cs",
+                      "sourceSha256":  "6FBC5A108974FB72695AC7CAD99B28FD84C2C581714D3D63BCE815258D6AE6B1",
+                      "sha256":  "6FBC5A108974FB72695AC7CAD99B28FD84C2C581714D3D63BCE815258D6AE6B1"
+                  }
+              ]
+}

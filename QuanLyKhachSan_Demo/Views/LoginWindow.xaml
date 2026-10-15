@@ -1,0 +1,62 @@
+<Window x:Class="QuanLyKhachSan.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Grand Palace Hotel – Đăng nhập"
+        Width="480" Height="740"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="{StaticResource BackgroundBrush}"
+        FontFamily="{StaticResource MainFont}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="195"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <!-- ═══ Banner ═══ -->
+        <Border Grid.Row="0" Background="{StaticResource SidebarBrush}"
+                BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="★  ★  ★  ★  ★" FontSize="15" Foreground="{StaticResource GoldBrush}"
+                           HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                <TextBlock Text="GRAND PALACE HOTEL" FontSize="21" FontWeight="Black"
+                           Foreground="{StaticResource GoldBrush}" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                <TextBlock Text="Hệ thống Quản lý Khách sạn 5 Sao" FontSize="13"
+                           Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- ═══ Login Form ═══ -->
+        <StackPanel Grid.Row="1" Margin="50,30,50,0">
+            <TextBlock Text="Đăng nhập vào hệ thống" FontSize="16" FontWeight="SemiBold"
+                       Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Chọn tài khoản demo" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,4"/>
+            <ComboBox x:Name="cboDemoAccount" DisplayMemberPath="RoleName" Style="{StaticResource DarkComboBox}"
+                      ItemContainerStyle="{StaticResource ReadableComboBoxItem}"
+                      Height="38" Margin="0,0,0,16" SelectionChanged="DemoAccount_SelectionChanged"/>
+
+            <TextBlock Text="Tên đăng nhập" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,4"/>
+            <TextBox x:Name="txtUser" Text="admin" Style="{StaticResource DarkTextBox}" Height="38" Margin="0,0,0,16"/>
+
+            <TextBlock Text="Mật khẩu" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,4"/>
+            <PasswordBox x:Name="txtPass" Style="{StaticResource DarkPasswordBox}" Height="38" Margin="0,0,0,10"/>
+
+            <TextBlock x:Name="lblErr" Text="" FontSize="11" Foreground="{StaticResource DangerBrush}"
+                       HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+            <Button Content="  ĐĂNG NHẬP" Style="{StaticResource PrimaryButton}"
+                    Height="46" FontSize="14" Click="Login_Click" IsDefault="True"/>
+
+            <TextBlock Text="Admin: admin123 · Các tài khoản khác: demo123" FontSize="11"
+                       Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,16,0,0"/>
+        </StackPanel>
+
+        <!-- ═══ Footer ═══ -->
+        <TextBlock Grid.Row="2" Text="© 2026 Grand Palace Hotel Management System"
+                   FontSize="10.5" Foreground="{StaticResource TextSecondaryBrush}"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>

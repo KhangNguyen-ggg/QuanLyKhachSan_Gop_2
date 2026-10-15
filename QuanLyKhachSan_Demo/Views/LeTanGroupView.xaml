@@ -1,0 +1,67 @@
+<UserControl x:Class="QuanLyKhachSan.Views.LeTanGroupView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:QuanLyKhachSan.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1120" d:DesignHeight="720"
+    Background="{StaticResource BackgroundBrush}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QuanLyKhachSan;component/Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+    <Grid.RowDefinitions><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+    <TabControl x:Name="tabNhom" Style="{StaticResource DarkTabControl}" SelectedIndex="0"
+                SelectionChanged="TabNhom_SelectionChanged">
+        <TabControl.Template>
+            <ControlTemplate TargetType="TabControl">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"
+                                  CanContentScroll="False" Focusable="False">
+                        <StackPanel Orientation="Horizontal" IsItemsHost="True" KeyboardNavigation.TabIndex="1"/>
+                    </ScrollViewer>
+                    <ContentPresenter x:Name="PART_SelectedContentHost" Grid.Row="1" ContentSource="SelectedContent"/>
+                </Grid>
+            </ControlTemplate>
+        </TabControl.Template>
+        <TabItem x:Name="tabDatPhong" Header="Đặt phòng" Style="{StaticResource DarkTabItem}" Padding="16,12">
+            <local:DatPhongView x:Name="viewDatPhong" Margin="0,12,0,0"/>
+        </TabItem>
+        <TabItem x:Name="tabLuuTru" Header="Khách lưu trú" Style="{StaticResource DarkTabItem}" Padding="16,12">
+            <local:LuuTruView Margin="0,12,0,0"/>
+        </TabItem>
+        <TabItem Header="Khách hàng" Style="{StaticResource DarkTabItem}" Padding="16,12">
+            <local:KhachHangView Margin="0,12,0,0"/>
+        </TabItem>
+        <TabItem x:Name="tabHoaDon" Header="Hóa đơn &amp; thu tiền" Style="{StaticResource DarkTabItem}" Padding="16,12">
+            <local:HoaDonView Margin="0,12,0,0"/>
+        </TabItem>
+        <TabItem x:Name="tabPhanBoPhong" Header="Phân bổ phòng" Style="{StaticResource ContextToolTab}"
+                 Padding="16,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed">
+            <local:PhanBoPhongView x:Name="viewPhanBoPhong" Margin="0,12,0,0"/>
+        </TabItem>
+        <TabItem x:Name="tabTuVanAI" Header="Tư vấn AI ✨" Style="{StaticResource ContextToolTab}"
+                 Padding="8,0,0,0" Background="#2A223F" BorderBrush="#C4B5FD" Visibility="Collapsed">
+            <local:TuVanAIView Margin="0,12,0,0"/>
+        </TabItem>
+        <TabItem x:Name="tabLichSuLuuTru" Header="Lịch sử lưu trú" Style="{StaticResource ContextToolTab}"
+                 Padding="16,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed">
+            <local:LichSuLuuTruView Margin="0,12,0,0"/>
+        </TabItem>
+        <TabItem x:Name="tabLichSuThuTien" Header="Lịch sử thu tiền" Style="{StaticResource ContextToolTab}"
+                 Padding="16,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed">
+            <local:LichSuThuTienView Margin="0,12,0,0"/>
+        </TabItem>
+    </TabControl>
+    <TextBlock x:Name="txtDataMode" Grid.Row="1" Margin="0,10,0,0" TextWrapping="Wrap"
+               Foreground="{StaticResource TextSecondaryBrush}"/>
+    </Grid>
+</UserControl>

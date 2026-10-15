@@ -1,0 +1,50 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="QuanLyKhachSan.Views.Dialogs.DatPhongChiTietWindow" Title="Chi tiết — Đặt phòng" Width="720" Height="740" MinWidth="540" MinHeight="420" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Background="{StaticResource BackgroundBrush}" FontFamily="Segoe UI">
+  <Window.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/QuanLyKhachSan;component/Resources/Styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Window.Resources>
+  <Grid Margin="24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <TextBlock Text="Chi tiết — Đặt phòng" FontSize="22" FontWeight="SemiBold" Foreground="{StaticResource GoldBrush}" Margin="0,0,0,14" />
+    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+      <StackPanel Margin="0,0,12,0">
+        <TextBlock Text="Mã đơn" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBlock Text="{Binding MaDatPhong}" Foreground="{StaticResource TextPrimaryBrush}" TextWrapping="Wrap" />
+        <TextBlock Text="Khách hàng" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBlock Text="{Binding HoTen}" Foreground="{StaticResource TextPrimaryBrush}" TextWrapping="Wrap" />
+        <TextBlock Text="Ngày nhận" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBlock Text="{Binding NgayNhanDuKien, StringFormat={}{0:dd/MM/yyyy HH:mm}}" Foreground="{StaticResource TextPrimaryBrush}" TextWrapping="Wrap" />
+        <TextBlock Text="Ngày trả" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBlock Text="{Binding NgayTraDuKien, StringFormat={}{0:dd/MM/yyyy HH:mm}}" Foreground="{StaticResource TextPrimaryBrush}" TextWrapping="Wrap" />
+        <TextBlock Text="Phòng đã xếp" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBlock Text="{Binding SoPhong}" Foreground="{StaticResource TextPrimaryBrush}" TextWrapping="Wrap" />
+        <TextBlock Text="Số khách" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBlock Text="{Binding SoKhach}" Foreground="{StaticResource TextPrimaryBrush}" TextWrapping="Wrap" />
+        <TextBlock Text="Trạng thái" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBlock Text="{Binding TrangThai, Converter={StaticResource StatusTextConverter}}" Foreground="{StaticResource TextPrimaryBrush}" TextWrapping="Wrap" />
+        <TextBlock Text="Các loại phòng đã đặt" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <ListBox x:Name="lstChiTiet" MinHeight="90" Background="{StaticResource SurfaceBrush}" Foreground="{StaticResource TextPrimaryBrush}">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Margin="4">
+<TextBlock Text="{Binding TenLoaiPhong}" FontWeight="SemiBold" />
+<TextBlock><TextBlock.Text><MultiBinding StringFormat="{}{0:dd/MM/yyyy} – {1:dd/MM/yyyy} · {2} phòng · {3} lớn + {4} trẻ · {5:N0} đ/đêm"><Binding Path="NgayNhanDuKien" /><Binding Path="NgayTraDuKien" /><Binding Path="SoLuongPhong" /><Binding Path="NguoiLon" /><Binding Path="TreEm" /><Binding Path="DonGiaDuKien" /></MultiBinding></TextBlock.Text></TextBlock>
+</StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </StackPanel>
+    </ScrollViewer>
+    <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,18,0,0">
+<Button x:Name="btnDatPhongSuaDatPhong" Content="Sửa" Click="btnDatPhongSuaDatPhong_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8" /><Button x:Name="btnDatPhongXacNhanDatPhong" Content="Xác nhận" Click="btnDatPhongXacNhanDatPhong_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8" /><Button x:Name="btnDatPhongHuyDatPhong" Content="Hủy đơn" Click="btnDatPhongHuyDatPhong_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8" />
+      <Button Content="Đóng" Click="btnDong_Click" IsCancel="True" Style="{StaticResource SecondaryButton}" MinWidth="100" x:Name="btnDong" />
+    </WrapPanel>
+  </Grid>
+</Window>

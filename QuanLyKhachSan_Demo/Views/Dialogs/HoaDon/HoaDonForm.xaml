@@ -1,0 +1,92 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="QuanLyKhachSan.Views.Dialogs.HoaDonForm" Title="Lập hóa đơn" Width="920" Height="800" MinWidth="540" MinHeight="420" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Background="{StaticResource BackgroundBrush}" FontFamily="Segoe UI">
+  <Window.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/QuanLyKhachSan;component/Resources/Styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Window.Resources>
+  <Grid Margin="24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <TextBlock Text="Lập hóa đơn" FontSize="22" FontWeight="SemiBold" Foreground="{StaticResource GoldBrush}" Margin="0,0,0,14" />
+    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+      <StackPanel Margin="0,0,12,0">
+        <TextBlock Text="Đơn đặt phòng" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <ComboBox x:Name="cboDatPhong" Style="{StaticResource DarkComboBox}" MinHeight="36" DisplayMemberPath="MaDatPhong" SelectedValuePath="MaDatPhong" SelectionChanged="Don_Changed" />
+        <TextBlock Text="Khách đặt" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtKhachHang" Text="{Binding HoTen, Mode=OneWay}" Style="{StaticResource DarkTextBox}" MinHeight="36" IsReadOnly="True" />
+        <TextBlock Text="Nhân viên lập" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <ComboBox x:Name="cboNhanVien" Style="{StaticResource DarkComboBox}" MinHeight="36" DisplayMemberPath="HoTen" SelectedValuePath="MaNhanVien" />
+        <TextBlock Text="Các khoản đã ghi nhận của đơn" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,16,0,5" />
+        <DataGrid Style="{StaticResource DarkDataGrid}" ColumnHeaderStyle="{StaticResource DarkColumnHeader}" CellStyle="{StaticResource DarkDataGridCell}" RowStyle="{StaticResource DarkDataGridRow}" x:Name="dgvKhoanThu" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" MaxHeight="180" MinHeight="90">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Nội dung" Binding="{Binding NoiDung}" Width="*" />
+            <DataGridTextColumn Header="Số lượng" Binding="{Binding SoLuong}" Width="85" />
+            <DataGridTextColumn Header="Đơn giá" Binding="{Binding DonGia, StringFormat=N2}" Width="120" />
+            <DataGridTextColumn Header="Thành tiền" Binding="{Binding ThanhTien, StringFormat=N2}" Width="130" />
+          </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Text="Thêm dịch vụ / gói dịch vụ vào hóa đơn" Foreground="{StaticResource GoldBrush}" FontWeight="SemiBold" Margin="0,16,0,5" />
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="95" />
+            <ColumnDefinition Width="120" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <TextBlock Text="Dịch vụ / gói dịch vụ" Foreground="{StaticResource TextSecondaryBrush}" />
+          <TextBlock Grid.Column="1" Text="Số lượng" Foreground="{StaticResource TextSecondaryBrush}" />
+          <ComboBox Grid.Row="1" x:Name="cboDichVu" DisplayMemberPath="TenDichVu" Style="{StaticResource DarkComboBox}" Margin="0,5,8,5" MinHeight="36" />
+          <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtSoLuongDichVu" Text="1" Style="{StaticResource DarkTextBox}" Margin="0,5,8,5" />
+          <Button x:Name="btnThemDichVu" Grid.Row="1" Grid.Column="2" Content="Thêm dịch vụ" Click="ThemDichVu_Click" Style="{StaticResource SecondaryButton}" Margin="0,5,0,5" />
+          <ComboBox Grid.Row="2" x:Name="cboGoiDichVu" DisplayMemberPath="TenGoiDichVu" Style="{StaticResource DarkComboBox}" Margin="0,5,8,5" MinHeight="36" />
+          <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtSoLuongGoi" Text="1" Style="{StaticResource DarkTextBox}" Margin="0,5,8,5" />
+          <Button x:Name="btnThemGoi" Grid.Row="2" Grid.Column="2" Content="Thêm gói" Click="ThemGoi_Click" Style="{StaticResource SecondaryButton}" Margin="0,5,0,5" />
+        </Grid>
+        <DataGrid Style="{StaticResource DarkDataGrid}" ColumnHeaderStyle="{StaticResource DarkColumnHeader}" CellStyle="{StaticResource DarkDataGridCell}" RowStyle="{StaticResource DarkDataGridRow}" x:Name="dgvDichVuThem" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CanUserSortColumns="False" SelectionMode="Single" MaxHeight="180" MinHeight="90" Margin="0,8,0,0">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Loại" Binding="{Binding Loai}" Width="100" />
+            <DataGridTextColumn Header="Dịch vụ / gói" Binding="{Binding NoiDung}" Width="*" />
+            <DataGridTextColumn Header="Số lượng" Binding="{Binding SoLuong}" Width="85" />
+            <DataGridTextColumn Header="Đơn giá" Binding="{Binding DonGia, StringFormat=N2}" Width="120" />
+            <DataGridTextColumn Header="Thành tiền" Binding="{Binding ThanhTien, StringFormat=N2}" Width="130" />
+          </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Bỏ dòng vừa thêm" Click="BoDichVu_Click" Style="{StaticResource SecondaryButton}" HorizontalAlignment="Left" Margin="0,8,0,0" />
+        <TextBlock Text="Các khoản đã ghi nhận được tự cộng. Chỉ thêm dịch vụ phát sinh mới để tránh tính trùng; gói tính theo giá gói, không cộng lại dịch vụ bên trong." TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,8,0,0" />
+        <TextBlock Text="Ưu đãi (có thể bỏ trống)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <ComboBox x:Name="cboUuDai" Style="{StaticResource DarkComboBox}" MinHeight="36" DisplayMemberPath="TenUuDai" SelectedValuePath="MaUuDai" SelectionChanged="UuDai_Changed" />
+        <Button Content="Bỏ ưu đãi" Click="BoUuDai_Click" Style="{StaticResource SecondaryButton}" HorizontalAlignment="Left" Margin="0,8,0,0" />
+        <TextBlock Text="Điều kiện ưu đãi" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtDieuKien" Text="{Binding DieuKien, Mode=OneWay}" Style="{StaticResource DarkTextBox}" MinHeight="36" IsReadOnly="True" />
+        <TextBlock Text="Tiền phòng (đ)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtTienPhong" Style="{StaticResource DarkTextBox}" MinHeight="36" IsReadOnly="True" Text="{Binding TienPhong, Mode=OneWay, StringFormat=N2}" />
+        <TextBlock Text="Tiền dịch vụ (đ)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtTienDichVu" Style="{StaticResource DarkTextBox}" MinHeight="36" IsReadOnly="True" Text="{Binding TienDichVu, Mode=OneWay, StringFormat=N2}" />
+        <TextBlock Text="Tiền gói dịch vụ (đ)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtTienGoi" Style="{StaticResource DarkTextBox}" MinHeight="36" IsReadOnly="True" Text="{Binding TienGoi, Mode=OneWay, StringFormat=N2}" />
+        <TextBlock Text="Tổng tiền (đ)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtTong" Text="{Binding TongTien, Mode=OneWay, StringFormat=N2}" Style="{StaticResource DarkTextBox}" MinHeight="36" IsReadOnly="True" />
+        <TextBlock Text="Giảm (đ)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtGiam" Text="{Binding TienGiam, Mode=OneWay, StringFormat=N2}" Style="{StaticResource DarkTextBox}" MinHeight="36" IsReadOnly="True" />
+        <TextBlock Text="Phải thu (đ)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtPhaiThu" Text="{Binding PhaiThu, Mode=OneWay, StringFormat=N2}" Style="{StaticResource DarkTextBox}" MinHeight="36" IsReadOnly="True" />
+        <TextBlock Text="Tiền phòng tính theo số đêm, số lượng và đơn giá đã thỏa thuận. Tổng tiền gồm phòng + dịch vụ + gói dịch vụ đã sử dụng." Foreground="{StaticResource TextSecondaryBrush}" TextWrapping="Wrap" Margin="0,12,0,5" />
+        <TextBlock Text="Ghi chú" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtGhiChu" Text="" Style="{StaticResource DarkTextBox}" MinHeight="36" />
+      </StackPanel>
+    </ScrollViewer>
+    <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,18,0,0">
+      <Button Content="Đóng" Click="btnDong_Click" IsCancel="True" Style="{StaticResource SecondaryButton}" MinWidth="100" x:Name="btnDong" />
+      <Button x:Name="btnLuu" Content="Lưu" Click="btnLuu_Click" Style="{StaticResource PrimaryButton}" Margin="8,0,0,0" MinWidth="130" />
+    </WrapPanel>
+  </Grid>
+</Window>

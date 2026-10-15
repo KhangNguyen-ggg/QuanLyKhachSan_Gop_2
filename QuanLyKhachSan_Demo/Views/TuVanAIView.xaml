@@ -1,0 +1,94 @@
+<UserControl x:Class="QuanLyKhachSan.Views.TuVanAIView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    d:DesignHeight="720" d:DesignWidth="1120"
+    Background="{StaticResource BackgroundBrush}" FontFamily="Segoe UI">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QuanLyKhachSan;component/Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Margin="0,14,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="380"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Margin="0,0,14,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="AI Hỗ Trợ Đặt Phòng" FontSize="22" FontWeight="SemiBold" Foreground="{StaticResource GoldBrush}" Margin="0,0,0,14"/>
+            <TextBlock Grid.Row="1" Text="Nhập yêu cầu khách hàng (Ngôn ngữ tự nhiên):" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+            <TextBox Grid.Row="2" x:Name="txtYeuCauAI" Height="90" TextWrapping="Wrap" AcceptsReturn="True" 
+                     Style="{StaticResource DarkTextBox}" 
+                     Text="Gia đình 9 người cần 3 phòng liền kề, ưu tiên view đẹp, muốn sử dụng hồ bơi và ngân sách khoảng 8 triệu cho 2 đêm." 
+                     Margin="0,0,0,14"/>
+            <WrapPanel Grid.Row="3" Margin="0,0,0,8">
+                <Button x:Name="btnPhanTichAI" Content="✨ Phân tích yêu cầu" Style="{StaticResource PrimaryButton}" Click="btnPhanTichAI_Click" Margin="0,0,8,0"/>
+            </WrapPanel>
+            <ProgressBar Grid.Row="4" x:Name="prgAI" IsIndeterminate="True" Height="3" Visibility="Collapsed" Margin="0,0,0,14"
+                         Foreground="{StaticResource GoldBrush}" Background="{StaticResource SurfaceBrush}"/>
+            
+            <Border Grid.Row="5" x:Name="borderKetQuaPhanTich" Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="4" Padding="14" VerticalAlignment="Top" Visibility="Collapsed">
+                <StackPanel>
+                    <TextBlock Text="Tiêu chí phân tích được" FontWeight="SemiBold" FontSize="16" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,14"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Số lượng khách:" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" x:Name="txtTcSoKhach" Text="—" Foreground="{StaticResource TextPrimaryBrush}" FontWeight="SemiBold"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Số phòng cần:" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="txtTcSoPhong" Text="—" Foreground="{StaticResource TextPrimaryBrush}" FontWeight="SemiBold"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Thời gian:" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="txtTcThoiGian" Text="—" Foreground="{StaticResource TextPrimaryBrush}" FontWeight="SemiBold"/>
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Ngân sách:" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" x:Name="txtTcNganSach" Text="—" Foreground="{StaticResource TextPrimaryBrush}" FontWeight="SemiBold"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Yêu cầu thêm:" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,8"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" x:Name="txtTcYeuCauThem" Text="—" Foreground="{StaticResource TextPrimaryBrush}" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Đề xuất các phương án phù hợp" FontSize="18" FontWeight="SemiBold" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,14"/>
+            
+            <TextBox x:Name="txtPhanHoiAI" Grid.Row="1" 
+                     Style="{StaticResource DarkTextBox}"
+                     Background="{StaticResource SurfaceBrush}"
+                     Padding="16"
+                     FontSize="14"
+                     TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" VerticalScrollBarVisibility="Auto"
+                     Text="Nhấn &quot;Phân tích yêu cầu&quot; để AI phân tích và đề xuất phương án đặt phòng phù hợp." />
+        </Grid>
+    </Grid>
+</UserControl>

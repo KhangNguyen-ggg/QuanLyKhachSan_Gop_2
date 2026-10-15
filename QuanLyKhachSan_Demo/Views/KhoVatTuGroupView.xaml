@@ -1,0 +1,41 @@
+<UserControl x:Class="QuanLyKhachSan.Views.KhoVatTuGroupView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:QuanLyKhachSan.Views" Background="{StaticResource BackgroundBrush}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QuanLyKhachSan;component/Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <ControlTemplate x:Key="ContentOnlyTabs" TargetType="TabControl">
+                <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+        <TabControl x:Name="tabNhom" Style="{StaticResource DarkTabControl}" SelectedIndex="0" SelectionChanged="TabNhom_SelectionChanged">
+            <TabControl.Template>
+                <ControlTemplate TargetType="TabControl">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Focusable="False">
+                        <StackPanel Orientation="Horizontal" IsItemsHost="True" KeyboardNavigation.TabIndex="1"/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </TabControl.Template>
+            <TabItem x:Name="tabKhoView" Header="Kho &amp; nhập xuất" Style="{StaticResource DarkTabItem}" Padding="16,12"/>
+            <TabItem x:Name="tabVatTuNhaCungCapView" Header="Vật tư &amp; nhà cung cấp" Style="{StaticResource DarkTabItem}" Padding="16,12"/>
+            <TabItem x:Name="tabTieuHaoView" Header="Tiêu hao nội bộ" Style="{StaticResource DarkTabItem}" Padding="16,12"/>
+            <TabItem x:Name="tabTonKho" Header="Tồn kho" Style="{StaticResource ContextToolTab}" Padding="16,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabVatTu" Header="Vật tư" Style="{StaticResource ContextToolTab}" Padding="16,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabDinhMucTieuHao" Header="Định mức tiêu hao" Style="{StaticResource ContextToolTab}" Padding="16,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabPhieuNhapXuat" Header="Phiếu nhập / xuất" Style="{StaticResource ContextToolTab}" Padding="8,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabKho" Header="Kho" Style="{StaticResource ContextToolTab}" Padding="8,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabNhomVatTu" Header="Nhóm vật tư" Style="{StaticResource ContextToolTab}" Padding="8,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabNhaCungCap" Header="Nhà cung cấp" Style="{StaticResource ContextToolTab}" Padding="8,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabCapVatTuNoiBo" Header="Cấp vật tư nội bộ" Style="{StaticResource ContextToolTab}" Padding="8,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+        </TabControl>
+        <local:KhoView x:Name="viewKhoView" Grid.Row="1" Margin="0,12,0,0"/>
+        <local:VatTuNhaCungCapView x:Name="viewVatTuNhaCungCapView" Grid.Row="1" Margin="0,12,0,0" Visibility="Collapsed"/>
+        <local:TieuHaoView x:Name="viewTieuHaoView" Grid.Row="1" Margin="0,12,0,0" Visibility="Collapsed"/>
+    </Grid>
+</UserControl>

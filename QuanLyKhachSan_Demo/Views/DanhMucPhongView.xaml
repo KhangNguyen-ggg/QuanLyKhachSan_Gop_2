@@ -1,0 +1,165 @@
+<UserControl x:Class="QuanLyKhachSan.Views.DanhMucPhongView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:mau="clr-namespace:QuanLyKhachSan.Data"
+    d:DesignWidth="1120" d:DesignHeight="720"
+    Background="{StaticResource BackgroundBrush}" FontFamily="Segoe UI">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QuanLyKhachSan;component/Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <!-- Mở file này bằng Designer. Mọi tab, nút và bảng đều khai báo cố định. -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="tabChinh" Grid.Row="1" Style="{StaticResource DarkTabControl}">
+            <TabItem x:Name="tabCauTrucKhachSan" Header="Cấu trúc khách sạn" Style="{StaticResource DarkTabItem}">
+                <Grid Margin="0,14,0,0">
+                    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Margin="0,6,0,14" Focusable="False">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnKhuVucThemMoi" Content="Thêm khu vực" Click="btnKhuVucThemMoi_Click" Style="{StaticResource PrimaryButton}" Margin="0,0,8,8"/>
+                            <Button x:Name="btnTangThemMoi" Content="Thêm tầng" Click="btnTangThemMoi_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8"/>
+                            <TextBox x:Name="txtTimKhuVuc" Width="180" Style="{StaticResource DarkTextBox}" ToolTip="Tìm theo mã hoặc tên khu vực" Margin="0,0,8,8"/>
+                            <Button x:Name="btnTimKhuVuc" Content="Tìm kiếm" Click="btnTimKhuVuc_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8"/>
+                            <Button x:Name="btnMoiKhuVuc" Content="Làm mới" Click="btnMoiKhuVuc_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="300"/><ColumnDefinition Width="16"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                            <TextBlock Text="Khu vực" FontSize="18" FontWeight="SemiBold" Foreground="{StaticResource GoldBrush}" Margin="0,0,0,10"/>
+                            <DataGrid x:Name="dgvKhuVuc" Grid.Row="1" MouseDoubleClick="KhuVuc_DoubleClick" SelectionChanged="KhuVuc_SelectionChanged" Style="{StaticResource DarkDataGrid}" CellStyle="{StaticResource DarkDataGridCell}" RowStyle="{StaticResource DarkDataGridRow}" ColumnHeaderStyle="{StaticResource DarkColumnHeader}" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" SelectedIndex="0">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Mã" Binding="{Binding Ma}" Width="70"/>
+                                    <DataGridTextColumn Header="Tên khu vực" Binding="{Binding TenKhuVuc}" Width="*" MinWidth="100"/>
+                                    <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="110"/>
+                                </DataGrid.Columns>
+                        <!-- Dữ liệu minh họa khai báo trực tiếp trong XAML. -->
+                        <mau:KhuVucMau Ma="KV01" TenKhuVuc="Tòa A" MoTa="Khu phòng nghỉ" TrangThai="Đang hoạt động">
+                            <mau:KhuVucMau.Tangs>
+                                <mau:TangMau Ma="T02" TenTang="Tầng 2" SoTang="2" KhuVuc="Tòa A" TrangThai="Đang hoạt động"/>
+                                <mau:TangMau Ma="T03" TenTang="Tầng 3" SoTang="3" KhuVuc="Tòa A" TrangThai="Đang hoạt động"/>
+                            </mau:KhuVucMau.Tangs>
+                        </mau:KhuVucMau>
+                        <mau:KhuVucMau Ma="KV02" TenKhuVuc="Tòa B" MoTa="Khu dịch vụ" TrangThai="Đang hoạt động"/>
+
+                            </DataGrid>
+                            <TextBlock Grid.Row="2" Text="Chọn khu vực để xem tầng; nhấp đúp để sửa khu vực." Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,0" TextWrapping="Wrap"/>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                            <TextBlock x:Name="txtKhuVucDangChon" Text="Chọn một khu vực" FontSize="18" FontWeight="SemiBold" Foreground="{StaticResource GoldBrush}" Margin="0,0,0,10"/>
+                            <DataGrid x:Name="dgvTang" Grid.Row="1" MouseDoubleClick="Tang_DoubleClick" Style="{StaticResource DarkDataGrid}" CellStyle="{StaticResource DarkDataGridCell}" RowStyle="{StaticResource DarkDataGridRow}" ColumnHeaderStyle="{StaticResource DarkColumnHeader}" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Mã" Binding="{Binding Ma}" Width="75"/>
+                                    <DataGridTextColumn Header="Tên tầng" Binding="{Binding TenTang}" Width="*" MinWidth="100"/>
+                                    <DataGridTextColumn Header="Số tầng" Binding="{Binding SoTang}" Width="75"/>
+                                    <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="*" MinWidth="110"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <TextBlock Grid.Row="2" Text="Nhấp đúp để sửa hoặc xóa tầng. Thêm tầng sẽ dùng khu vực đang chọn." Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,0" TextWrapping="Wrap"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="tabLoaiPhong" Header="Loại phòng" Style="{StaticResource DarkTabItem}">
+                <Grid Margin="0,14,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0" Margin="0,6,0,14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Focusable="False">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnLoaiPhongThemMoi" Content="Thêm mới" Click="btnLoaiPhongThemMoi_Click" Style="{StaticResource PrimaryButton}" Margin="0,0,8,8"/>
+                            <TextBox x:Name="txtTimLoaiPhong" Width="200" Style="{StaticResource DarkTextBox}" ToolTip="Từ khóa tìm kiếm" Margin="0,0,8,8"/>
+                            <ComboBox x:Name="cboLocLoaiPhong" Width="180" SelectedIndex="0" Style="{StaticResource DarkComboBox}" Margin="0,0,8,8">
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Tất cả trạng thái"/>
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Đang hoạt động"/>
+                            </ComboBox>
+                            <Button x:Name="btnTimLoaiPhong" Content="Tìm kiếm" Click="btnTimLoaiPhong_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8"/>
+                            <Button x:Name="btnMoiLoaiPhong" Content="Làm mới" Click="btnMoiLoaiPhong_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <DataGrid Grid.Row="1" x:Name="dgvLoaiPhong" MouseDoubleClick="LoaiPhong_DoubleClick" Style="{StaticResource DarkDataGrid}"
+                              CellStyle="{StaticResource DarkDataGridCell}" RowStyle="{StaticResource DarkDataGridRow}"
+                              ColumnHeaderStyle="{StaticResource DarkColumnHeader}" IsReadOnly="True" SelectedIndex="0"
+                              AutoGenerateColumns="False" CanUserAddRows="False" MinHeight="180">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã" Binding="{Binding Ma}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Tên loại" Binding="{Binding TenLoai}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Giá / đêm" Binding="{Binding GiaDem}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Người lớn" Binding="{Binding NguoiLon}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Trẻ em" Binding="{Binding TreEm}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Diện tích" Binding="{Binding DienTich}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="*" MinWidth="110"/>
+                        </DataGrid.Columns>
+                        <!-- Dữ liệu minh họa khai báo trực tiếp trong XAML. -->
+                        <mau:LoaiPhongMau Ma="LP01" TenLoai="Deluxe" GiaDem="2.500.000 đ" NguoiLon="2" TreEm="1" DienTich="38 m²" TrangThai="Đang hoạt động">
+                            <mau:LoaiPhongMau.TienNghis>
+                                <mau:TienNghiTheoLoaiMau LoaiPhong="Deluxe" TienNghi="Bồn tắm" SoLuong="1" GhiChu="Trong phòng tắm"/>
+                            </mau:LoaiPhongMau.TienNghis>
+                        </mau:LoaiPhongMau>
+                        <mau:LoaiPhongMau Ma="LP02" TenLoai="Suite" GiaDem="4.500.000 đ" NguoiLon="4" TreEm="2" DienTich="60 m²" TrangThai="Đang hoạt động">
+                            <mau:LoaiPhongMau.TienNghis>
+                                <mau:TienNghiTheoLoaiMau LoaiPhong="Suite" TienNghi="Ban công" SoLuong="1" GhiChu="Hướng biển"/>
+                            </mau:LoaiPhongMau.TienNghis>
+                        </mau:LoaiPhongMau>
+                    </DataGrid>
+                    <TextBlock Grid.Row="2" Text="Nhấp đúp để xem chi tiết"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,0" TextWrapping="Wrap"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabTienNghi" Header="Tiện nghi" Style="{StaticResource DarkTabItem}">
+                <Grid Margin="0,14,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0" Margin="0,6,0,14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Focusable="False">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnTienNghiThemMoi" Content="Thêm mới" Click="btnTienNghiThemMoi_Click" Style="{StaticResource PrimaryButton}" Margin="0,0,8,8"/>
+                            <TextBox x:Name="txtTimTienNghi" Width="200" Style="{StaticResource DarkTextBox}" ToolTip="Từ khóa tìm kiếm" Margin="0,0,8,8"/>
+                            <ComboBox x:Name="cboLocTienNghi" Width="180" SelectedIndex="0" Style="{StaticResource DarkComboBox}" Margin="0,0,8,8">
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Tất cả trạng thái"/>
+                                <ComboBoxItem Style="{StaticResource ReadableComboBoxItem}" Content="Đang hoạt động"/>
+                            </ComboBox>
+                            <Button x:Name="btnTimTienNghi" Content="Tìm kiếm" Click="btnTimTienNghi_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,8,8"/>
+                            <Button x:Name="btnMoiTienNghi" Content="Làm mới" Click="btnMoiTienNghi_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,0,8"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <DataGrid Grid.Row="1" x:Name="dgvTienNghi" MouseDoubleClick="TienNghi_DoubleClick" Style="{StaticResource DarkDataGrid}"
+                              CellStyle="{StaticResource DarkDataGridCell}" RowStyle="{StaticResource DarkDataGridRow}"
+                              ColumnHeaderStyle="{StaticResource DarkColumnHeader}" IsReadOnly="True" SelectedIndex="0"
+                              AutoGenerateColumns="False" CanUserAddRows="False" MinHeight="180">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã" Binding="{Binding Ma}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Tên tiện nghi" Binding="{Binding TenTienNghi}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Mô tả" Binding="{Binding MoTa}" Width="*" MinWidth="110"/>
+                            <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="*" MinWidth="110"/>
+                        </DataGrid.Columns>
+                        <!-- Dữ liệu minh họa khai báo trực tiếp trong XAML. -->
+                        <mau:TienNghiMau Ma="TN01" TenTienNghi="Bồn tắm" MoTa="Bồn tắm trong phòng" TrangThai="Đang hoạt động"/>
+                        <mau:TienNghiMau Ma="TN02" TenTienNghi="Ban công" MoTa="Ban công riêng" TrangThai="Đang hoạt động"/>
+                        <mau:TienNghiMau Ma="TN03" TenTienNghi="Két an toàn" MoTa="Két điện tử" TrangThai="Đang hoạt động"/>
+                    </DataGrid>
+                    <TextBlock Grid.Row="2" Text=" Nhấp đúp để xem chi tiết"
+                               Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,0" TextWrapping="Wrap"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</UserControl>

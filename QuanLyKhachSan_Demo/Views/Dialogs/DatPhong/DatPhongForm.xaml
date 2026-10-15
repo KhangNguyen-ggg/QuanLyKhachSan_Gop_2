@@ -1,0 +1,58 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="QuanLyKhachSan.Views.Dialogs.DatPhongForm" Title="Thông tin đặt phòng" Width="720" Height="740" MinWidth="540" MinHeight="420" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Background="{StaticResource BackgroundBrush}" FontFamily="Segoe UI">
+  <Window.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/QuanLyKhachSan;component/Resources/Styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Window.Resources>
+  <Grid Margin="24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <TextBlock Text="Thông tin đặt phòng" FontSize="22" FontWeight="SemiBold" Foreground="{StaticResource GoldBrush}" Margin="0,0,0,14" />
+    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+      <StackPanel Margin="0,0,12,0">
+        <TextBlock Text="Khách đặt phòng" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <ComboBox x:Name="cboKhachHang" Style="{StaticResource DarkComboBox}" MinHeight="36" DisplayMemberPath="HoTen" SelectedValuePath="MaKhachHang" SelectedValue="{Binding MaKhachHangDat, Mode=OneWay}" />
+        <TextBlock Text="Loại phòng" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <ComboBox x:Name="cboLoaiPhong" Style="{StaticResource DarkComboBox}" MinHeight="36" DisplayMemberPath="TenLoaiPhong" SelectedValuePath="MaLoaiPhong" />
+        <TextBlock Text="Ngày nhận (14:00)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <DatePicker x:Name="dtpNgayNhan" MinHeight="36" Foreground="#14243B" Background="White" />
+        <TextBlock Text="Ngày trả (12:00)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <DatePicker x:Name="dtpNgayTra" MinHeight="36" Foreground="#14243B" Background="White" />
+        <TextBlock Text="Số lượng phòng" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtSoPhong" Text="1" Style="{StaticResource DarkTextBox}" MinHeight="36" />
+        <TextBlock Text="Người lớn (tổng của dòng này)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtNguoiLon" Text="1" Style="{StaticResource DarkTextBox}" MinHeight="36" />
+        <TextBlock Text="Trẻ em (tổng của dòng này)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtTreEm" Text="0" Style="{StaticResource DarkTextBox}" MinHeight="36" />
+        <TextBlock Text="Đơn giá / phòng / đêm (đ)" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtDonGia" Text="{Binding SelectedItem.GiaCoBan, ElementName=cboLoaiPhong, Mode=OneWay, StringFormat=0.##}" Style="{StaticResource DarkTextBox}" MinHeight="36" />
+        <WrapPanel Margin="0,12,0,0">
+          <Button Content="Thêm loại phòng" Click="ThemChiTiet_Click" Style="{StaticResource SecondaryButton}" />
+          <Button Content="Bỏ mục đã chọn" Click="BoChiTiet_Click" Style="{StaticResource SecondaryButton}" Margin="8,0,0,0" />
+        </WrapPanel>
+        <TextBlock Text="Phòng muốn đặt" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <ListBox x:Name="lstChiTiet" MinHeight="90" MaxHeight="170" Background="{StaticResource SurfaceBrush}" Foreground="{StaticResource TextPrimaryBrush}">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Margin="4">
+<TextBlock Text="{Binding TenLoaiPhong}" FontWeight="SemiBold" />
+<TextBlock><TextBlock.Text><MultiBinding StringFormat="{}{0:dd/MM/yyyy} – {1:dd/MM/yyyy} · {2} phòng · {3} lớn + {4} trẻ · {5:N0} đ/đêm"><Binding Path="NgayNhanDuKien" /><Binding Path="NgayTraDuKien" /><Binding Path="SoLuongPhong" /><Binding Path="NguoiLon" /><Binding Path="TreEm" /><Binding Path="DonGiaDuKien" /></MultiBinding></TextBlock.Text></TextBlock>
+</StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Text="Ghi chú" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,5" />
+        <TextBox x:Name="txtGhiChu" Text="{Binding GhiChu, Mode=OneWay}" Style="{StaticResource DarkTextBox}" MinHeight="36" />
+      </StackPanel>
+    </ScrollViewer>
+    <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,18,0,0">
+      <Button Content="Đóng" Click="btnDong_Click" IsCancel="True" Style="{StaticResource SecondaryButton}" MinWidth="100" x:Name="btnDong" />
+      <Button x:Name="btnLuu" Content="Lưu" Click="btnLuu_Click" Style="{StaticResource PrimaryButton}" Margin="8,0,0,0" MinWidth="130" />
+    </WrapPanel>
+  </Grid>
+</Window>

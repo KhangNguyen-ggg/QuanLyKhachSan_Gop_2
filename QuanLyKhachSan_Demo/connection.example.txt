@@ -1,0 +1,1 @@
+Data Source=lpc:.\SQLEXPRESS;Initial Catalog=QuanLyKhachSan5Sao2;Integrated Security=True;Trust Server Certificate=True;Connect Timeout=5

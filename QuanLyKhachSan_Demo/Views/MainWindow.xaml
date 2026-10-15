@@ -1,0 +1,121 @@
+<Window x:Class="QuanLyKhachSan.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:QuanLyKhachSan.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Grand Palace Hotel — Quản lý khách sạn" Width="1400" Height="860"
+    MinWidth="1100" MinHeight="700" WindowState="Maximized" WindowStartupLocation="CenterScreen"
+    Background="{StaticResource BackgroundBrush}" FontFamily="Segoe UI">
+    <Window.Resources>
+        <Style x:Key="MenuRadio" TargetType="RadioButton">
+            <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
+            <Setter Property="Margin" Value="0,0,0,6"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="menuBorder" Background="Transparent" CornerRadius="5" Padding="14,14">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True"><Setter TargetName="menuBorder" Property="Background" Value="{StaticResource ActiveNavBrush}"/><Setter Property="Foreground" Value="{StaticResource GoldBrush}"/></Trigger>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="menuBorder" Property="Background" Value="{StaticResource HoverNavBrush}"/></Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions><ColumnDefinition Width="255"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Background="{StaticResource SidebarBrush}">
+            <Grid Margin="12">
+                <Grid.RowDefinitions><RowDefinition Height="112"/><RowDefinition Height="*"/><RowDefinition Height="110"/></Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Margin="12,20,0,0">
+                    <TextBlock Text="★ GRAND PALACE" FontSize="17" FontWeight="Bold" Foreground="{StaticResource GoldBrush}"/>
+                    <TextBlock Text="HOTEL MANAGEMENT" FontSize="11" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,8,0,0"/>
+                    <TextBlock Text="QUẢN LÝ VẬN HÀNH" FontSize="10" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,20,0,0"/>
+                </StackPanel>
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel>
+                    <RadioButton x:Name="btnTongQuan" GroupName="DieuHuong" IsChecked="True"
+                                 Click="btnTongQuan_Click" Style="{StaticResource MenuRadio}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE80F;" FontFamily="Segoe MDL2 Assets" FontSize="17" Width="30" VerticalAlignment="Center"/>
+                            <TextBlock Text="Tổng quan" FontSize="13" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="btnLeTan" GroupName="DieuHuong" IsChecked="False"
+                                 Click="btnLeTan_Click" Style="{StaticResource MenuRadio}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE77B;" FontFamily="Segoe MDL2 Assets" FontSize="17" Width="30" VerticalAlignment="Center"/>
+                            <TextBlock Text="Lễ tân &amp; lưu trú" FontSize="13" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="btnPhongBuong" GroupName="DieuHuong" IsChecked="False"
+                                 Click="btnPhongBuong_Click" Style="{StaticResource MenuRadio}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE80A;" FontFamily="Segoe MDL2 Assets" FontSize="17" Width="30" VerticalAlignment="Center"/>
+                            <TextBlock Text="Phòng" FontSize="13" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="btnDichVuKhachSan" GroupName="DieuHuong" IsChecked="False"
+                                 Click="btnDichVuKhachSan_Click" Style="{StaticResource MenuRadio}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE8D4;" FontFamily="Segoe MDL2 Assets" FontSize="17" Width="30" VerticalAlignment="Center"/>
+                            <TextBlock Text="Dịch vụ &amp; ưu đãi" FontSize="13" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="btnKhoVatTu" GroupName="DieuHuong" IsChecked="False"
+                                 Click="btnKhoVatTu_Click" Style="{StaticResource MenuRadio}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE7B8;" FontFamily="Segoe MDL2 Assets" FontSize="17" Width="30" VerticalAlignment="Center"/>
+                            <TextBlock Text="Kho &amp; vật tư" FontSize="13" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="btnQuanLyNhanSu" GroupName="DieuHuong" IsChecked="False"
+                                 Click="btnQuanLyNhanSu_Click" Style="{StaticResource MenuRadio}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE716;" FontFamily="Segoe MDL2 Assets" FontSize="17" Width="30" VerticalAlignment="Center"/>
+                            <TextBlock Text="Nhân sự" FontSize="13" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="btnHeThong" GroupName="DieuHuong" IsChecked="False"
+                                 Click="btnHeThong_Click" Style="{StaticResource MenuRadio}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE713;" FontFamily="Segoe MDL2 Assets" FontSize="17" Width="30" VerticalAlignment="Center"/>
+                            <TextBlock Text="Hệ thống" FontSize="13" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="btnBaoCao" GroupName="DieuHuong" IsChecked="False"
+                                 Click="btnBaoCao_Click" Style="{StaticResource MenuRadio}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE9D9;" FontFamily="Segoe MDL2 Assets" FontSize="17" Width="30" VerticalAlignment="Center"/>
+                            <TextBlock Text="Báo cáo" FontSize="13" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    </StackPanel>
+                </ScrollViewer>
+                <Border Grid.Row="2" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0" Padding="10,14,10,0">
+                    <StackPanel>
+                        <TextBlock x:Name="lblUser" FontWeight="SemiBold" Foreground="{StaticResource TextPrimaryBrush}"/>
+                        <TextBlock x:Name="lblRole" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,4,0,12"/>
+                        <Button x:Name="btnDangXuat" Content="Đăng xuất" Click="btnDangXuat_Click" Style="{StaticResource SecondaryButton}"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions><RowDefinition Height="70"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+            <Border Grid.Row="0" Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1">
+                <Grid Margin="22,0">
+                    <TextBlock x:Name="lblTitle" Text="Tổng quan" FontSize="22" FontWeight="SemiBold" Foreground="{StaticResource TextPrimaryBrush}" VerticalAlignment="Center"/>
+                    <TextBlock Text="Grand Palace Hotel" Foreground="{StaticResource TextSecondaryBrush}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+            <ContentControl x:Name="contentArea" Grid.Row="1" Margin="22" d:Content="{d:DesignInstance Type=local:DashboardView, IsDesignTimeCreatable=True}"/>
+        </Grid>
+    </Grid>
+</Window>

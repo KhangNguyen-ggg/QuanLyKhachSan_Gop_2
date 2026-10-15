@@ -1,0 +1,817 @@
+[
+  {
+    "file": "BUS_QuanlyKhachSan/HeThong/BUS_Taikhoang.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "4293e3d54b8bb1932af92342adc9b0dc0840d58f255a9933430a2e162ff2183b"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/HeThong/BUS_VaiTro.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "ea0fb954c14e92f5abb34da74e44c950fcd81b35d7c00358c6140763cb5da097"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/LeTanValuuTru/BUS_DatPhong.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "edbc3451c0f691ae1b8b588237bbdbb3793d467320741009aa7ad3dceca4f2fd"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/LeTanValuuTru/BUS_HoaDon.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "787280a02d4008f2d602c4686b95eab011aac4cc66ebd18db1b200f21dcafbe0"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/LeTanValuuTru/BUS_KhachHang.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "83fda6f6941d8781f3a6944da220d078f5e8db2ca26f9d126a5260f2377bc7ae"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/LeTanValuuTru/BUS_KhachTheoPhong.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "34021fc6cf3f6b5dc59b303d29f368e4e2b08ee246dcc7db2add4e0c3daf68c0"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/LeTanValuuTru/BUS_KiemTra.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "b514624d4bf8171c6fe7354a96ff9961dac151fc66a8716df82a9316865a89ba"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/LeTanValuuTru/BUS_LichSuThuTien.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "3f958ecf5bc75decee2430b117d8437b5fbf82ccec0265ccc4adb6136db7c2cf"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/LeTanValuuTru/BUS_LichSuXepPhong.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "33579d3e4d16c39c2616e3cfe204ac7499fc1c1d1d35f38b4b9059c567ea99d5"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/LeTanValuuTru/BUS_PhanBoPhong.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "1d6f2e1d7e50971ed378d7a68571d8c96e7975709d2542230a9f269dc2606a54"
+  },
+  {
+    "file": "BUS_QuanlyKhachSan/Properties/AssemblyInfo.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "54a015f140d359b19034d69931353570ea4aad8f91f94a36a0bfef65273e835b"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/HeThong/DAL_Taikhoang.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "ec53ce1f87b69b1bb7214559a81db9774f1b3b7b9a3a7d0888b5599f008cd3eb"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/HeThong/DAL_VaiTro.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "07ffad4931e20d04e17a1ad85a0142965759767f050e96d9d4c4bc45ee7b13a4"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/LeTanVaLuutru/DAL_Datphong.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "965b186692513052409be3a85fc213a3d972794e4633345bd396ce8b289c1765"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/LeTanVaLuutru/DAL_HoaDon.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "221d955e871690a3b8021f710da44a0db3d3d6e6b350e8d96d5603155f992ba6"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/LeTanVaLuutru/DAL_KhachHang.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "61f4b865c292f62b43bc5bc81a06364b8edb07653e43ea0f05e7ab0ec4841969"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/LeTanVaLuutru/DAL_KhachTheoPhong.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "31a0f3e324290e4c3856d1b8d43f892374724ec10470dd7b6a04601dde30bb7f"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/LeTanVaLuutru/DAL_LichSuThuTien.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "59a65c7aec6f1ac8d627fd07f54f540b4f964b8023f104529e02e7d1ffb9e22d"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/LeTanVaLuutru/DAL_LichSuXepPhong.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "cda428301ef32faaaf8b069157e8905a537ef5a3551f46135cc37f69fcb09f05"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/LeTanVaLuutru/DAL_PhanBoPhong.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "4d65728c64a87e33df3ce350b331706b2618c5a77f57313aef5561bde1f023c4"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/Properties/AssemblyInfo.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "631d2c53a62546255f3a4faf15607c026aadadfd9e1996f1b53753b557fd402f"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/TienIch/CauHinhKetNoi.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "8b7b68cc49ad454678818a1bf36c07f7aac8815f98291f180705f2312b0feda8"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/TienIch/HienThi.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "20a2e93047a42f0b47b3dd05568ae060d4e285d8a9d4dc8c02809d1a6e504808"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/TienIch/Sua.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "489422f85523fc334e2e526110ad9893f2e42a43627e35face546d655f0b89f7"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/TienIch/Them.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "b8516a451dbfd4958c1bc7355f127c0b087afb516ab3630acacd20af9ab1523a"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/TienIch/ThuThiLenhCoDieuKien.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "ffd6c700a4175845251d8181cf8e013121db211a220ab10410bfedfe812a1de8"
+  },
+  {
+    "file": "DAL_QuanlyKhachSan/TienIch/Xoa.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "c969a706ae0d8260aa1867e01446d54324e823d8215e171ae7159dcd241ddf93"
+  },
+  {
+    "file": "ET_QuanLyKhachSan/DaTa_QuanLyKhachSan.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "eca97dd82d57db698e6954f4e99b5fe44d67168f225b54c7db23da19259664dc"
+  },
+  {
+    "file": "ET_QuanLyKhachSan/Properties/AssemblyInfo.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "6fbc5a108974fb72695ac7cad99b28fd84c2c581714d3d63bce815258d6ae6b1"
+  },
+  {
+    "file": "KiemTra/Program.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "3b6b2f49aed89ce4497dfbd8886af1942888512f55d0aa10e5f254c30288d0e8"
+  },
+  {
+    "file": "KiemTraHoaDon/Program.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "3007ea512f689fea8d7dc321b52c3d422fe6d55bbb4480577a0323268b188ee8"
+  },
+  {
+    "file": "KiemTraLeTan/Program.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "8d7f1f3ff422f45de9f014f05f5a23bbda9ce10a971c57c0cece923d5ddbe711"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/App.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d22ea2d0e232ea1a60badf9768a313a5a44332b3984e739ab71af6af81e18eb4"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Helpers/ThemeHelper.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "96fc82ef9e2710dd677090f75111bee1aafaed216e9ffcf701e445d7916d8954"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/ViewModels/DuLieuKhachSan.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "76dabedd46f565e78d04d2e3cd5faf56a09773a62ae5d0205e712c19b8d5b11c"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/ViewModels/DuLieuViewModel.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "421967a6c8f4953a4eaf70d2f4732efd17bccf782943c1a33bceea129e0c7cd3"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/BaoCaoView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "40a6f05b4b6e58a27248d16600a8b89ec85ea36f266facc97e60f0069c77f00d"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/BuongPhongView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "faf66b495ad2823213852ab5a4ecc6bf3bea406d27d5ce9c2587c1c11cc4545d"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/DanhMucPhongView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d29826caf4256ec06eba0b9f1c12b326611529561218b5716827c003d3dcadda"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/DashboardView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "0689ce81a8338619f6a84b71da4ddd527b1a1b4cf473ab18d8247736a029a0f6"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/DatPhongView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "9f796d0ff6e7f5dc1322f5abca3c47eeb18535b7dc65f95f8ac4a738f946f6a3"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/BuongPhong/BaoTriChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "3a851b9ce0da2e94f6a85bdb75844dfcf5b67757c57dafe3c03f1998e053e134"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/BuongPhong/BaoTriForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "79bb21a02e7b05b3899d437ee4a113370b1e844df672e837c4af7e19356e41c5"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/BuongPhong/BaoTriHoanThanhBaoTriWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "6392ae5d053d4ef6313bf08adca947a5a943398149c4ff5f5f97e93595fbc498"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/BuongPhong/BaoTriPhanCongXuLyWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "750985cd8cba44210202cbf8b034bf87fb422e1a534472328e20c3ec7440cfa1"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/BuongPhong/DonPhongChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "19da64bf3530f4244aec68a27e692d8ae72418243939d0bbe8128885988217e6"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/BuongPhong/DonPhongForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "6f7dacdadab7407c12b3a37ae72f2c5a89c20f5f42a5474df80553892e0b28ab"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/BuongPhong/DonPhongPhanCongWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "65b6c7f13cb5126cb7e1c4d8bc04367dd90bd8213e6a39b27af458b490c74173"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/BuongPhong/ThietBiChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "2b4334e280e62c946aa2da04a161c906e30e792a9cdbf7656e671942b45c9e1f"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/BuongPhong/ThietBiForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "7a076cfe2b954b8b7341b4314803f3f66a4cc62fd533fcb86e1783d4911f14ce"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Chung/PhanQuyenWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "a5c68826cd096ad048e6ce381e54d5ba997516aa138e272e010eac917429bbeb"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Chung/XacNhanDemoWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "a178bb68528650ad5736ae3bd25f9a54af65c28c87e8e83bf5de601ee50d1ac9"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/KhuVucChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "cfe3388dbacffbae74bf5d67cf84d5e228e074bfa65572cea4db5cfda376620c"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/KhuVucForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "9b0e986eb4b47e6b493b789d3eee2f8cac0b222d9d6fa6b0b583fbfd94cd225f"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/LoaiPhongChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "fc8fae0447761c6d71d8eef28151a16540050d66be284ede74589ea7579aba06"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/LoaiPhongForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "073f67e18ba4438dedaa8bcb14b868410897fffa136cc561683dcf93f1a088fb"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/TangChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "f31986a67e101293947b922add1ad769a9dd9a780bee1ca462551f3a5d080b44"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/TangForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "aa13f8ba11bd97e62a0e6add656b6f7f8afc88a566b9e073de20ebc552a6a330"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/TienNghiChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "739e3ae0f05a1c64e91202b94d6aff206b2581b11a8c82e0f1fb6e08523b6308"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/TienNghiForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "a6c4287597b6872601a8befa7c4a3bf82fa240e168fa474730d317d671a24744"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/TienNghiTheoLoaiChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "06cefd727a3b3f882b674ca3715398a30319bb7a9128f6306cfdef0bb21d3092"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DanhMucPhong/TienNghiTheoLoaiForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "826f5848d23a4833963f37eadcdecc3d0473735b199ce653164f8a5a5776cf3e"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DatPhong/DatPhongChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "fd477a8d24c2a4168db06dd24136b6e2b8b4a233391ed845851dc0007d36be9d"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DatPhong/DatPhongForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "02386bd056ead92c3d2835997cadcea4efddff2178d6e6080c04a80fff4c5432"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DatPhong/PhanBoPhongChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d9d04d0648ff03103fe6deae48679a6a8fb57cef87bc2763ca46aec0804cabf0"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DatPhong/PhanBoPhongForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "21e4dbdb94e351e43222ae4e30b2db9953f130256ed6a92aeb19be438df1c246"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DichVu/DichVuChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "2fc3921a59a784041c10b51190e74b4b9a7fa29e3f5b650531f0bd568e11c0f1"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DichVu/DichVuForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "9fa6caca9f09ffadc489fa06b1287288d68ea23dd4da2bf32acfe0c2912c5f67"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DichVu/LoaiDichVuChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "c55b7e0412c89da831e19c69a6b5afa34fa05d1f7a9ac23b4d8c459913c26936"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DichVu/LoaiDichVuForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "2e15ce26ad5a1f54df7d2411be8973744d2ca4cd7b88a91d1f942665b9e06555"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DichVu/SuDungDichVuChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "c2dc95e183d4b043e7f870307549699d3e0f5347073df20415cc912c8c77a8ce"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/DichVu/SuDungDichVuForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "f6aba70e209e52c1633fdc33ec52a4b98456bd582bc9cb93269404086c192180"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/GoiUuDai/GoiDichVuChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "101d9c172fce5a4dafc67c92018c4f27bb5b801d3134a9f327dd4f767a5459da"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/GoiUuDai/GoiDichVuForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "aa8a3782865b944be334ee73b08d95747da7d8fae2a807a91e191af6c8d7fe46"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/GoiUuDai/ThanhPhanGoiChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "ae93aa8e85a978b6dcdba142e6a928d236434d28bdae448f3c5fd572dc19cc59"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/GoiUuDai/ThanhPhanGoiForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "6b1ff6e282e39d3b8b1782d3658520bb23c94f16ee176f3e1abe305f304bf9d4"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/GoiUuDai/UuDaiChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "b8a3b6fe02a6e7fb6170ed3d89052599378353decb24fbfab72f90def8fd6b1e"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/GoiUuDai/UuDaiForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "b56e464f082b0f9ac588ee9d99a60d7d8918c9dfcc0b73f39da092e1901f8568"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/HoaDon/HoaDonApDungUuDaiWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "3f8d186d912694d7bb701f0f50173dc9325b87eb4bcd1bd86889a230192e1b27"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/HoaDon/HoaDonChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "8bd8f751577d0cd71f3bcffa924197124f6f27afd6c4b83f1eb6b17bd464aee5"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/HoaDon/HoaDonForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "00de23cf8ce8eb9507672ea0835961d67d77c47b92e7d9d676d1a46e5c0eb3b6"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/HoaDon/HoaDonThuTienMatWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "c267c087267d9ddec647915212311f0037beb7903d2fe460d742e7f685d9873d"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/HoaDon/LichSuThuTienChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "482be841ddca0266411f5ead4c841192decab8843542262fba567669ac2a1585"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/KhachHang/KhachHangChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "2455e1bf32c5b790a85fdc74fdd0c74bf1e1b6cabe50e7183c531a807fd6fe56"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/KhachHang/KhachHangForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "96a460916b9cb0ea8afaab56c1a9ac19d271809c85002264c59ce8f8cc7481f2"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/ChiTietPhieuKhoChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "351979de61c5567b215ce49b6479e27ba76d1def92951986e51ffbbe2342519f"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/ChiTietPhieuKhoForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "086282504fe45362b93ce656648bb637e739f0dcbf57d9e9b87677d7dab76eec"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/KhoChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "e5ac55c3f294da55a53e4ccabef652de75bbd11d253f7d0cd2e7b68d84f857e0"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/KhoForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "9ac3b38634f490d5bc4fa161de9f3ff0f5cc0686a4bb8d999b783d99158884b0"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/PhieuNhapXuatChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "21e3e31850e8815ccb2416a691da6d0f9b95a09375c6b35d896b535634ad5080"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/PhieuNhapXuatForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "8a48e686228596a0dd8277a51c35046ad3ced42303e95b4ab642861244d62987"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/TonKhoChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d15389926402927475b001a894cd36344e63ee108eb35c94f397d640d5a65db7"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/TonKhoForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "df2cb35310629ecd78d75a0215c34609a1c9fc7dfca978528e2b974e4a530c9c"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/TonKhoNhapKhoWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "6ea9618ecc6e819171d04f16c57991308052f43d97f5ddb80a86d2b84b295786"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Kho/TonKhoXuatKhoWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "79d5e083458e2ce39a06115400f137b1b22c9a8dc682a0470510d60a1f4c5985"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/LuuTru/KhachLuuTruChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "a164690b1cb14949fea2d79d76fe44770f9ccec8854aa4b67d2c2bfa2c976634"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/LuuTru/KhachLuuTruChuyenPhongWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "59855ccaba7ac2c0f46ad5c7871633e951c9a74de48dc2fd9177429561e9a486"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/LuuTru/KhachLuuTruForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "a4c743a60915f1986cb2f9121bb2e3ab5dd96a1ea6e600bfa44eca7db7e6c0f1"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/LuuTru/KhachLuuTruNhanPhongWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "3faff6cd42c2fe22c49fa5d44c3631a2dbe7190ad027f025d74b1e1883e2a645"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/LuuTru/KhachLuuTruTraPhongWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "86e418b94be18ad9eaa8d8fefc5b349bd92b7cd2e036d36316832e1f25117a2d"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/LuuTru/LichSuLuuTruChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d35474031ea2686e1e48362ee31584fea880d4f737e8003f2ff03b39bcf4351e"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/BangLuongChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "7c50db2d0bdfec6a6999c4ba7f727dbce9e2b4e71ad9af24a4f8e4aaf50c0873"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/BangLuongForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "e9b2196d6674123f88eecccb17df94a9b7d221f8f42b8345ae441cf0cd884b1d"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/CaLamViecChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "836ef98e714d3f0bfb13ef8f16931344afb8830bf9f7d17f994a5f0b3631e64a"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/CaLamViecForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "271d4f05b4ccac2981d94f0c6735ef2396608099b7845cdc790da399bf78b0d9"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/ChamCongChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "8856bb33386c4bca162cdaa387ae7bb7549900220395ccec43ddfc6b454f2374"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/ChamCongForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "13dba2663f1e62a9cc41055824686574f3b441e8e0843befaa999ede62babfee"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/KhenThuongChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "f32fe6449cb255178f47823a5a7991c91af5e3649be8dce69501a1187229fb89"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/KhenThuongForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d4efab58ec159efa3938c404c3df20f4d068b3e80ef78e11aec7b6885156d04b"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/LichLamViecChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "895ee9c4ea0c5745a410c4896fcb6d1e6563956c114f445efe78dc5ff3eb617c"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanSu/LichLamViecForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d8ed758330f2cd8d5eaf539ccdcf38e0a587bf6ad12efb795470c698da450244"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanVien/ChucVuChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "006f98714bc861caf4f8b7e23089f0e1b60dca9bf4c74dd48e5dc0e9314dd304"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanVien/ChucVuForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "e0beed3a2832759221e112e7bbc38d2e1c77715bdd4d39478aa36684429591fa"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanVien/NhanVienChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "35712ca0722481b9b9b22ade875737d9862f65af2b575c062ea2ff0b9c04cdda"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanVien/NhanVienForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "408b135d79d8974a964f0ff23b796cdadfcc8ca5f6bd41c53b7e05da05251a65"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanVien/PhongBanChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d29be26f20d3f754145d7ae9e0cec8fe2fb9d8dd6af5b6be9495288b9a876de2"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhanVien/PhongBanForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "976b5e372a70b0a2f6472484a36fee2110b7aed099cce76653c60c38cc602600"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhatKy/NhatKyThaoTacChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "2517ad7a866cc4244edf19479b19a0d76f673e4ffe356788bfb16bb1fc1191ac"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/NhatKy/NhatKyThaoTacForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "1319166c001a0cb397db6ed2c5030ecd345d730480ce315a980347c15cae32d8"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Phong/PhongChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "a3b9f3099e6ae726d8ad0ab9ee8500b03ad12722b26ef32ea856e46201c5c8c4"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Phong/PhongForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "4b601c71c4789688818a304e30b73171fed1fcb6781ed1baf86bbc266ff54463"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Phong/TinhTrangPhongChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "32042a4b4a6132702de4865baa31cbdce39910666a7f01e65f6f5b31619ad52c"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/Phong/TinhTrangPhongForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "aa8a05019eed49eae456f9ea96960a55da987c3f2f7f7da9e326f582043fb952"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TaiKhoan/TaiKhoanChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "9a3d3a9c7803ea4c5ba5f558d2fcad9bb9d198023d3f538f7cc6e1565eb22e31"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TaiKhoan/TaiKhoanDatLaiMatKhauWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "0331f286c12820537a925da120ac5f7ca854b9e7ad40b0062a9242120fecb822"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TaiKhoan/TaiKhoanForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "bf681724397929095de39c087f90e7f54dd331247b2c257cf5eac79685f89f1a"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TaiKhoan/TaiKhoanGanVaiTroWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "53fb1982941563df1ff1ee07d57e19685ae7da3e58000d53b0a8997d2742a44b"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TaiKhoan/VaiTroQuyenChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "1034104ed96acb4e2a6b294c62df460477580c5000099f3e2fc479286c6b9c3a"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TaiKhoan/VaiTroQuyenForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "f59ab8b9c7e5ac5b42224a11d34a94c867d125df86baacacf21f5b042d0ca854"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TieuHao/CapVatTuNoiBoChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "f5f2e2a7e4f5d17b88f615d2fbcb0c6d0298d6da4a3a0fb88403b99608463840"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TieuHao/CapVatTuNoiBoForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "a85bd1023a5fbf305e569541793040fbf2280c29ad79aadd777f1cd9cc0c5dd8"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TieuHao/DinhMucTieuHaoChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "6bbfdce238340b80d3924059b33f6d12be57950b4ecbb8fdbd6ed701491ce5f7"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/TieuHao/DinhMucTieuHaoForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "467c8b4de5f01826cef908e7211c6b9c2c0768db757ac284b0e547f963997a88"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/VatTuNhaCungCap/NhaCungCapChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "6319c3a5971f67c7a47c0b654141d353c45c53a3a1ec4642f2c76b244a11d314"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/VatTuNhaCungCap/NhaCungCapForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "c1711abbb310ccbac4a9ed6e6abb311f4c5270fd05a2168d4e0d0b80f60ecc98"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/VatTuNhaCungCap/NhomVatTuChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "53f844a37950b3f79422e5e1b619f4bfd52c6a01347f0b22dfa757c2b3aba6df"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/VatTuNhaCungCap/NhomVatTuForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "bf12ca8a2e9a80c8689a115dc2d3f9f44f14c9de10c8ce309c6f89c8af7fb330"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/VatTuNhaCungCap/VatTuChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "8d31e78dbe3bcb28c344faf6726e9dec5e7071c26dfb5c8c90fbd0eed739f535"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/VatTuNhaCungCap/VatTuForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d67324077ed022b4acebe440341969b2d4119cde4cba0d6156892371143d0880"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/VatTuNhaCungCap/VatTuNhaCungCapChiTietWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "158670db893f467eeaeb7c9dcad935ebac66ebd9df98d44feca22b895be8954e"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/Dialogs/VatTuNhaCungCap/VatTuNhaCungCapForm.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "4694c13a2d1ff1a5a7c4b993e928b4affde44949a26388ed22e8b5b1c96fe84e"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/DichVuKhachSanGroupView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "996d3d540d1a030224a2f8211c9c27129813c7d3ef2f5799c36819815c643042"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/DichVuView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "1892c71d0c3b4ea71ec9312924e76ed22e3338bb1375c604b08dc59e184cf1fd"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/GoiUuDaiView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "071f83f85601787d2b6e3250e58c6b585c2b28c1cb8ea715449a92dd7007d614"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/HeThongGroupView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "fdee55a34875fa1998b64bd3decd1b277cb3be501c6704489fc9eb8ad9865664"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/HoaDonView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "aa379da7869de0d2d5b2a5c965992421a1abf89874a5ff84a87437ec9ca413e6"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/KhachHangView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "24fd7471f4b40ffd38443dc42be4edc9b75ad23f849236cd89b7dc6794c9ff98"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/KhoVatTuGroupView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d8c97feffa32afa644c5573ccc6eb9438319e9c4fda0f26881af074aa3ed2fa5"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/KhoView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "f529e74427e70875753f12b63a366c81e04e6486408dc63175be0e0cd1346cd8"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/LeTanGroupView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "dbbf7fa8ff985acf03798d135a65c60f55266771343149146d709130220b88db"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/LoginWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "66e2437358c6432d1d55f3f7a1ef19d5491a7355019db76877ef5518caf305a8"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/LuuTruView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "324f44155ed1025f6ea225a33ea4521a07b1bfc4fb88487fb6150528a6de7469"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/MainWindow.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "43c73b9756427a6d5f2b7bf1dcb0ed39ddf0b2eca152ccf6d2fa5d42d4efc996"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/NhanSuView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "ac3b8f197c6d73b2228884f841dc977c49f492a11a0c5e3c1417335363a42674"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/NhanVienView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "61168e46402bd58fbe671b52aed17fefd99e81d5ce7c680632c30b3ee9ec1056"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/NhatKyView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "72d01ed916bd90dc7452d27070637c788cb5399b7a1120182b916c3453d80c3d"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/PhongBuongGroupView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "c0d576dc7de7a7552dee4059aee5aa06f296f236f762bec6e4eb9660a652dcf4"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/PhongView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "f5becb157508eb20363e970b98a7b12a3fd02e2b6baa9f217857d7ede2af5d4d"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/QuanLyNhanSuGroupView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "d6817f836d8ba0f9cff8a0ebb52d1e77e0590e126adf9b9f996cdb39a9514a3b"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/TaiKhoanView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "6f0cbe83a9c275b5d8feccbbf1c93d87f1635f6859c148a831d7deb90e9e282d"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/TieuHaoView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "b1fabfd96b2ba239513e9b831b24a5aa8abc287f93a2bc6019819865e70a81ae"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/VatTuNhaCungCapView.xaml.cs",
+    "source": "QuanLyKhachSan.zip",
+    "sha256": "973d5ec6b44b9d1e56e40da86b438f2aab980ce85e7a69d97cf7983e3e8d30d6"
+  },
+  {
+    "file": "QuanLyKhachSan_Demo/Views/TuVanAIView.xaml.cs",
+    "source": "DoAn_QuanLyKhachSan-retsam.zip",
+    "sha256": "ac1741af6753c92f78cdbb45818de4033a1549bb2c00dfc94ef88197e64bf6d2"
+  }
+]

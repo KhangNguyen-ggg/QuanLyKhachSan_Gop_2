@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ET_QuanLyKhachSan\ET_QuanLyKhachSan.csproj" />
+    <ProjectReference Include="..\DAL_QuanlyKhachSan\DAL_QuanlyKhachSan.csproj" />
+
+  </ItemGroup>
+</Project>

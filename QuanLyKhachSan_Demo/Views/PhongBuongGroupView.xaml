@@ -1,0 +1,39 @@
+<UserControl x:Class="QuanLyKhachSan.Views.PhongBuongGroupView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:QuanLyKhachSan.Views" Background="{StaticResource BackgroundBrush}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QuanLyKhachSan;component/Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <ControlTemplate x:Key="ContentOnlyTabs" TargetType="TabControl">
+                <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+        <TabControl x:Name="tabNhom" Style="{StaticResource DarkTabControl}" SelectedIndex="0" SelectionChanged="TabNhom_SelectionChanged">
+            <TabControl.Template>
+                <ControlTemplate TargetType="TabControl">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Focusable="False">
+                        <StackPanel Orientation="Horizontal" IsItemsHost="True" KeyboardNavigation.TabIndex="1"/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </TabControl.Template>
+            <TabItem x:Name="tabPhongView" Header="Phòng" Style="{StaticResource DarkTabItem}" Padding="16,12"/>
+            <TabItem x:Name="tabBuongPhongView" Header="Dọn phòng &amp; bảo trì" Style="{StaticResource DarkTabItem}" Padding="16,12"/>
+            <TabItem x:Name="tabDanhMucPhongView" Header="Danh mục phòng" Style="{StaticResource DarkTabItem}" Padding="16,12"/>
+            <TabItem x:Name="tabDonPhong" Header="Dọn phòng" Style="{StaticResource ContextToolTab}" Padding="16,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabBaoTri" Header="Bảo trì" Style="{StaticResource ContextToolTab}" Padding="8,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabThietBi" Header="Thiết bị" Style="{StaticResource ContextToolTab}" Padding="8,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabCauTrucKhachSan" Header="Cấu trúc khách sạn" Style="{StaticResource ContextToolTab}" Padding="16,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabLoaiPhong" Header="Loại phòng" Style="{StaticResource ContextToolTab}" Padding="8,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+            <TabItem x:Name="tabTienNghi" Header="Tiện nghi" Style="{StaticResource ContextToolTab}" Padding="8,0,0,0" Background="#152D3B" BorderBrush="#7DD3FC" Visibility="Collapsed"/>
+        </TabControl>
+        <local:PhongView x:Name="viewPhongView" Grid.Row="1" Margin="0,12,0,0"/>
+        <local:BuongPhongView x:Name="viewBuongPhongView" Grid.Row="1" Margin="0,12,0,0" Visibility="Collapsed"/>
+        <local:DanhMucPhongView x:Name="viewDanhMucPhongView" Grid.Row="1" Margin="0,12,0,0" Visibility="Collapsed"/>
+    </Grid>
+</UserControl>
