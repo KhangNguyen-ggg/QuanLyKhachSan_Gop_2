@@ -12,9 +12,12 @@ public class BUS_PhongBan
     {
         tuKhoa = (tuKhoa ?? "").Trim();
         return dal.HienThiTatCaPB().Where(x =>
-            (x.TenPhongBan.Contains(tuKhoa, StringComparison.CurrentCultureIgnoreCase) ||
-             (x.MoTa ?? "").Contains(tuKhoa, StringComparison.CurrentCultureIgnoreCase)) &&
-            (!trangThai.HasValue || x.TrangThai == trangThai.Value))
+        {
+            bool khopTuKhoa = x.TenPhongBan.Contains(tuKhoa, StringComparison.CurrentCultureIgnoreCase) ||
+                (x.MoTa ?? "").Contains(tuKhoa, StringComparison.CurrentCultureIgnoreCase);
+            bool khopTrangThai = !trangThai.HasValue || x.TrangThai == trangThai.Value;
+            return khopTuKhoa && khopTrangThai;
+        })
             .OrderBy(x => x.MaPhongBan).ToList();
     }
 
@@ -35,7 +38,15 @@ public class BUS_PhongBan
     public void Luu(PhongBan phongBan)
     {
         KiemTra(phongBan);
+        BUS_KiemTra.YeuCau(!dal.TenDaTonTai(phongBan), "Tên phòng ban đã tồn tại. Vui lòng nhập tên khác.");
         bool daLuu = phongBan.MaPhongBan == 0 ? dal.Them(phongBan) : dal.Sua(phongBan);
         BUS_KiemTra.KetQua(daLuu);
+    }
+
+    public void Xoa(int ma)
+    {
+        BUS_KiemTra.Ma(ma, "phòng ban cần xóa");
+        BUS_KiemTra.YeuCau(dal.Xoa(new PhongBan { MaPhongBan = ma }),
+            "Phòng ban không còn tồn tại hoặc đã bị xóa.");
     }
 }

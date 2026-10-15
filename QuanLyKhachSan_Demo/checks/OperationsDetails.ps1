@@ -153,7 +153,8 @@ class Check
             }
         }
         CheckGroups();
-        foreach (var rowCase in rows)
+        // SQL departments are exercised against an isolated database in checks/PhongBanValidation.
+        foreach (var rowCase in rows.Where(r => r.Detail != typeof(PhongBanChiTietWindow)))
         {
             var screen = (UserControl)Activator.CreateInstance(rowCase.View)!;
             if (screen.FindName(rowCase.Tab) == null) continue;
@@ -281,7 +282,7 @@ class Check
         {
             DemoSession.SignIn(account.Username, account.Password);
             CheckGroups();
-            foreach (var row in rows)
+            foreach (var row in rows.Where(r => r.Detail != typeof(PhongBanChiTietWindow)))
             {
                 var detail = (Window)Activator.CreateInstance(row.Detail, new object?[] { null })!;
                 foreach (var action in row.Actions)
@@ -302,7 +303,7 @@ class Check
         }
         Assert(DemoSession.Accounts.Count == 5 && DemoSession.SignIn("admin", "admin123"), "UI changed fixed demo authentication.");
         app.Shutdown();
-        Console.WriteLine("PASS: all 21 row details, 3 contextual groups, toolbars, editing/cancellation, confirmations, computations, nested actions and role permissions.");
+        Console.WriteLine("PASS: demo row details, 3 contextual groups, toolbars, editing/cancellation, confirmations, computations, nested actions and role permissions. SQL departments are checked separately.");
     }
     static void ClickScreen(UserControl screen, string name) => Field<Button>(screen, name).RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
 }

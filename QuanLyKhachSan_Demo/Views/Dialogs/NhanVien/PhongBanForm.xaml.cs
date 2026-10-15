@@ -29,7 +29,7 @@ namespace QuanLyKhachSan.Views.Dialogs
                 bus.Luu(phongBan);
                 DialogResult = true;
             }
-            catch (Exception ex) { txtThongBao.Text = ex.Message; }
+            catch (Exception ex) { txtThongBao.Text = "Không lưu được phòng ban. " + ex.Message; }
         }
     }
 }

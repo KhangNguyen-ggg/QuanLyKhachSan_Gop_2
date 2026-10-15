@@ -2,6 +2,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using System.Windows.Threading;
 using BUS_QuanlyKhachSan.NhanSu;
 using ET_QuanLyKhachSan;
@@ -20,10 +21,14 @@ internal static class Program
         checks++;
     }
 
-    private static void Reject(Action action)
+    private static void Reject(Action action, string? expectedMessage = null)
     {
         try { action(); }
-        catch (ArgumentException) { checks++; return; }
+        catch (Exception ex) when (ex is ArgumentException or InvalidOperationException)
+        {
+            Assert(expectedMessage == null || ex.Message.Contains(expectedMessage), "Unexpected rejection: " + ex.Message);
+            return;
+        }
         throw new Exception("Invalid department was accepted.");
     }
 
@@ -54,7 +59,7 @@ internal static class Program
         window.UpdateLayout();
     }
 
-    private static bool? CheckForm(PhongBanForm form, Action action)
+    private static bool? CheckForm(Window form, Action action)
     {
         Exception? failure = null;
         form.Opacity = 0;
@@ -68,6 +73,33 @@ internal static class Program
         bool? result = form.ShowDialog();
         if (failure != null) throw failure;
         return result;
+    }
+
+    private static void ConfirmDelete(PhongBanChiTietWindow detail, bool accept)
+    {
+        Exception? failure = null;
+        bool handled = false;
+        var operation = detail.Dispatcher.BeginInvoke(new Action(() =>
+        {
+            try
+            {
+                var confirm = Application.Current.Windows.OfType<XacNhanDemoWindow>().Single();
+                confirm.Opacity = 0;
+                var department = (PhongBan)detail.DataContext;
+                Assert(confirm.Owner == detail && Field<TextBlock>(confirm, "txtNoiDung").Text.Contains(department.TenPhongBan),
+                    "Delete confirmation lost the department identity.");
+                Click(confirm, accept ? "btnLuu" : "btnDong");
+            }
+            catch (Exception ex)
+            {
+                failure = ex;
+                foreach (var window in Application.Current.Windows.OfType<XacNhanDemoWindow>().ToArray()) window.Close();
+            }
+            finally { handled = true; }
+        }));
+        Click(detail, "btnPhongBanXoa");
+        if (!handled) { operation.Abort(); throw new Exception("Delete did not open a confirmation."); }
+        if (failure != null) throw failure;
     }
 
     private static void Execute(SqlConnection connection, string sql)
@@ -113,13 +145,17 @@ internal static class Program
             testConnection.Open();
             Execute(testConnection, "CREATE TABLE dbo.PhongBan (MaPhongBan int IDENTITY(1,1) PRIMARY KEY, " +
                 "TenPhongBan nvarchar(100) NOT NULL UNIQUE, MoTa nvarchar(500) NULL, TrangThai bit NOT NULL)");
+            Execute(testConnection, "CREATE TABLE dbo.NhanVien (MaNhanVien int IDENTITY(1,1) PRIMARY KEY, " +
+                "MaPhongBan int NOT NULL REFERENCES dbo.PhongBan(MaPhongBan))");
 
             var bus = new BUS_PhongBan();
+            Reject(() => bus.Xoa(0));
+            Reject(() => bus.Xoa(int.MaxValue), "không còn tồn tại");
             var department = new PhongBan { TenPhongBan = "  Phòng kiểm tra  ", MoTa = "Ghi chú", TrangThai = true };
             bus.Luu(department);
             Assert(department.MaPhongBan > 0 && bus.HienThiTatCa().Count == 1, "Insert/identity failed.");
             Assert(bus.HienThiTheoId(department.MaPhongBan).TenPhongBan == "Phòng kiểm tra", "SQL read failed.");
-            Reject(() => bus.Luu(new PhongBan { TenPhongBan = "Phòng kiểm tra" }));
+            Reject(() => bus.Luu(new PhongBan { TenPhongBan = "  Phòng kiểm tra  " }), "đã tồn tại");
             Reject(() => bus.Luu(new PhongBan { MaPhongBan = int.MaxValue, TenPhongBan = "Missing" }));
 
             department.TenPhongBan = "Phòng đã sửa";
@@ -130,6 +166,11 @@ internal static class Program
                 "Keyword/status filter failed.");
             bus.Luu(boundary);
             Assert(bus.HienThiTheoId(boundary.MaPhongBan).MoTa.Length == 500, "Boundary round trip failed.");
+            Reject(() => bus.Luu(new PhongBan { MaPhongBan = department.MaPhongBan,
+                TenPhongBan = boundary.TenPhongBan }), "đã tồn tại");
+            bus.Luu(department);
+            Assert(bus.HienThiTheoId(department.MaPhongBan).TenPhongBan == "Phòng đã sửa",
+                "An unchanged name was rejected or a duplicate edit changed SQL data.");
 
             DemoSession.SignIn("admin", "admin123");
             var invalid = new PhongBanForm();
@@ -145,6 +186,10 @@ internal static class Program
                 Click(invalid, "btnLuu");
                 Assert(invalid.IsVisible && Field<TextBlock>(invalid, "txtThongBao").Text.Contains("100"),
                     "Overlong name was not rejected in form.");
+                SetText(invalid, "txtTenPhongBan", department.TenPhongBan);
+                Click(invalid, "btnLuu");
+                Assert(invalid.IsVisible && Field<TextBlock>(invalid, "txtThongBao").Text.Contains("đã tồn tại"),
+                    "Duplicate add did not keep the form open with an actionable error.");
             });
 
             var form = new PhongBanForm();
@@ -160,7 +205,7 @@ internal static class Program
 
             var detail = new PhongBanChiTietWindow(added);
             ShowHidden(detail);
-            Assert(!Field<Button>(detail, "btnPhongBanXoa").IsEnabled, "Unimplemented delete is enabled.");
+            Assert(Field<Button>(detail, "btnPhongBanXoa").IsEnabled, "Authorized delete is disabled.");
             Assert(Field<TextBox>(detail, "txtMa").Text == added.MaPhongBan.ToString(), "Detail ID binding failed.");
             Click(detail, "btnPhongBanSuaThongTin");
             SetText(detail, "txtTenPhongBan", "Chưa lưu");
@@ -174,6 +219,10 @@ internal static class Program
             Click(detail, "btnLuuSua");
             Assert(!Field<TextBox>(detail, "txtTenPhongBan").IsReadOnly &&
                 bus.HienThiTheoId(added.MaPhongBan).TenPhongBan == "Tạo từ form", "Invalid edit reached SQL.");
+            SetText(detail, "txtTenPhongBan", department.TenPhongBan);
+            Click(detail, "btnLuuSua");
+            Assert(Field<TextBlock>(detail, "txtThongBao").Text.Contains("đã tồn tại") &&
+                bus.HienThiTheoId(added.MaPhongBan).TenPhongBan == "Tạo từ form", "Duplicate edit reached SQL.");
             SetText(detail, "txtTenPhongBan", "Đã sửa từ chi tiết");
             SetText(detail, "txtMoTa", "Đã cập nhật");
             SetStatus(detail, "cboTrangThai", false);
@@ -208,6 +257,40 @@ internal static class Program
             Click(view, "btnMoiPhongBan");
             Assert(grid.Items.Count == 3 && Field<TextBox>(view, "txtTimPhongBan").Text == "" &&
                 Field<ComboBox>(view, "cboLocPhongBan").SelectedIndex == 0, "Refresh did not reset both filters.");
+
+            Execute(testConnection, $"INSERT INTO dbo.NhanVien(MaPhongBan) VALUES ({added.MaPhongBan})");
+            Reject(() => bus.Xoa(added.MaPhongBan), "nhân viên");
+            grid.SelectedIndex = 0;
+            grid.UpdateLayout();
+            var target = grid.Items.Cast<PhongBan>().Single(x => x.MaPhongBan == added.MaPhongBan);
+            var clickedRow = (DataGridRow)grid.ItemContainerGenerator.ContainerFromItem(target);
+            Exception? deleteFailure = null;
+            app.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                PhongBanChiTietWindow? deleting = null;
+                try
+                {
+                    deleting = app.Windows.OfType<PhongBanChiTietWindow>().Single();
+                    deleting.Opacity = 0;
+                    Assert(Field<TextBox>(deleting, "txtMa").Text == added.MaPhongBan.ToString(),
+                        "Double-click opened the selected row instead of the clicked row.");
+                    ConfirmDelete(deleting, false);
+                    Assert(deleting.IsVisible && bus.HienThiTatCa().Count == 3, "Cancel deleted the department.");
+                    ConfirmDelete(deleting, true);
+                    Assert(deleting.IsVisible && Field<TextBlock>(deleting, "txtThongBao").Text.Contains("nhân viên") &&
+                        bus.HienThiTatCa().Count == 3, "Referenced department was deleted or the error closed the detail.");
+                    Execute(testConnection, "DELETE FROM dbo.NhanVien");
+                    ConfirmDelete(deleting, true);
+                    Assert(!deleting.IsVisible, "Successful deletion did not close the detail.");
+                }
+                catch (Exception ex) { deleteFailure = ex; }
+                finally { if (deleting?.IsVisible == true) deleting.Close(); }
+            }));
+            grid.RaiseEvent(new MouseButtonEventArgs(Mouse.PrimaryDevice, 0, MouseButton.Left)
+                { RoutedEvent = Control.MouseDoubleClickEvent, Source = clickedRow });
+            if (deleteFailure != null) throw deleteFailure;
+            Assert(grid.Items.Count == 2 && grid.Items.Cast<PhongBan>().All(x => x.MaPhongBan != added.MaPhongBan) &&
+                bus.HienThiTatCa().Count == 2, "Delete did not persist and refresh the SQL list.");
             host.Close();
 
             DemoSession.SignIn("letan", "demo123");
@@ -219,8 +302,19 @@ internal static class Program
                 Click(denied, "btnLuu");
                 Assert(denied.IsVisible, "Unauthorized save closed the form.");
             });
-            Assert(bus.HienThiTatCa().Count == 3, "Unauthorized save reached SQL.");
+            var deniedDetail = new PhongBanChiTietWindow(department);
+            CheckForm(deniedDetail, () =>
+            {
+                Assert(!Field<Button>(deniedDetail, "btnPhongBanXoa").IsEnabled &&
+                    !Field<Button>(deniedDetail, "btnPhongBanSuaThongTin").IsEnabled, "Detail role restrictions missing.");
+                Click(deniedDetail, "btnPhongBanXoa");
+                Click(deniedDetail, "btnPhongBanSuaThongTin");
+                Assert(!app.Windows.OfType<XacNhanDemoWindow>().Any() &&
+                    Field<TextBox>(deniedDetail, "txtTenPhongBan").IsReadOnly, "Denied action opened a modal or edit mode.");
+            });
+            Assert(bus.HienThiTatCa().Count == 2, "Unauthorized save/delete reached SQL.");
             DemoSession.SignIn("admin", "admin123");
+            Execute(testConnection, "DROP TABLE dbo.NhanVien");
             Execute(testConnection, "DROP TABLE dbo.PhongBan");
             var failed = new PhongBanForm();
             CheckForm(failed, () =>

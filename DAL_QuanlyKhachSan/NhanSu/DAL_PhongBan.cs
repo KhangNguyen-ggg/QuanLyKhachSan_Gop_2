@@ -1,5 +1,6 @@
 using DAL_QuanlyKhachSan.TienIch;
 using ET_QuanLyKhachSan;
+using Microsoft.Data.SqlClient;
 
 namespace DAL_QuanlyKhachSan.NhanSu;
 
@@ -8,8 +9,6 @@ public class DAL_PhongBan
     // Dùng lại các tiện ích SQL của dự án; kiểm tra dữ liệu đầu vào nằm ở BUS.
     private readonly HienThi hienThi;
     private readonly Them them;
-    private readonly Sua sua;
-    private readonly Xoa xoa;
     private readonly ThuThiLenhCoDieuKien lenh;
 
     // Khởi tạo các tiện ích SQL với chuỗi kết nối từ QLKS_CONNECTION hoặc connection.txt.
@@ -18,8 +17,6 @@ public class DAL_PhongBan
         // Các tiện ích cùng dùng chuỗi kết nối từ QLKS_CONNECTION hoặc connection.txt.
         string chuoi = CauHinhKetNoi.Chuoi;
         hienThi = new HienThi(chuoi);
-        sua = new Sua(chuoi);
-        xoa = new Xoa(chuoi);
         them = new Them(chuoi);
         lenh = new ThuThiLenhCoDieuKien(chuoi);
     }
@@ -33,7 +30,22 @@ public class DAL_PhongBan
     // SQL tự sinh MaPhongBan; tiện ích thêm trả false nếu gặp lỗi, chẳng hạn trùng tên.
     public bool Them(PhongBan phongBan) => them.ThemKhongDieuKien(phongBan);
 
-    public bool Xoa(PhongBan phongBan) => xoa.XoaTheoId(phongBan);
+    public bool TenDaTonTai(PhongBan phongBan) => lenh.TruyVan<int>(
+        "SELECT COUNT(1) FROM dbo.PhongBan WHERE TenPhongBan = @TenPhongBan AND MaPhongBan <> @MaPhongBan",
+        phongBan).Single() > 0;
+
+    public bool Xoa(PhongBan phongBan)
+    {
+        try
+        {
+            return lenh.ThucThiLenh("DELETE FROM dbo.PhongBan WHERE MaPhongBan = @MaPhongBan", phongBan) == 1;
+        }
+        catch (SqlException ex) when (ex.Number == 547)
+        {
+            throw new InvalidOperationException(
+                "Không thể xóa phòng ban đang được nhân viên sử dụng. Có thể đổi trạng thái thành Ngừng hoạt động.", ex);
+        }
+    }
 
     public bool Sua(PhongBan phongBan)
     {

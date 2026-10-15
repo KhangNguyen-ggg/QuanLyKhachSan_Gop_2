@@ -16,6 +16,7 @@ public partial class PhongBanChiTietWindow : Window
         phongBan = duLieu;
         btnPhongBanThemMoi.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanThemMoi");
         btnPhongBanSuaThongTin.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin");
+        btnPhongBanXoa.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanXoa");
         btnLuuSua.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin");
         btnHuySua.IsEnabled = DemoSession.CanUseButton("NhanVienView", "btnPhongBanSuaThongTin");
         HienThiPhongBan();
@@ -67,7 +68,21 @@ public partial class PhongBanChiTietWindow : Window
             HienThiPhongBan();
             txtThongBao.Text = "Đã lưu thông tin phòng ban.";
         }
-        catch (Exception ex) { txtThongBao.Text = ex.Message; }
+        catch (Exception ex) { txtThongBao.Text = "Không lưu được phòng ban. " + ex.Message; }
+    }
+
+    private void btnXoa_Click(object sender, RoutedEventArgs e)
+    {
+        if (_editing || !DemoSession.CanUseButton("NhanVienView", "btnPhongBanXoa")) return;
+        var confirm = new XacNhanDemoWindow { Owner = this };
+        confirm.txtNoiDung.Text = $"Xóa phòng ban {phongBan.MaPhongBan} — {phongBan.TenPhongBan}? Thao tác này không thể hoàn tác.";
+        if (confirm.ShowDialog() != true) return;
+        try
+        {
+            bus.Xoa(phongBan.MaPhongBan);
+            DialogResult = true;
+        }
+        catch (Exception ex) { txtThongBao.Text = "Không xóa được phòng ban. " + ex.Message; }
     }
 
     private void btnPhongBanThemMoi_Click(object sender, RoutedEventArgs e)

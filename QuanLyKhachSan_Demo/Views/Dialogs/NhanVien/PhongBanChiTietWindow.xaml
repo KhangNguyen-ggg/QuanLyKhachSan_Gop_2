@@ -19,7 +19,8 @@
                 <TextBlock Text="Tên phòng ban" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,4"/>
                 <TextBox x:Name="txtTenPhongBan" Text="{Binding TenPhongBan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Style="{StaticResource DarkTextBox}"/>
                 <TextBlock Text="Mô tả" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,4"/>
-                <TextBox x:Name="txtMoTa" Text="{Binding MoTa, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Style="{StaticResource DarkTextBox}"/>
+                <TextBox x:Name="txtMoTa" Text="{Binding MoTa, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Style="{StaticResource DarkTextBox}"
+                         MinHeight="90" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
                 <TextBlock Text="Trạng thái" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,12,0,4"/>
                 <ComboBox x:Name="cboTrangThai" Style="{StaticResource DarkComboBox}" IsEnabled="False"
                           SelectedValuePath="Tag" SelectedValue="{Binding TrangThai, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
@@ -34,8 +35,8 @@
         <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,16,0,0">
             <Button x:Name="btnPhongBanThemMoi" Content="Thêm mới" Click="btnPhongBanThemMoi_Click" Style="{StaticResource PrimaryButton}" Margin="8,4,0,4" MinWidth="90"/>
             <Button x:Name="btnPhongBanSuaThongTin" Content="Sửa" Click="btnSua_Click" Style="{StaticResource SecondaryButton}" Margin="8,4,0,4" MinWidth="90"/>
-            <Button x:Name="btnPhongBanXoa" Content="Xóa" IsEnabled="False" ToolTip="Chưa triển khai xóa. Có thể sửa trạng thái thành ngừng hoạt động."
-                    ToolTipService.ShowOnDisabled="True" Style="{StaticResource DangerButton}" Margin="8,4,0,4" MinWidth="90"/>
+            <Button x:Name="btnPhongBanXoa" Content="Xóa" Click="btnXoa_Click"
+                    Style="{StaticResource DangerButton}" Margin="8,4,0,4" MinWidth="90"/>
             <Button x:Name="btnLuuSua" Content="Lưu thay đổi" Click="btnLuuSua_Click" Style="{StaticResource PrimaryButton}" Margin="8,4,0,4" Visibility="Collapsed"/>
             <Button x:Name="btnHuySua" Content="Hủy sửa" Click="btnHuySua_Click" Style="{StaticResource SecondaryButton}" Margin="8,4,0,4" Visibility="Collapsed"/>
             <Button x:Name="btnDong" Content="Đóng" Click="btnDong_Click" Style="{StaticResource SecondaryButton}" Margin="8,4,0,4" IsCancel="True" MinWidth="90"/>
